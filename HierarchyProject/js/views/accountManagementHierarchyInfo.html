@@ -1,0 +1,181 @@
+<div class="nodesChilders" ng-controller="nodeController as nodeCtrl" ng-init="nodeCtrl.init()">
+	
+	<div class="leftContainer">
+		<h4 class="accountTitle">Hirarchies Account</h4>
+		<div class="container col-md-4">
+			
+			<script type="text/ng-template" id="tree_template.html">
+				<div class="node">
+				<edit-node-in-place
+						select="nodeCtrl.userSelectedNode(s)"
+ 						value="{{s.name}}"
+ 						update="nodeCtrl.updateSelectedNodeName(newName)"
+ 						is-selected-condition="{{s.id == nodeCtrl.commonNodeHeirarchyModel.userSelectedNode.id}}"
+ 						validate-value="nodeCtrl.validateNewNodeName(value)"
+ 						editable="{{ s.id != nodeCtrl.assumedNode.id }}"
+ 						edit-after-creation="{{s.id == -1}}"
+ 						being-edit="nodeCtrl.editingStart(s)">
+ 				</edit-node-in-place>
+ 				<span class="node-button" >
+ 					<div class="addDeledBtn">
+                        <button class="btn-node btn-node-add" title="add" ng-click="nodeCtrl.createNewChildNodeForUserToEdit(s)">+</button>
+                        <button class="btn-node btn-node-del" title="delete" ng-click="nodeCtrl.deleteNode(s)" ng-show="!s.isRootNode"> - </button>
+                     </div>
+                </span>
+ 				</div>
+ 				 <ul class="nodeListName">
+                    <li ng-repeat="s in s.child" ng-include="'tree_template.html'"></li>
+                </ul>   
+			</script>
+			
+			<ul class="nodeListName">
+                <li class="node-list" ng-repeat="s in [nodeCtrl.assumedNode]" ng-include="'tree_template.html'"></li>
+            </ul>
+        </div> <!-- end of thge container col-md-4 -->
+	</div> <!-- end of the left container -->
+
+		<div class="rightContainer">
+				<h4 class="accountSelectedTitle">Selected Node {{nodeCtrl.titleOfNode}}</h4>
+				<div bs-tabs nav-class="nav nav-tabs noselect">
+
+	                <div bs-pane title="Account Info">
+	                    <div title="">
+	                        <br />
+	                        <div class="row" title="">
+	                            <div class="accoutInfoContent">
+	                                <div class="text">{{ nodeCtrl.numberOfChild }}</div>
+	                                <div class="text">{{ nodeCtrl.profesionInfo }}</div>
+	                            </div>
+	                        </div>
+	                    </div>
+                	</div>  <!-- end of the Account info pane -->
+
+                	<div bs-pane title="Account Details">
+	                    <div title="">
+	                        <br />
+	                        <div class="row" title="">
+	                            <div class="accoutDetailsContent">
+	                            	<div class="textWork">{{ nodeCtrl.workSince }}</div>
+	                                <div class="textTitle">{{ nodeCtrl.detailsTitle }}</div>
+	                                <div class="textContent">{{ nodeCtrl.commensData }}</div>
+	                            </div>
+	                        </div>
+	                    </div>
+                	</div> <!-- end of the Account details pane -->
+          
+                	<div bs-pane title="Settings" ng-controller="formController as formCtrl" ng-init="formCtrl.init()">
+	                    <div title="">
+	                        <br />
+	                        <div class="row" title="">
+	                            <div class="formText"><strong>Modified Nodes Details:</strong> modification will override current text and it will be available to particular employee.</div>
+	                             <div class="formContainer">
+
+	                               	<form role="form" name="form" novalidate ng-submit="formCtrl.save()">
+	                               		<div class="form-group">
+	                               		 <label class="radio-btn">
+	                               			<input type="radio"
+ 	                               				   class="form-control-helper-radioBtn"
+											       id="adminRdb"
+											       ng-model="formCtrl.access"
+       											   value="admin"
+       											   ng-disabled="formCtrl.modified" 
+       											   name="admin"
+       											   ng-change="formCtrl.makeChange()">
+       									    Admin
+       									</label>
+       									<label class="radio-btn">
+       										<input type="radio"
+ 	                               				   class="form-control-helper-radioBtn"
+											       id="viewerRdb"
+											       ng-disabled="formCtrl.modified" 
+											       ng-model="formCtrl.access"
+       											   value="viewer"
+       											   name="viewer"
+       											   ng-change="formCtrl.makeChange()">
+       										Viewer
+       									</label>
+       									<label class="radio-btn">
+       										<input type="radio"
+ 	                               				   class="form-control-helper-radioBtn"
+											       id="userRdb"
+											       ng-disabled="formCtrl.modified" 
+											       ng-model="formCtrl.access"
+       											   value="user"
+       											   name="user"
+       											   ng-change="formCtrl.makeChange()">
+       										User
+       									</label>
+	                               		</div>
+										<div class="form-group">
+											<div class="row">
+												<div class="startDay" >
+													<label for="startDay">Start Day</label>
+													<input type="text"
+													   class="form-control-helper"
+													   id="startDate"
+													   name="startDay"
+													   maxlength="10"
+													   placeholder="dd/mm/yyyy"
+													   date-validation="{ctrl:formCtrl}"
+													   autocomplete="off"
+													   autofocus
+													   ng-change="formCtrl.makeChange()"
+													   ng-model="formCtrl.startDay"
+													   ng-maxlength="10"
+												       required="true"
+													   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
+												</div>
+												<div class="message-help-block" ng-messages="form.startDay.$error" ng-if="form.startDay.$dirty">
+													<div class="form_error_messages" ng-message="required">Starting date is required.</div>
+													<div class="form_error_messages" ng-message="dateValidation">
+														{{ formCtrl.dateErrorMessage }} </div>
+												</div>
+												<div class="position" >
+													<label for="position">Position&nbsp</label>
+													<input type="text"
+													   class="form-control-helper"
+													   id="position"
+													   name="position"
+													   maxlength="225"
+													   placeholder="Employee profession"
+													   autocomplete="off"
+													   autofocus
+													   ng-change="formCtrl.makeChange()"
+													   ng-model="formCtrl.position"
+													   required="true"
+													   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
+												</div>
+												<div class="message-help-block" ng-messages="form.position.$error" ng-if="form.position.$dirty">
+													<div class="form_error_messages" ng-message="required">Position is required.</div>
+											    </div>
+												<div class="comment" >
+													<label for="comment">Comments</label>
+													<br />
+													<textarea rows="6" cols="50"
+													   class="form-control-helper"
+													   id="comment"
+													   name="COMMENT"
+													   maxlength="1884"
+													   placeholder="Node about employee:"
+													   autocomplete="off"
+													   autofocus
+													   ng-change="formCtrl.makeChange()"
+													   ng-model="formCtrl.comment"
+													   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"></textarea>
+													</div>
+													<button class="btnSave" type="button"
+													ng-disabled="formCtrl.btnSave || form.position.$invalid || form.startDay.$invalid " title="{{formCtrl.btnName}}"
+													ng-click="formCtrl.save()">{{formCtrl.btnName}}</button>
+												</div>
+											</div> <!-- end of the row -->
+										</div> <!-- enf of the form group -->
+									</form>
+
+									</div> <!-- end of the formContainer -->
+	                            </div> <!-- end of the row -->
+	                        </div> <!-- end of the title  -->
+                	</div> <!-- end of the setting pane -->
+                	
+                </div>	<!-- end of the 'nav nav-tabs noselect' class -->
+		</div> <!-- end of the right container -->
+</div>

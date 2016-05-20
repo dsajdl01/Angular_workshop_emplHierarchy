@@ -1,0 +1,33 @@
+<div class="modal" tabindex="-1" role="dialog" ng-controller="aboutController as aboutCtrl"> 
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+         <button type="button" ng-click="aboutCtrl.close()" class="btn close" data-dismiss="modal" >X</button>
+            <h3 class="modal-title">About Employee Managment App</h3>
+        </div>
+
+        <div class="modal-body">
+            <div class="aboutContent">
+              <p><strong>Framework: </strong>AngularJS </p>
+              <p><strong>Use on: </strong> HTML &#38; CSS </p>
+              <div class="purposeContent">
+                <p>To display top node and node's children and sub-children.</p> 
+                <p>When is assumed identity as any child the child has just view to child's children. Child cannot obtain information on parapet’s nodes</p>
+                <p>The depend on nodes usability then nodes can modify itself or other nodes.</p> 
+                <p>In this application nodes represent employee staff where managers, supervisors and leaders can notify itself or other nodes.</p>
+              </div>
+            </div>
+            <div id="right">
+              <button class="btn btn-primary" ng-click="aboutCtrl.close()">Cancel</button>
+            </div>  
+        </div>
+        <div class="modal-footer">
+             <div class="row">
+                   <div class="col-sm-4 col-sm-offset-8">
+                <span> &#169; Copyright 2016 Created by David Sajdl</span> 
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

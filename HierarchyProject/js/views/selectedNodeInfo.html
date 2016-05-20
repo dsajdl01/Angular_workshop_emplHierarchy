@@ -1,0 +1,21 @@
+<div class="AccountInfo" ng-controller="accountInfoController as infoCtrl" ng-init="infoCtrl.init()">
+	<h3 class="greyClr">Info</h3>
+	<div class="blockInfo">
+	<div class="leftblock">
+		<p><span class="styleBold">Position: </span></p>
+		<p><span class="styleBold">Date Of Birthday: </span></p>
+		<p><span class="styleBold">Start working for company: </span></p>
+		<p><span class="styleBold">Working in Company: </span></p>
+	</div>
+	<div class="rightblock">
+		<p><span class="output">{{ infoCtrl.possition }}</span></p>
+		<p><span class="output">{{ infoCtrl.dob }} - {{ infoCtrl.age }} years old.</span></p>
+		<p><span class="output"> {{ infoCtrl.startWorkingDay }}</span></p>
+		<p><span class="output">{{ infoCtrl.yearsWorking }} years and {{infoCtrl.daysWorking }} days.</span></p>
+	</div>
+	</div>
+	<div class="infoComments">
+		<p><span class="styleBold">Comments: </span></p> 
+		<p class="emplComments">{{ infoCtrl.comments }}</p>
+	</div>
+</div>
