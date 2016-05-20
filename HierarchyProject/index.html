@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myMngtHierarchyApp">
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<title>AngularJS- Mamagment Hierarchies</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/toaster.min.css">
+		<link rel="stylesheet" type="text/css" href="css/angular-motion.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-additions.min.css">
+	    <link rel="stylesheet" type="text/css" href="css/style.css" media="all" >
+	     <link rel="stylesheet" type="text/css" href="css/accountMngmtHierarchyInfo.css" media="all" >
+	    <link rel="stylesheet" type="text/css" href="css/assumeIdentityStyle.css" media="all" >
+	</head>
+
+	<body ng-controller="mngtHierarchyController as ctrl" ng-init="ctrl.init()">
+	<toaster-container toaster-options="{'close-button': true}"></toaster-container>
+		<div class="mainContent" ng-show="ctrl.showPage">
+
+			<div class="top-bar"> 
+				<div class="navigation-menu">
+				<ul>
+					<li><a class="emloyeeProfil" ng-href="#/homeViewAccount" ng-class="{disabled: !ctrl.isTopNavigationBtnDisabled || ctrl.commonNodeHeirarchyModel.hasPersonalData}"  title="Home"> Employee Managment </a></li>
+					<li><a class="homeAccount" ng-href="#/homeViewAccount" ng-class="{disabled: !ctrl.isTopNavigationBtnDisabled}" title="Home - View User Account">Selected Account </a></li>
+					<li ng-show="ctrl.hasPermission"><a class="accountManager" ng-href="#/viewAccountInfo" ng-class="{disabled: !ctrl.isTopNavigationBtnDisabled}"  title="Account Managment">Manage Account</a></li>
+					<li><a class="aboutApp" href="javascript:void(0)" target="_self" ng-class="{disabled: !ctrl.isTopNavigationBtnDisabled}" ng-click="ctrl.displayAboutDialog()" title="About Hierarchy App">About</a></li>
+					<li><a class="last" href="#/homeViewAccount" ng-click="ctrl.loadPage()" title="Change Node">Change identity </a></li>
+					<li><a class="myProfile" href="#myProfile" target="_self" ng-class="{disabled: !ctrl.isTopNavigationBtnDisabled}" title="User's profile">My Profile</a></li>
+					<li><a class="templateAssumeIdentity" ng-href="#/templateAssumeIdentity"></a></li>
+				</ul>
+				<span class="currentDay"> Today: {{ ctrl.todayDay }}</span>
+				</div>
+			</div>
+				
+			<div class="mainContainer">
+					<h2>{{ctrl.accountTitle}} </h2>
+
+					<div ng-view></div>
+
+					<div id="footer">
+						<div class="row">
+	                		<div class="col-sm-4 col-sm-offset-8">
+								<span class="copyRight">&copy; Copyright 2016 Created by David Sajdl</span>
+							</div>
+						</div>
+					</div>
+
+			</div>
+		</div>
+		<script src="js/vendor/angular/angular.min.js"></script>
+		<script src="js/vendor/angular-resource/angular-resource.js"></script>
+		<script src="js/vendor/angular-messages/angular-messages.js"></script>
+		<script src="js/vendor/angular-route/angular-route.js"></script>
+		<script src="js/vendor/angularjs-toaster/toaster.js"></script>
+		<script src="js/vendor/angular-strap/dist/angular-strap.min.js"></script>
+		<script src="js/vendor/angular-strap/dist/angular-strap.tpl.min.js"></script>
+		<script src="js/vendor/angular/angular.min.js"></script>
+		
+		<script src="js/app.js"></script>
+		<script src="js/controller/nodeController.js"></script>
+		<script src="js/controller/aboutController.js"></script>
+		<script src="js/directives/nodeDirective.js"></script>
+		<script src="js/directives/dateValidation_directive.js"></script>
+		<script src="js/controller/accountInfoController.js"></script>
+		<script src="js/controller/mngtHierarchyController.js"></script>
+		<script src="js/controller/myProfileContrller.js"></script>
+		<script src="js/controller/formController.js"></script>
+		<script src="js/controller/assumeIdentityController.js"></script>
+		<script src="js/service/hierarchyNodeService.js"></script>
+		<script src="js/service/commonNodeHierarchyModel.js"></script>
+		<script src="js/service/calculateTimeService.js"></script>
+		<script src="js/service/mngtHierarchyNodeServiceProvider.js"></script>
+		<script src="js/service/modalDialogBoxService.js"></script>
+		<script src="js/service/AuthServices.js"></script>
+
+		<!-- add livereload script so we don't have to refresh our browser on changes -->
+		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+	</body>
+</html>
