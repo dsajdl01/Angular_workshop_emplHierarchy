@@ -1,0 +1,55 @@
+/*********************************
+**	Assume Identity error page 	**
+**********************************/
+.assumeIdentityText{
+  color: rgb(0, 0, 0);
+  text-align: center;
+  width: 70%;
+  margin:  -80px auto 0px;
+  font-size: 120%;
+  margin-bottom: 70px;
+  box-shadow: 10px 10px 10px 10px #c2c2c2;
+}
+
+/*********************************
+**	Account Info details page 	**
+**********************************/
+.AccountInfo{
+	padding-left: 10px;
+	font-size: 100%;
+}
+.greyClr{
+	color: #808080;
+	font-style: italic;
+}
+.styleBold{
+	font-weight: bold;
+	font-style: italic;
+}
+.rightblock{
+	float: right;
+	line-height: 90%;
+	margin: 2px 290px 0px 0px;
+	width: 500px;
+}
+.leftblock{
+	float: left;
+	line-height: 90%;
+}
+.blockInfo{
+	height: 140px;
+}
+
+.infoComments{
+	height: 80px;
+	margin-bottom: 35px;
+}
+.emplComments{
+	text-align: justify;
+	text-justify: inter-word;
+	background-color: #efefff;
+	border-style: ridge;
+	border-color: #efefef;
+	padding: 5px 10px 10px 5px;
+	margin: -12px 30px 0px 0px;
+}
