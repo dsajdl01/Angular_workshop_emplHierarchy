@@ -1,0 +1,26 @@
+{
+  "name": "Employment Hierarchy",
+  "version": "1.0.0",
+  "description": "AngularJS project. Employment hierarchy to display employees information depend on employees accessibility",
+  "dependencies": {
+    "bootstrap": "^3.3.2",
+    "angular": "^1.3.11"
+  },
+  "devDependencies": {
+    "http-server": "^0.7.4",
+    "livereload": "^0.3.6"
+  },
+  "scripts": {
+    "start": "node_modules/.bin/http-server -c-1 > /dev/null & node_modules/.bin/livereload . -i 200 > /dev/null"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dsajd01/Angular_workshop_emplHierarchy"
+  },
+  "keywords": [
+    "AngularJS",
+    "personalProject"
+  ],
+  "author": "David Sajdl. email <davidsajdl@yahoo.co.uk>",
+  "homepage": "https://github.com/dsajdl/Angular_workshop_emplHierarchy/HierarchyProje"
+}
