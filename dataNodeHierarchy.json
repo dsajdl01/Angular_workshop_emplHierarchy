@@ -1,0 +1,55 @@
+[{
+	"name": "Yadira",
+	"id": 100,
+	"parentsId": null,
+	"access": "admin",
+	"child": [{
+		"name": "Bob",
+		"id": 101,
+		"parentsId": 100,
+		"access": "admin",
+		"child": [{
+			"name": "David",
+			"id": 102,
+			"parentsId": 101,
+			"access": "user",
+			"child": []
+		}, {
+			"name": "Magda",
+			"id": 103,
+			"parentsId": 101,
+			"access": "user",
+			"child": []
+		}]
+	}, {
+		"name": "Fred",
+		"id": 104,
+		"parentsId": 100,
+		"access": "admin",
+		"child": [{
+			"name": "Gita",
+			"id": 105,
+			"parentsId": 104,
+			"access": "viewer",
+			"child": [{
+				"name": "David",
+				"id": 106,
+				"parentsId": 105,
+				"access": "user",
+				"child": []
+			}, {
+				"name": "Jolita",
+				"id": 107,
+				"parentsId": 105,
+				"access": "user",
+				"child": [{
+					"name": "Rob",
+					"id": 108,
+					"parentsId": 107,
+					"access": "user",
+					"child": []
+				}]
+			}]
+		}]
+	}]
+}]

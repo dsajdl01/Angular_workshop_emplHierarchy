@@ -1,0 +1,93 @@
+[
+	{
+		"id": 100,
+		"dob": "28/02/1976",
+		"start": "10/02/2005",
+		"possition": "Senior Manager",
+		"comments": "One of the out top manager is responsible for staffing the business. This includes creating running advertisements for open positions, reviewing resumes and applications, interviewing prospective employees, hiring and firing. She is ensuring that our staff are trained properly with follow company guidelines and policies, perform the job satisfactorily.",
+		"fullname": "Yadira Diez",
+		"email": "yadira.diez@example.co.uk",
+		"password": "password123"
+	},
+	{
+		"id": 101,
+		"dob": "18/10/1973",
+		"start": "28/09/2006",
+		"possition": "Back End Supervisor - Developer",
+		"comments": "Our supervisor is responsible for communication especially between our development team and management to keep the workplace running efficiently.  Bob is  individual who is able to adapt to all situations and who is always willing to offer support and assistance to others.",
+		"fullname": "Bob Freeman",
+		"email": "bob.freeman@example.co.uk",
+		"password": "password123"
+	},
+	{
+		"id": 102,
+		"dob": "02/02/1982",
+		"start": "24/06/2010",
+		"possition": "Senior Java Developer",
+		"comments": "David works as a senior Java developer. He is  a part of a talented software team that works on mission-critical applications. He is responsible for Java/Java EE application development while providing expertise in the full software development life-cycle, from concept and design to testing.",
+		"fullname": "David Smith",
+		"email": "david.shith@example.co.uk",
+		"password": "password123"
+	},
+	{
+		"id": 103,
+		"dob": "16/09/1979",
+		"start": "26/10/2015",
+		"possition": "Junior Java Developer",
+		"comments": "Magda works as a Junior Java developer. She is  a part of a talented software team that works on mission-critical applications. She is responsible for Java/Java EE application development and design to testing. She is able to prioritise her own workload to achieve the best results and work effectively and efficiently.",
+		"fullname": "Magdalena Kanarova",
+		"email": "magdalena.kanarova@example.co.uk",
+		"password": "password123"
+	},
+	{
+		"id": 104,
+		"dob": "20/07/1977",
+		"start": "20/03/2008",
+		"possition": "Front End Supervisor - Developer",
+		"comments": "Our supervisor is responsible for communication especially among our development team, management and customers to keep the workplace running efficiently.  Fred  a confident individual who has developed strong interpersonal and communication skills. He is able to adapt to all situations and is always willing to offer support and assistance to others.",
+		"fullname": "Fred Mahony",
+		"email": "fred.mahony@example.co.uk",
+		"password": "password123"
+	},
+	{
+		"id": 105,
+		"dob": "01/01/1980",
+		"start": "23/08/2010",
+		"possition": "Team Leader - Developer and Designer",
+		"comments": "Gita is our front end team leader who is responsible for communication between developed team and our clients. She is specialize for design development and insure that our application provides user friendly interface.  She is specialize on the languages such as JavaScript, Angular-JS, Java include REST and REST-Full services. She is able to prioritise her own workload to achieve the best results and work effectively and efficiently.",
+		"fullname": "Gita Stankova",
+		"email": "gita.stankova@example.co.uk",
+		"password": "password123"
+	},
+	{
+		"id": 106,
+		"dob": "30/31/1986",
+		"start": "15/02/2014",
+		"possition": "Junior Front End Developer",
+		"comments": "David is Junior front end developer specialize on JavaScript, Angular-JS, PHP include CSS and HTML.  He is a confident individual who has developed strong interpersonal and communication skills. He is able to adapt to all situations and is always willing to offer support and assistance to others.",
+		"fullname": "David Gordon",
+		"email": "david.gordon@example.co.uk",
+		"password": "password123"
+	},
+	{
+		"id": 107,
+		"dob": "10/11/1987",
+		"start": "02/12/2011",
+		"possition": "Senior Front End Developer and Designer",
+		"comments": "Jolita is Senior front end developer specialize on JavaScript, Angular-JS, PHP include CSS and HTML.  She also provide our design of the software views. She is able to prioritise her own workload to achieve the best results and work effectively and efficiently. She is able to adapt to all situations and she is always willing to offer support and assistance to others.",
+		"fullname": "Jolita Woods",
+		"email": "jolita.woods@example.co.uk",
+		"password": "password123"
+	},	
+	{
+		"id": 108,
+		"dob": "04/09/1994",
+		"start": "05/02/2016",
+		"possition": "Trainer - Programming",
+		"comments": "Rob is currently study at University and he has just joined our company for a couple months as practician for a front end Software developer under supervision Jolita and the rest of the Software developer team.",
+		"fullname": "Rob Wilkinson",
+		"email": "rob.wilkinson@example.co.uk",
+		"password": "password123"
+		
+	}
+]
