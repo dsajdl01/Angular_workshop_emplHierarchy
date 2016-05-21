@@ -44,13 +44,13 @@ Now, all is ready go to HierarchyProject directory and type:
 	
 ### Python 
 
-to check if you CP has Payton type 
+to check if you CP has python type 
 
 	
 	python --version
 	
 
-if yes, go to HierarchyProject directory and type:
+If yes, go to HierarchyProject directory and type:
 	
 	python -m SimpleHTTPServer 8081
 	
@@ -60,5 +60,5 @@ if yes, go to HierarchyProject directory and type:
 ### Employment hierarchy application
 
 > * Application is just created for education and practicing purposes 
-> * Any names and and data are imaginary 
+> * Any names and data are imaginary 
 > * created by David Sajdl 2016 
