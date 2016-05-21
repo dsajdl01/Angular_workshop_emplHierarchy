@@ -10,9 +10,9 @@ The idea is to get practice on writing application using AngularJS and demonstra
 The application Employment hierarchy enable to user assume identity as any employee. Depend on the employee accessibility the user would get view on other employees. When the assumed employee has highest accessibility then the viewer is able to modify employees records or create a new employee and assign new details to created employee.
 
 ## Testing
-Each controller service and directives is tested by using Karma Jasmine.
+Each controller, service and directive is tested by using Karma Jasmine.
 
- > * to confirm karma test, rum from HierarchyProject depository type:
+ > * to confirm karma test, run from HierarchyProject depository following command:
 
      
      karma start test/karma.conf.js
