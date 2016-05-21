@@ -12,34 +12,38 @@ The application Employment hierarchy enable to user assume identity as any emplo
 ## Testing
 Each constructor and service is tested by using Karma Jasmine.
 
- > to run karma test, from HierarchyProject depository type:
+ > * to run karma test, from HierarchyProject depository type:
 
      ```
      karma start test/karma.conf.js
      ```
 
 ## Runnig progect
-To run Employment hierarchy application in your machine *'localhost:8081'*, it needs to be installed either * http-server * or * python *
+To run Employment hierarchy application in your machine *'localhost:8081'*, it needs to be installed either *http-server* or *python*
 
 ### Using Http-server
 
 To run any application with Http-server, it needs to be installed node.js
 Just type in terminal 
+
 		```
 		node --version
 		```
-If you receive something like * v0.10.37 * then PC has node.js if not go to [node](https://nodejs.org/en/)
+
+If you receive something like *v0.10.37* then PC has node.js if not go to [node](https://nodejs.org/en/)
 
 If you do not have Http-server then type
 
 	```
 	sudo npm install -g Http-server
 	```
+
 Now, all is ready go to HierarchyProject directory and type
 
 ### Python 
 
 to check if you CP has Payton type 
+
 	```
 	python --version
 	```
@@ -54,6 +58,6 @@ Go to HierarchyProject directory and type:
 
 ### Employment hierarchy application
 
- > Application is just created for education and practicing purposes 
- > Any names and and data are imaginary 
- > created by David Sajdl 2016 
+> * Application is just created for education and practicing purposes 
+> * Any names and and data are imaginary 
+> * created by David Sajdl 2016 
