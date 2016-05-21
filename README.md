@@ -17,7 +17,7 @@ Each constructor and service is tested by using Karma Jasmine.
      
      karma start test/karma.conf.js
      
-
+     
 ## Runnig progect
 To run Employment hierarchy application in your machine *'localhost:8081'*, it needs to be installed either *http-server* or *python*
 
@@ -26,17 +26,17 @@ To run Employment hierarchy application in your machine *'localhost:8081'*, it n
 To run any application with Http-server, it needs to be installed node.js
 Just type in terminal 
 
-		```
+		
 		node --version
-		```
+		
 
 If you receive something like *v0.10.37* then PC has node.js if not go to [node](https://nodejs.org/en/)
 
 If you do not have Http-server then type
 
-	```
+	
 	sudo npm install -g Http-server
-	```
+	
 
 Now, all is ready go to HierarchyProject directory and type
 
@@ -44,15 +44,15 @@ Now, all is ready go to HierarchyProject directory and type
 
 to check if you CP has Payton type 
 
-	```
+	
 	python --version
-	```
+	
 
 Go to HierarchyProject directory and type:
 
-	```
+	
 	python -m SimpleHTTPServer 8081
-	```
+	
 
 ## Deceleration
 
