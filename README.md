@@ -14,9 +14,9 @@ Each constructor and service is tested by using Karma Jasmine.
 
  > * to run karma test, from HierarchyProject depository type:
 
-     ```
+     
      karma start test/karma.conf.js
-     ```
+     
 
 ## Runnig progect
 To run Employment hierarchy application in your machine *'localhost:8081'*, it needs to be installed either *http-server* or *python*
