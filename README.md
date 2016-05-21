@@ -18,12 +18,12 @@ Each controller, service and directive is tested by using Karma Jasmine.
      karma start test/karma.conf.js
      
      
-## Runnig progect
-To run Employment hierarchy application in your machine clone repository and the it is able to run it on local hoset: *'localhost:8081'*. It needs to be installed either *http-server* or *python*.
+## Runnig project
+To run Employment hierarchy application in your machine clone repository and then it is able to run it on you local hoset: *'localhost:8081'*. It also needs to be installed either *http-server* or *python*.
 
 ### Using Http-server
 
-To run any application with Http-server, it needs to be installed node.js
+To run any application with http-server, it needs to be installed node.js
 Just type in your terminal:
 
 		
