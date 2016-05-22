@@ -1,10 +1,10 @@
 myMngtHierarchyApp.factory('mngtHierarchyNodeServiceProvider',
-	['hierarchyNodeService','commonNodeHeirarchyModel', 'modalDialogBoxService', 
-		function(hierarchyNodeService, commonNodeHeirarchyModel, modalDialogBoxService){
-		return new mngtHierarchyNodeServiceProvider(hierarchyNodeService, commonNodeHeirarchyModel, modalDialogBoxService);
+	['hierarchyNodeService','commonNodeHeirarchyModel', 'modalDialogBoxService', '$location', 
+		function(hierarchyNodeService, commonNodeHeirarchyModel, modalDialogBoxService, $location){
+		return new mngtHierarchyNodeServiceProvider(hierarchyNodeService, commonNodeHeirarchyModel, modalDialogBoxService, $location);
 }]);
 
-function mngtHierarchyNodeServiceProvider(hierarchyNodeService, commonNodeHeirarchyModel, modalDialogBoxService) {
+function mngtHierarchyNodeServiceProvider(hierarchyNodeService, commonNodeHeirarchyModel, modalDialogBoxService, $location) {
 		var self = this;
 	
 		self.loadTopNode = function(callBack)
@@ -71,6 +71,14 @@ function mngtHierarchyNodeServiceProvider(hierarchyNodeService, commonNodeHeirar
 			};
 			return null;
 		};
+
+		self.checkIfPersonalDetailsAreInseared = function(){
+			var selectedDetails =	self.getSelectedNodeDetails(commonNodeHeirarchyModel.selectedTopNode.id);
+			if(selectedDetails.dob == null || selectedDetails.email == null){
+				commonNodeHeirarchyModel.hasPersonalData = true;
+				$location.path('/personalInfo');
+			}
+		}
 
 		var getSelectedNodeName = function(selectedPath)
 		{

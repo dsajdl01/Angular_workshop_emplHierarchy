@@ -8,6 +8,7 @@ myMngtHierarchyApp.controller('nodeController',[ 'commonNodeHeirarchyModel','mng
 			self.assumedNode = "";
 
 		self.init = function(){
+			mngtHierarchyNodeServiceProvider.checkIfPersonalDetailsAreInseared();
 			self.assumedNode = self.commonNodeHeirarchyModel.selectedTopNode;
 			setHighestId(self.commonNodeHeirarchyModel.rootNode[0]);
 			initializeViewVariables(self.commonNodeHeirarchyModel.userSelectedNode, getNodesDetails(self.commonNodeHeirarchyModel.userSelectedNode.id))

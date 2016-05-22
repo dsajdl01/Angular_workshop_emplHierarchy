@@ -56,22 +56,14 @@ myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeSer
 					self.isTopNavigationBtnDisabled = true;
 					self.accountTitle = "Profile of " + selectedNodeName;
 					self.commonNodeHeirarchyModel.isUserAssumeIdentity = true;
+					mngtHierarchyNodeServiceProvider.checkIfPersonalDetailsAreInseared();
 					var access = self.commonNodeHeirarchyModel.selectedTopNode.access;
-					//checkIfPersonalDataisInseared();
 					self.hasPermission = (access == "admin" || access == "viewer") ? true : false; 
 				}
 				isAssumeIdentity = !!selectedNodeName;
 				canPageBeDisplayed(isNodeLoaded, isAssumeIdentity);
 			});
 	};
-
-	var checkIfPersonalDataisInseared = function(){	
-		var selectedDetails =	mngtHierarchyNodeServiceProvider.getSelectedNodeDetails(self.commonNodeHeirarchyModel.selectedTopNode.id);
-		if(selectedDetails.dob == null || selectedDetails.email == null){
-			self.commonNodeHeirarchyModel.hasPersonalData = true;
-			$location.path('/myProfile');
-		}
-	}
 
 	self.loadPage = function()
 	{
