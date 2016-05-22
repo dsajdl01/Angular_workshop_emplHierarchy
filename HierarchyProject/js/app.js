@@ -27,23 +27,34 @@ myMngtHierarchyApp.config(['$routeProvider', function($routeProvider) {
 	  .when('/homeViewAccount', {
 		  templateUrl: 'js/views/selectedNodeInfo.html',
 		  requireAssumedIdentity: false,
+		  requirePersonalDataEntry: false,
 		  requiresAuthentication: false
 	  })
 	  .when('/viewAccountInfo',{
 	  	templateUrl: 'js/views/accountManagementHierarchyInfo.html',
 	  	requireAssumedIdentity: true,
 	  	requiresAuthentication: true,
+	  	requirePersonalDataEntry: false,
   	 	permissions: ["admin", "viewer"]
 	  })
 	  .when('/templateAssumeIdentity',{
 	  	templateUrl: 'js/views/AssumeIdentityTemplate.html',
 	  	requireAssumedIdentity: false,
+	  	requirePersonalDataEntry: false,
 	  	requiresAuthentication: false
 	  })
 	  .when('/myProfile',{
 	  	templateUrl: 'js/views/myProfile.html',
 	  	requireAssumedIdentity: true,
+	  	requirePersonalDataEntry: false,
 	  	requiresAuthentication: false
+	  })
+	  .when('/personalInfo',{
+	  	templateUrl: 'js/views/personalInfoForm.html',
+	  	requireAssumedIdentity: true,
+	  	requiresAuthentication: true,
+	  	requirePersonalDataEntry: true,
+	  	personalDataEntry: ["email", "dob"]
 	  })
 	  .otherwise({redirectTo: '/homeViewAccount'})
 	}]
