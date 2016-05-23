@@ -3,6 +3,7 @@ myMngtHierarchyApp.controller('myProfileContrller',['calculateTimeService', 'com
 	
 	var self = this;
 	self.showInputForms = false;
+	self.btnName = "Save";
 
 	self.showPasswordFields =function(){
 		self.showInputForms = (self.showInputForms) ? false : true;

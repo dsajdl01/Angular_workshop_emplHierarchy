@@ -1,6 +1,6 @@
-<div class="myProfile-container" ng-controller="myProfileContrller as myProfileCtrl">
+<div class="myProfile-container" ng-controller="myProfileContrller as formCtrl">
 		<h3>My Profile</h3>
-		<form role="form" name="form" novalidate ng-submit="myProfileCtrl.save()">
+		<form role="form" name="form" novalidate ng-submit="formCtrl.save()">
 			<div class="form-group">
 				<div class="text-field" >
 					<label for="employeeName">Employee Name</label>
@@ -11,8 +11,8 @@
 						placeholder="Emoloyee name"
 						autocomplete="off"
 						autofocus
-						ng-change="myProfileCtrl.makeChange()"
-						ng-model="myProfileCtrl.employeeName"
+						ng-change="formCtrl.makeChange()"
+						ng-model="formCtrl.employeeName"
 						ng-maxlength="80"
 						required="true"
 						ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
@@ -26,44 +26,14 @@
 						placeholder="Emoloyee fullname"
 						autocomplete="off"
 						autofocus
-						ng-change="myProfileCtrl.makeChange()"
-						ng-model="myProfileCtrl.employeeFullName"
+						ng-change="formCtrl.makeChange()"
+						ng-model="formCtrl.employeeFullName"
 						ng-maxlength="250"
 						required="false"
 						ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
 				</div>
-				<div class="text-field">
-					<label for="email">E-mail</label>
-					<input type="email"
-						class="form-control-helper"
-						id="email"
-						name="email"
-						placeholder="Emoloyee email"
-						autocomplete="off"
-						autofocus
-						ng-change="myProfileCtrl.makeChange()"
-						ng-model="myProfileCtrl.email"
-						ng-maxlength="1000"
-						required="true"
-						ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
-				</div>
-				<div class="text-field" >
-					<label for="dob">Date of Birthday</label>
-					<input type="text"
-					   class="form-control-helper"
-					   id="dob"
-					   name="dob"
-					   maxlength="10"
-					   placeholder="dd/mm/yyyy"
-					   date-validation="{ctrl:myProfileCtrl}"
-					   autocomplete="off"
-					   autofocus
-					   ng-change="myProfileCtrl.makeChange()"
-					   ng-model="myProfileCtrl.dob"
-					   ng-maxlength="10"
-					   required="true"
-					   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
-				</div>
+				<div ng-include="'../js/views/include/emailInput.html'"></div>
+				<div ng-include="'../js/views/include/dobInput.html'"></div>
 				<div class="text-field" >
 					<label for="startDay">Start Day</label>
 					<input type="text"
@@ -72,12 +42,12 @@
 					   name="startDay"
 					   maxlength="10"
 					   placeholder="dd/mm/yyyy"
-					   date-validation="{ctrl:myProfileCtrl}"
+					   date-validation="{ctrl:formCtrl}"
 					   autocomplete="off"
 					   autofocus
-					   ng-change="myProfileCtrl.makeChange()"
-					   ng-model="myProfileCtrl.startDay"
-					   disabled="myProfileCtrl.hasAccess"
+					   ng-change="formCtrl.makeChange()"
+					   ng-model="formCtrl.startDay"
+					   disabled="formCtrl.hasAccess"
 					   ng-maxlength="10"
 					   required="true"
 					   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
@@ -91,10 +61,10 @@
 						placeholder="Emoloyee Position"
 						autocomplete="off"
 						autofocus
-						ng-change="myProfileCtrl.makeChange()"
-						ng-model="myProfileCtrl.Position"
+						ng-change="formCtrl.makeChange()"
+						ng-model="formCtrl.Position"
 						ng-maxlength="250"
-						disabled="myProfileCtrl.hasAccess"
+						disabled="formCtrl.hasAccess"
 						required="false"
 						ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
 				</div>
@@ -107,13 +77,13 @@
 						autocomplete="off"
 						autofocus
 						disabled="true" 
-						ng-model="myProfileCtrl.Access"/>
+						ng-model="formCtrl.Access"/>
 				</div>
 			</div>
 			<div class="form-group">
-				<a href="javascript:void(0)" target="_self"ng-click="myProfileCtrl.showPasswordFields()" title="Change password">Change password</a></li>
+				<a href="javascript:void(0)" target="_self"ng-click="formCtrl.showPasswordFields()" title="Change password">Change password</a></li>
 			</div>
-				<div ng-show="myProfileCtrl.showInputForms">
+				<div ng-show="formCtrl.showInputForms">
 					<div class="form-group">
 						<div class="text-field" >
 							<label for="oldPasswoord">Old Password</label>
@@ -124,8 +94,8 @@
 								placeholder="Old Password"
 								autocomplete="off"
 								maxlength="255" 
-								ng-model="myProfileCtrl.oldPasswoord"
-								ng-change="myProfileCtrl.makeChange()"
+								ng-model="formCtrl.oldPasswoord"
+								ng-change="formCtrl.makeChange()"
 								ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
 						</div>
 						<div class="text-field" >
@@ -139,8 +109,8 @@
 								maxlength="255"
 								minlength="8"
 								title="Minimum 8 characters" 
-								ng-model="myProfileCtrl.newPasswoord"
-								ng-change="myProfileCtrl.makeChange()"
+								ng-model="formCtrl.newPasswoord"
+								ng-change="formCtrl.makeChange()"
 								ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
 						</div>
 						<div class="text-field" >
@@ -151,16 +121,15 @@
 								name="confirmPasswoord"
 								autocomplete="off"
 								placeholder="Confirm Password"
-								ng-model="myProfileCtrl.confirmPasswoord"
-								ng-change="myProfileCtrl.makeChange()"
-								ui-validate=" '$value==myProfileCtrl.newPassword' "
-								ui-vatidate-watch=" 'myProfileCtrl.newPassword' "  />
+								ng-model="formCtrl.confirmPasswoord"
+								ng-change="formCtrl.makeChange()"
+								ui-validate=" '$value==formCtrl.newPassword' "
+								ui-vatidate-watch=" 'formCtrl.newPassword' "  />
 						</div> 
 					</div>
 				</div>
 				<button class="btnSave" type="button"
-				ng-disabled="myProfileCtrl.btnSave" title="{{myProfileCtrl.btnName}}"
-				ng-click="myProfileCtrl.save()">{{myProfileCtrl.btnName}} SAVE</button>
-			
+				ng-disabled="formCtrl.btnSave" title="{{formCtrl.btnName}}"
+				ng-click="formCtrl.save()">{{formCtrl.btnName}}</button>
 		</form>
 </div>
