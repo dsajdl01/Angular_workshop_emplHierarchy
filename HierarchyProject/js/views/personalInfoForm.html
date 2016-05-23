@@ -1,0 +1,14 @@
+<div class="helpPersonalInfo_controller" ng-controller="helpMyProfileController as formCtrl" ng-init="formCtrl.init()">
+	<h4>Important node</h4>
+	<p>To access your employment records, it needs to be provided with date of birthday and e-mail</p>
+	<p>Please fill in your date of birthday and e-mail</p>
+	<form role="form" name="form" novalidate ng-submit="formCtrl.save()">
+		<div ng-include="'../js/views/include/emailInput.html'"></div>
+		<div ng-include="'../js/views/include/dobInput.html'"></div>
+		<button class="btnSave" type="button"
+				ng-disabled="form.dob.$invalid || form.email.$invalid" 
+				title="{{formCtrl.btnName}}"
+				ng-click="formCtrl.save()">{{formCtrl.btnName}}</button>
+	</form>
+	<div class="internalError" ng-show="formCtrl.internalErrorMessage">{{formCtrl.internalErrorMessage}}</div>
+</div>
