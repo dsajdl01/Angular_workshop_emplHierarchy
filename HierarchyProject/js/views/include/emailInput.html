@@ -1,0 +1,19 @@
+<div class="text-field">
+	<label for="email">E-mail</label>
+		<input type="email"
+			class="form-control-helper"
+			id="email"
+			name="email"
+			placeholder="Emoloyee email"
+			autocomplete="off"
+			autofocus
+			ng-change="formCtrl.makeChange()"
+			ng-model="formCtrl.email"
+			ng-maxlength="1000"
+			required="true"
+			ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
+</div>
+    <div class="message-help-block" ng-messages="form.email.$error" ng-if="form.email.$dirty">
+		<div class="form_error_messages" ng-message="required">Email is required.</div>
+		<span class="form_error_messages" ng-message="email">This is not a valid email.</span>
+	</div>

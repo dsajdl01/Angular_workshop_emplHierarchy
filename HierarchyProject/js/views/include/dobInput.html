@@ -1,0 +1,21 @@
+<div class="text-field" >
+					<label for="dob">Date of Birthday</label>
+					<input type="text"
+					   class="form-control-helper"
+					   id="dob"
+					   name="dob"
+					   maxlength="10"
+					   placeholder="dd/mm/yyyy"
+					   date-validation="{ctrl:formCtrl}"
+					   autocomplete="off"
+					   autofocus
+					   ng-change="formCtrl.makeChange()"
+					   ng-model="formCtrl.dob"
+					   ng-maxlength="10"
+					   required="true"
+					   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
+				</div>
+	<div class="message-help-block" ng-messages="form.dob.$error" ng-if="form.dob.$dirty">
+		<div class="form_error_messages" ng-message="required">Starting date is required.</div>
+		<div class="form_error_messages" ng-message="dateValidation">{{ formCtrl.dateErrorMessage }} </div>
+	</div>
