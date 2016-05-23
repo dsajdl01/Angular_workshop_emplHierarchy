@@ -1,0 +1,36 @@
+/*********************************************************
+*****		Help - personalInfo Form.html page 		******
+**********************************************************/
+
+.helpPersonalInfo_controller {
+	border: 1px solid #efefef;
+	width: 500px;
+	margin: 0 auto;
+	padding: 30px 50px 100px 50px;
+	margin-bottom: 50px;
+	margin-top: -30px;
+}
+
+.helpPersonalInfo_controller button.btnSaveHelp {
+	margin-top: 25px;
+}
+
+.helpPersonalInfo_controller #email {
+    margin-left: 70px;
+    margin-bottom: 10px;
+}
+
+.helpPersonalInfo_controller #dob {
+	margin-left: 4px;
+}
+
+.helpPersonalInfo_controller .form_error_messages {
+	margin: -28px 0px 0px -115px !important;
+}
+
+.internalError {
+	color: #d95347;
+	font-size: 90%;
+	font-weight: bold;
+	padding: 15px 45px;
+}
