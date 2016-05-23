@@ -1,7 +1,7 @@
 describe('Service: hierarchyNodeService', function() {
 
 	var service, httpBackend;
-	var contextRoot = 'https://raw.githubusercontent.com/dsajdl01/AngularJS_practice/master/angularJsUpRunning/AngularJS_exceII_hierarchy/';
+	var contextRoot = 'https://raw.githubusercontent.com/dsajdl01/Angular_workshop_emplHierarchy/master/';
 
 	var nodes = [{"name": "Sandra","id": 100,"parentsId": null,"child": [
 				{"name":"Bob","id": 101,"parentsId": 100,"child": []}]}];

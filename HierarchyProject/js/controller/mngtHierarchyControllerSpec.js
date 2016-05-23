@@ -69,7 +69,8 @@ describe('Controller: mngtHierarchyController', function() {
 					selectedNodeName(false);
 				}
 			},
-			displayAboutDialogBox: function(){}
+			displayAboutDialogBox: function(){},
+			checkIfPersonalDetailsAreInseared: function(){}
 		};
 
 		mockCommonNodeHeirarchyModel = 

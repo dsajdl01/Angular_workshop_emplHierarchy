@@ -41,7 +41,8 @@ describe('Controller: nodeController', function() {
 				else {
 					return {};
 				}
-			}
+			},
+            checkIfPersonalDetailsAreInseared: function(){}
 		};
 
 		calculateTimeServiceMock = {

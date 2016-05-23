@@ -1,12 +1,14 @@
 describe('Service: mngtHierarchyNodeServiceProvider', function() {
 
 
-	var service, hierarchyNodeServiceMock, commonNodeHeirarchyModelMock, modalDialogBoxServiceMock;
-	var rootNode = [{"name": "Sandra","id": 100,"parentsId": null,"child": [
-				{"name":"Bob","id": 101,"parentsId": 100,"child": []}]}];
+	var service, hierarchyNodeServiceMock, commonNodeHeirarchyModelMock, modalDialogBoxServiceMock, locationMock;
+	var rootNode = [{"name": "Sandra","id": 100,"parentsId": null, "access": "admin", "child": [
+				{"name":"Bob","id": 101,"parentsId": 100, "access": "user", "child": []}]}];
 	var nodesDetails = [
-		{"id": 100, "pathToNode": "Sandra","dob": "28/02/1976","start": "09/12/2001","possition": "Senior Developer","comments": "Work with smile in our company."},
-		{"id": 101, "pathToNode": "Sandra>Bod", "dob": "28/02/1981","start": "05/02/2005","possition": "Junior Developer","comments": "Work with hard for our company."}];
+		{"id": 100, "pathToNode": "Sandra","dob": "28/02/1976","start": "09/12/2001","possition": "Senior Developer",
+            "comments": "Work with smile in our company.", "fullname": "Bob Bobek", "email": null, "password": "1234567890"},
+		{"id": 101, "pathToNode": "Sandra>Bod", "dob": "28/02/1981","start": "05/02/2005","possition": "Junior Developer",
+            "comments": "Work with hard for our company.", "fullname": "Sandra Smith", "email": "s.smith@example.com", "password": "1234567890"}];
 	
 	var path = ["Sandra", "Sandra>Bob"];
 	
@@ -38,16 +40,22 @@ describe('Service: mngtHierarchyNodeServiceProvider', function() {
 			notify: function(){},
 			setTemplate: function(){}
 		};
+
+        locationMock = {
+            path: function(path) {}
+        };
 		
 		commonNodeHeirarchyModelMock = {
 			allNodesDetails: nodesDetails,
 			rootNode: rootNode,
-			nodesDetails: nodesDetails
+			nodesDetails: nodesDetails,
+            selectedTopNode: rootNode[0] 
 		};
 
 		$provide.value('hierarchyNodeService', hierarchyNodeServiceMock);
 		$provide.value('commonNodeHeirarchyModel', commonNodeHeirarchyModelMock);
 		$provide.value('modalDialogBoxService', modalDialogBoxServiceMock);
+        $provide.value('$location', locationMock);
 	}));
 	
 	beforeEach(inject(function($injector, _$httpBackend_) {
@@ -182,5 +190,24 @@ describe('Service: mngtHierarchyNodeServiceProvider', function() {
     it('should return selected node details when getSelectedNodeDetails is called II', function()
     {
     	expect(service.getSelectedNodeDetails(101)).toEqual(nodesDetails[1]);
+    });
+
+    it('should redirect to personalInfo page when checkIfPersonalDetailsAreInseared() is called and data is missing', function(){
+
+        spyOn(locationMock, 'path');
+
+        service.checkIfPersonalDetailsAreInseared();
+
+        expect(locationMock.path).toHaveBeenCalledWith('/personalInfo')
+    });
+
+    it('should not be redirect when checkIfPersonalDetailsAreInseared() is called and data is entered', function(){
+
+        commonNodeHeirarchyModelMock.selectedTopNode = rootNode[0].child[0];
+        spyOn(locationMock, 'path');
+
+        service.checkIfPersonalDetailsAreInseared();
+
+        expect(locationMock.path).not.toHaveBeenCalled();
     });
 });
