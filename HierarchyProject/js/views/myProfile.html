@@ -1,4 +1,4 @@
-<div class="myProfile-container" ng-controller="myProfileContrller as formCtrl">
+<div class="myProfile-container" ng-controller="myProfileContrller as formCtrl" ng-init="formCtrl.init()">
 		<h3>My Profile</h3>
 		<form role="form" name="form" novalidate ng-submit="formCtrl.save()">
 			<div class="form-group">
@@ -17,6 +17,9 @@
 						required="true"
 						ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
 				</div>
+				<div class="message-help-block" ng-messages="form.employeeName.$error" ng-if="form.employeeName.$dirty">
+					<div class="form_error_messages" ng-message="required">Name is required.</div>
+				</div>
 				<div class="text-field" >
 					<label for="employeeFullName">Full Name</label>
 					<input type="text"
@@ -32,42 +35,12 @@
 						required="false"
 						ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
 				</div>
+
 				<div ng-include="'../js/views/include/emailInput.html'"></div>
 				<div ng-include="'../js/views/include/dobInput.html'"></div>
-				<div class="text-field" >
-					<label for="startDay">Start Day</label>
-					<input type="text"
-					   class="form-control-helper"
-					   id="startDate"
-					   name="startDay"
-					   maxlength="10"
-					   placeholder="dd/mm/yyyy"
-					   date-validation="{ctrl:formCtrl}"
-					   autocomplete="off"
-					   autofocus
-					   ng-change="formCtrl.makeChange()"
-					   ng-model="formCtrl.startDay"
-					   disabled="formCtrl.hasAccess"
-					   ng-maxlength="10"
-					   required="true"
-					   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
-				</div>
-				<div class="text-field" >
-					<label for="Position">Position</label>
-					<input type="text"
-						class="form-control-helper"
-						id="Position"
-						name="Position"
-						placeholder="Emoloyee Position"
-						autocomplete="off"
-						autofocus
-						ng-change="formCtrl.makeChange()"
-						ng-model="formCtrl.Position"
-						ng-maxlength="250"
-						disabled="formCtrl.hasAccess"
-						required="false"
-						ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
-				</div>
+				<div ng-include="'../js/views/include/startDateInput.html'"></div>
+				<div ng-include="'../js/views/include/positionInput.html'"></div>
+	
 				<div class="text-field" >
 					<label for="Access">Employee Accesss</label>
 					<input type="text"
@@ -76,7 +49,7 @@
 						name="Access"
 						autocomplete="off"
 						autofocus
-						disabled="true" 
+						ng-disabled="true" 
 						ng-model="formCtrl.Access"/>
 				</div>
 			</div>
@@ -98,36 +71,56 @@
 								ng-change="formCtrl.makeChange()"
 								ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
 						</div>
+						<div class="help-block" ng-show="formCtrl.old_passwordMsg">
+                              <span class="error-message" >
+                                  {{ formCtrl.old_passwordMsg }}
+                            </span>    
+                        </div> 
+
+
 						<div class="text-field" >
-							<label for="newPasswoord">New Password</label>
+							<label for="newPassword">New Password</label>
 							<input type="password"
 								class="form-control-helper"
-								id="newPasswoord"
-								name="newPasswoord"
+								id="newPassword"
+								name="newPassword"
 								autocomplete="off"
 								placeholder="New Password"
 								maxlength="255"
 								minlength="8"
 								title="Minimum 8 characters" 
-								ng-model="formCtrl.newPasswoord"
+								ng-model="formCtrl.newPassword"
 								ng-change="formCtrl.makeChange()"
 								ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
 						</div>
+						<div  class="help-block" ng-show="form.newPassword.$dirty && form.newPassword.$invalid">
+            				<div class="error-message" ng-show="form.newPassword.$dirty && form.newPassword.$error.minlength">Password is too short</div>
+        				</div>
+        				<div class="help-block" ng-show="formCtrl.new_passwordMsg">
+            				<span class="error-message"> New password is required.</span>
+        				</div>
+
 						<div class="text-field" >
-							<label for="confirmPasswoord">Confirm Password</label>
+							<label for="confirmPassword">Confirm Password</label>
 							<input type="password"
 								class="form-control-helper"
-								id="confirmPasswoord"
-								name="confirmPasswoord"
+								id="confirmPassword"
+								name="confirmPassword"
 								autocomplete="off"
 								placeholder="Confirm Password"
-								ng-model="formCtrl.confirmPasswoord"
+								ng-model="formCtrl.confirmPassword"
 								ng-change="formCtrl.makeChange()"
 								ui-validate=" '$value==formCtrl.newPassword' "
-								ui-vatidate-watch=" 'formCtrl.newPassword' "  />
+								ui-vatidate-watch=" 'formCtrl.newPassword' " >
 						</div> 
 					</div>
 				</div>
+				<div  class="help-block" ng-show="form.confirmPassword.$dirty && form.confirmPassword.$invalid">
+            			<div class="error-message" ng-show="form.confirmPassword.$error.validator">Passwords do not match</div>
+        		</div>
+        		<div class="help-block" ng-show="formCtrl.confirm_passwordMsg">
+            		<span class="error-message" >Confirm password is required.</span>
+ 		       </div>
 				<button class="btnSave" type="button"
 				ng-disabled="formCtrl.btnSave" title="{{formCtrl.btnName}}"
 				ng-click="formCtrl.save()">{{formCtrl.btnName}}</button>
