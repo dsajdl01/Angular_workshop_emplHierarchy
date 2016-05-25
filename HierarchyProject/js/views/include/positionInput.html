@@ -1,0 +1,19 @@
+<div class="position" >
+	<label for="position">Position&nbsp</label>
+		<input type="text"
+			class="form-control-helper"
+			id="position"
+			name="position"
+			maxlength="225"
+			placeholder="Employee profession"
+			autocomplete="off"
+			autofocus
+			ng-change="formCtrl.makeChange()"
+			ng-model="formCtrl.position"
+			required="true"
+			ng-disabled="formCtrl.hasAccess"
+			ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
+</div>
+<div class="message-help-block" ng-messages="form.position.$error" ng-if="form.position.$dirty">
+	<div class="form_error_messages" ng-message="required">Position is required.</div>
+</div>
