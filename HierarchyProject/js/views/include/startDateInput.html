@@ -1,0 +1,21 @@
+<div class="startDay" >
+	<label for="startDay">Start Day</label>
+		<input type="text"
+			class="form-control-helper"
+			id="startDate"
+			name="startDay"
+			maxlength="10"
+			placeholder="dd/mm/yyyy"
+			date-validation="{ctrl:formCtrl}"
+			autocomplete="off"
+			autofocus
+			ng-change="formCtrl.makeChange()"
+			ng-model="formCtrl.startDay"
+			ng-maxlength="10"
+			required="true"
+			ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
+</div>
+<div class="message-help-block" ng-messages="form.startDay.$error" ng-if="form.startDay.$dirty">
+	<div class="form_error_messages" ng-message="required">Starting date is required.</div>
+	<div class="form_error_messages" ng-message="dateValidation">{{ formCtrl.dateErrorMessage }} </div>
+</div>
