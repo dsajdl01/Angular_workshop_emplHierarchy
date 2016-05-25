@@ -3,7 +3,8 @@ var myMngtHierarchyApp = angular.module('myMngtHierarchyApp', [
 	'ngRoute',
 	'ngResource',
 	'ngMessages',
-	'mgcrea.ngStrap'
+	'mgcrea.ngStrap',
+	'ui.validate'
 	]);
 
 myMngtHierarchyApp.run(['$rootScope', '$location', 'Auth', function ($rootScope, $location, Auth) {
