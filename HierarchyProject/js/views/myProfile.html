@@ -59,15 +59,15 @@
 				<div ng-show="formCtrl.showInputForms">
 					<div class="form-group">
 						<div class="text-field" >
-							<label for="oldPasswoord">Old Password</label>
+							<label for="oldPassword">Old Password</label>
 							<input type="password"
 								class="form-control-helper"
-								id="oldPasswoord"
-								name="oldPasswoord"
+								id="oldPassword"
+								name="oldPassword"
 								placeholder="Old Password"
 								autocomplete="off"
 								maxlength="255" 
-								ng-model="formCtrl.oldPasswoord"
+								ng-model="formCtrl.oldPassword"
 								ng-change="formCtrl.makeChange()"
 								ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
 						</div>
@@ -122,7 +122,7 @@
             		<span class="error-message" >Confirm password is required.</span>
  		       </div>
 				<button class="btnSave" type="button"
-				ng-disabled="formCtrl.btnSave" title="{{formCtrl.btnName}}"
+				ng-disabled="formCtrl.btnEqualValue" title="{{formCtrl.btnName}}"
 				ng-click="formCtrl.save()">{{formCtrl.btnName}}</button>
 		</form>
 </div>
