@@ -1,14 +1,14 @@
 /**
 * Created by david on 15/04/16.
 */
-myMngtHierarchyApp.controller('myProfileContrller',['calculateTimeService', 'commonNodeHeirarchyModel', 'mngtHierarchyNodeServiceProvider',
-				 function(calculateTimeService, commonNodeHeirarchyModel, mngtHierarchyNodeServiceProvider) {
+myMngtHierarchyApp.controller('myProfileContrller',['calculateTimeService', 'commonNodeHeirarchyModel', 'mngtHierarchyNodeServiceProvider', 'toaster',
+				 function(calculateTimeService, commonNodeHeirarchyModel, mngtHierarchyNodeServiceProvider, toaster) {
 
 	var self = this;
 
-	self.showInputForms = false;
-
-	self.init = function(){
+	self.init = function()
+	{
+		self.showInputForms = false;
 		self.btnName = "Save";
 		var emplDetails = getEmlpDetails();
 		self.employeeName = commonNodeHeirarchyModel.userSelectedNode.name;
@@ -26,7 +26,8 @@ myMngtHierarchyApp.controller('myProfileContrller',['calculateTimeService', 'com
 		setOriginalValues();
 	}
 
-	self.showPasswordFields =function(){
+	self.showPasswordFields =function()
+	{
 		self.showInputForms = (self.showInputForms) ? false : true;
 		self.oldPassword = null;
 		self.newPassword = null;
@@ -35,34 +36,41 @@ myMngtHierarchyApp.controller('myProfileContrller',['calculateTimeService', 'com
 		setMessagesToNull();
 	}
 
-	self.makeChange = function(){
+	self.makeChange = function()
+	{
 		self.btnEqualValue = equal();
 		self.btnName = (self.btnEqualValue)? "Done": "Save";
 	}
 
 	self.save = function(){
-		console.log("hjgh isPaswordValid: ", isPaswordValid());
 		setMessagesToNull();
-		if(isPaswordValid()){
-			console.log("hjgh oldPasswoord:", !self.oldPassword);
-			if(self.oldPassword){
-				if(oldPasswordMatch()){
-					console.log("hjgh");
-					savePassword()
+		if(isPaswordValid())
+		{
+			if(self.oldPassword)
+			{
+				if(oldPasswordMatch())
+				{
+					savePassword();
 					saveUserInputDate();
 					self.showInputForms = self.showPasswordFields();
-				} else {
+				}
+				else
+				{
 					self.old_passwordMsg = "Incorrect Current Password";
 				}
-			} else {
+			}
+			else
+			{
 				saveUserInputDate();
 			}
-		} else {
+		}
+		else
+		{
 			displayPasswordMessage();
 		}
-		console.log("self.commonNodeHeirarchyModel.hasPersonalData: ", commonNodeHeirarchyModel.hasPersonalData, "equal: ", equal());
 	}
-	var setMessagesToNull = function(){
+	var setMessagesToNull = function()
+	{
 		self.old_passwordMsg = null;
 		self.confirm_passwordMsg = null;
 		self.new_passwordMsg = null;
@@ -99,17 +107,20 @@ myMngtHierarchyApp.controller('myProfileContrller',['calculateTimeService', 'com
                 self.new_passwordMsg = true;
             }
         }
-        else {
+        else
+        {
             self.old_passwordMsg = "Current password is required.";
         }
     }
 
-	var savePassword = function(){
+	var savePassword = function()
+	{
 		var emplDetails = getEmlpDetails();
 		emplDetails.password = self.newPassword;
 	}
 
-	var saveUserInputDate = function(){
+	var saveUserInputDate = function()
+	{
 		var emplDetails = getEmlpDetails();
 		emplDetails.email =  self.email;
 		emplDetails.possition = self.position;
@@ -120,15 +131,17 @@ myMngtHierarchyApp.controller('myProfileContrller',['calculateTimeService', 'com
 		commonNodeHeirarchyModel.hasPersonalData = false;
 		self.btnName = "Done";
 		self.btnEqualValue = true;
+		toaster.pop("success","Done", "The data was successfully saved.");
 	}
 
-	var oldPasswordMatch = function(){
+	var oldPasswordMatch = function()
+	{
 		var emplDetails = getEmlpDetails();
 		return self.oldPassword == emplDetails.password
 	}
 
-	var isPaswordValid = function(){
-		console.log("con: ",self.confirmPassword, " .. old: ",self.oldPassword, " ..new: ", self.newPassword);
+	var isPaswordValid = function()
+	{
         if(!self.confirmPassword && !self.oldPassword && !self.newPassword)
         {
             return true;
@@ -140,7 +153,8 @@ myMngtHierarchyApp.controller('myProfileContrller',['calculateTimeService', 'com
         return false;
     }
 
-	var setOriginalValues = function(){
+	var setOriginalValues = function()
+	{
 		self.originalEmplName = self.employeeName;
 		self.originalDob = self.dob;
 		self.originalEmail = self.email;
@@ -152,7 +166,8 @@ myMngtHierarchyApp.controller('myProfileContrller',['calculateTimeService', 'com
 		self.originalConfirmPassword = self.confirmPassword;
 	}
 
-	var equal = function(){
+	var equal = function()
+	{
 		return self.originalEmplName == self.employeeName
 				&& self.originalDob == self.dob
 				&& self.originalEmail == self.email
@@ -164,11 +179,14 @@ myMngtHierarchyApp.controller('myProfileContrller',['calculateTimeService', 'com
 				&& self.originalConfirmPassword == self.confirmPassword;
 	}
 
-	var doesUserHasAccessToModified = function(){
-		return !(commonNodeHeirarchyModel.userSelectedNode.access == "admin" || commonNodeHeirarchyModel.userSelectedNode.access == "viewer");
+	var doesUserHasAccessToModified = function()
+	{
+		return !(commonNodeHeirarchyModel.userSelectedNode.access == "admin"
+			|| commonNodeHeirarchyModel.userSelectedNode.access == "viewer");
 	}
 
-	var getEmlpDetails = function(){
+	var getEmlpDetails = function()
+	{
 		return mngtHierarchyNodeServiceProvider.getSelectedNodeDetails(commonNodeHeirarchyModel.userSelectedNode.id);
 	}
 }]);
