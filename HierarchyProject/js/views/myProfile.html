@@ -93,8 +93,8 @@
 								ng-change="formCtrl.makeChange()"
 								ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
 						</div>
-						<div  class="help-block" ng-show="form.newPassword.$dirty && form.newPassword.$invalid">
-            				<div class="error-message" ng-show="form.newPassword.$dirty && form.newPassword.$error.minlength">Password is too short</div>
+						<div  class="message-help-block" ng-show="form.newPassword.$dirty && form.newPassword.$invalid">
+            				<div class="form_error_messages" ng-show="form.newPassword.$dirty && form.newPassword.$error.minlength">Password is too short</div>
         				</div>
         				<div class="help-block" ng-show="formCtrl.new_passwordMsg">
             				<span class="error-message"> New password is required.</span>
@@ -115,14 +115,18 @@
 						</div> 
 					</div>
 				</div>
-				<div  class="help-block" ng-show="form.confirmPassword.$dirty && form.confirmPassword.$invalid">
-            			<div class="error-message" ng-show="form.confirmPassword.$error.validator">Passwords do not match</div>
+				<div class="divBlocker">
+				<div  class="message-help-block" ng-show="form.confirmPassword.$dirty && form.confirmPassword.$invalid">
+            			<div class="form_error_messages_ps"   ng-show="form.confirmPassword.$error.validator">Passwords do not match</div>
+            	</div>
         		</div>
+
         		<div class="help-block" ng-show="formCtrl.confirm_passwordMsg">
             		<span class="error-message" >Confirm password is required.</span>
  		       </div>
-				<button class="btnSave" type="button"
-				ng-disabled="formCtrl.btnEqualValue" title="{{formCtrl.btnName}}"
+				<button class="btnSave" type="button" title="{{formCtrl.btnName}}"
+				ng-disabled="formCtrl.btnEqualValue || form.employeeName.$invalid
+				|| form.position.$invalid || form.startDay.$invalid || form.dob.$invalid || form.email.$invalid"
 				ng-click="formCtrl.save()">{{formCtrl.btnName}}</button>
 		</form>
 </div>
