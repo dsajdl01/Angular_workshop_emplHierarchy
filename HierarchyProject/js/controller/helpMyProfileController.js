@@ -1,5 +1,5 @@
 myMngtHierarchyApp.controller('helpMyProfileController', [ 'commonNodeHeirarchyModel', 'mngtHierarchyNodeServiceProvider', '$location',
-	function(commonNodeHeirarchyModel, mngtHierarchyNodeServiceProvider, $location){
+	function(commonNodeHeirarchyModel, mngtHierarchyNodeServiceProvider, $location) {
 
 		var self = this;
 
@@ -7,7 +7,7 @@ myMngtHierarchyApp.controller('helpMyProfileController', [ 'commonNodeHeirarchyM
 		{
 			self.btnName = "Save";
 			self.internalErrorMessage = null;
-			var emplDetails = mngtHierarchyNodeServiceProvider.getSelectedNodeDetails(commonNodeHeirarchyModel.userSelectedNode.id);
+			var emplDetails = getEmplDetails();
 			self.dob = emplDetails.dob;
 			self.email = emplDetails.email;
 		}
@@ -16,7 +16,7 @@ myMngtHierarchyApp.controller('helpMyProfileController', [ 'commonNodeHeirarchyM
 			if(self.dob && self.email)
 			{
 				commonNodeHeirarchyModel.hasPersonalData = false;
-				var emplDetails = mngtHierarchyNodeServiceProvider.getSelectedNodeDetails(commonNodeHeirarchyModel.userSelectedNode.id);
+				var emplDetails = getEmplDetails();
 				emplDetails.dob = self.dob;
 				emplDetails.email = self.email;
 				$location.path('/homeViewAccount');
@@ -26,5 +26,9 @@ myMngtHierarchyApp.controller('helpMyProfileController', [ 'commonNodeHeirarchyM
 				// it should never happend.
 				self.internalErrorMessage = "Your data has not been saved. Please, check your data and try it again."
 			} 	
+		}
+
+		var getEmplDetails = function(){
+			return mngtHierarchyNodeServiceProvider.getSelectedNodeDetails(commonNodeHeirarchyModel.userSelectedNode.id);
 		}
 }]);		
