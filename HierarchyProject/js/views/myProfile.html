@@ -40,7 +40,7 @@
 				<div ng-include="'../js/views/include/dobInput.html'"></div>
 				<div ng-include="'../js/views/include/startDateInput.html'"></div>
 				<div ng-include="'../js/views/include/positionInput.html'"></div>
-	
+
 				<div class="text-field" >
 					<label for="Access">Employee Accesss</label>
 					<input type="text"
@@ -49,81 +49,82 @@
 						name="Access"
 						autocomplete="off"
 						autofocus
-						ng-disabled="true" 
+						ng-disabled="true"
 						ng-model="formCtrl.Access"/>
 				</div>
 			</div>
 			<div class="form-group">
 				<a href="javascript:void(0)" target="_self"ng-click="formCtrl.showPasswordFields()" title="Change password">Change password</a></li>
 			</div>
-				<div ng-show="formCtrl.showInputForms">
+				<div class="showHidePassword" ng-show="formCtrl.showInputForms">
 					<div class="form-group">
-						<div class="text-field" >
-							<label for="oldPassword">Old Password</label>
-							<input type="password"
-								class="form-control-helper"
-								id="oldPassword"
-								name="oldPassword"
-								placeholder="Old Password"
-								autocomplete="off"
-								maxlength="255" 
-								ng-model="formCtrl.oldPassword"
-								ng-change="formCtrl.makeChange()"
-								ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
-						</div>
-						<div class="help-block" ng-show="formCtrl.old_passwordMsg">
-                              <span class="error-message" >
-                                  {{ formCtrl.old_passwordMsg }}
-                            </span>    
-                        </div> 
+						<div class="password_container">
+							<div class="text-field" >
+								<label for="oldPassword">Old Password</label>
+								<input type="password"
+									class="form-control-helper"
+									id="oldPassword"
+									name="oldPassword"
+									placeholder="Old Password"
+									autocomplete="off"
+									maxlength="255"
+									ng-model="formCtrl.oldPassword"
+									ng-change="formCtrl.makeChange()"
+									ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
+								<div class="help-block" ng-show="formCtrl.old_passwordMsg">
+		                              <span class="form_error_ps_inretnal_messages">{{ formCtrl.old_passwordMsg }}</span>
+		                        </div>
+							</div>
+                        </div>
 
-
-						<div class="text-field" >
-							<label for="newPassword">New Password</label>
-							<input type="password"
-								class="form-control-helper"
-								id="newPassword"
-								name="newPassword"
-								autocomplete="off"
-								placeholder="New Password"
-								maxlength="255"
-								minlength="8"
-								title="Minimum 8 characters" 
-								ng-model="formCtrl.newPassword"
-								ng-change="formCtrl.makeChange()"
-								ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
-						</div>
-						<div  class="message-help-block" ng-show="form.newPassword.$dirty && form.newPassword.$invalid">
-            				<div class="form_error_messages" ng-show="form.newPassword.$dirty && form.newPassword.$error.minlength">Password is too short</div>
+                        <div class="password_container">
+							<div class="text-field" >
+								<label for="newPassword">New Password</label>
+								<input type="password"
+									class="form-control-helper"
+									id="newPassword"
+									name="newPassword"
+									autocomplete="off"
+									placeholder="New Password"
+									maxlength="255"
+									minlength="8"
+									title="Minimum 8 characters" 
+									ng-model="formCtrl.newPassword"
+									ng-change="formCtrl.makeChange()"
+									ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
+								<div class="help-block" ng-show="formCtrl.new_passwordMsg">
+		            				<span class="form_error_ps_inretnal_messages"> New password is required.</span>
+		        				</div>
+							</div>
+							<div  class="message-help-block" ng-show="form.newPassword.$dirty && form.newPassword.$invalid">
+		            			<div class="form_error_messages_ps" ng-show="form.newPassword.$dirty && form.newPassword.$error.minlength">Password is too short</div>
+	        				</div>
         				</div>
-        				<div class="help-block" ng-show="formCtrl.new_passwordMsg">
-            				<span class="error-message"> New password is required.</span>
-        				</div>
 
-						<div class="text-field" >
-							<label for="confirmPassword">Confirm Password</label>
-							<input type="password"
-								class="form-control-helper"
-								id="confirmPassword"
-								name="confirmPassword"
-								autocomplete="off"
-								placeholder="Confirm Password"
-								ng-model="formCtrl.confirmPassword"
-								ng-change="formCtrl.makeChange()"
-								ui-validate=" '$value==formCtrl.newPassword' "
-								ui-vatidate-watch=" 'formCtrl.newPassword' " >
-						</div> 
-					</div>
-				</div>
-				<div class="divBlocker">
-				<div  class="message-help-block" ng-show="form.confirmPassword.$dirty && form.confirmPassword.$invalid">
-            			<div class="form_error_messages_ps"   ng-show="form.confirmPassword.$error.validator">Passwords do not match</div>
-            	</div>
-        		</div>
+        				<div class="password_container">
+							<div class="text-field" >
+								<label for="confirmPassword">Confirm Password</label>
+								<input type="password"
+									class="form-control-helper"
+									id="confirmPassword"
+									name="confirmPassword"
+									autocomplete="off"
+									placeholder="Confirm Password"
+									ng-model="formCtrl.confirmPassword"
+									ng-change="formCtrl.makeChange()"
+									ui-validate=" '$value==formCtrl.newPassword' "
+									ui-vatidate-watch=" 'formCtrl.newPassword' " >
+								<div class="help-block" ng-show="formCtrl.confirm_passwordMsg">
+			            			<span class="form_error_ps_inretnal_messages" >Confirm password is required.</span>
+			 		        	</div>
+							</div>
+							<div class="message-help-block" ng-show="form.confirmPassword.$dirty && form.confirmPassword.$invalid">
+							    <div class="form_error_messages_ps"   ng-show="form.confirmPassword.$error.validator">Passwords do not match</div>
+							</div>
+		 		        </div>
 
-        		<div class="help-block" ng-show="formCtrl.confirm_passwordMsg">
-            		<span class="error-message" >Confirm password is required.</span>
- 		       </div>
+					</div> <!-- end of the form-group -->
+				</div> <!-- end of the showHidePassword -->
 				<button class="btnSave" type="button" title="{{formCtrl.btnName}}"
 				ng-disabled="formCtrl.btnEqualValue || form.employeeName.$invalid
 				|| form.position.$invalid || form.startDay.$invalid || form.dob.$invalid || form.email.$invalid"
