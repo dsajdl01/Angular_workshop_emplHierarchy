@@ -25,6 +25,7 @@ module.exports = function(config) {
       'vendor/angular-sanitize/angular-sanitize.js',
       'vendor/angular-strap/dist/angular-strap.js',
       'vendor/angular-strap/dist/angular-strap.tpl.js',
+      'vendor/bower_components/angular-ui-validate/dist/validate.js',
       'vendor/angular-ui-utils/ui-utils.js',
       'vendor/angular-ui-select/dist/select.js',
 
