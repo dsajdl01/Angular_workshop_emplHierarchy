@@ -228,7 +228,7 @@ describe('Controller: mngtHierarchyController', function() {
 
 		expect(ctrl.showPage).toBeTruthy();
     	expect(ctrl.isTopNavigationBtnDisabled).toBeFalsy();
-    	expect(mockLocation.path).toHaveBeenCalledWith("/templateAssumeIdentity")
+    	expect(mockLocation.path).toHaveBeenCalledWith("/templateAssumeIdentity");
     	expect(ctrl.accountTitle).toEqual("");
     });
 
