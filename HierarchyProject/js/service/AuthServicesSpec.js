@@ -162,4 +162,13 @@ describe('Controller: Auth', function() {
     	details[1].dob = null;  // as it is object set dob back to null after execution
     });
 
+    it('should return true if the parameter of userHasPermission function contains admin', function(){
+    	var permission = ["admin", "viewer"];
+    	expect(service.userHasPermission(permission)).toBeTruthy();
+    });
+
+    it('should return false if the parameter of userHasPermission function does not contains admin', function(){
+    	var permission = ["viewer", "user"];
+    	expect(service.userHasPermission(permission)).toBeFalsy();
+    });
 });
