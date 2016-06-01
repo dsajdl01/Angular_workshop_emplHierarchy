@@ -27,7 +27,8 @@ function Auth(commonNodeHeirarchyModel, mngtHierarchyNodeServiceProvider)
 
         var result = userHasPermissionForView(view);
 
-        if(!view.requirePersonalDataEntry){
+        if(!view.requirePersonalDataEntry)
+        {
             return result;
         }
         return hasEnterPeronalDate(view);
@@ -77,7 +78,8 @@ function Auth(commonNodeHeirarchyModel, mngtHierarchyNodeServiceProvider)
         return result;
     }
 
-    var getDetailsValue = function(data, details){
+    var getDetailsValue = function(data, details)
+    {
         switch(data)
         {
             case 'email':
