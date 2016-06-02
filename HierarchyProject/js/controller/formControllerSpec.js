@@ -66,6 +66,7 @@ describe('Controller: formController', function() {
      	expect(ctrl.btnSave).toBeTruthy();
      	expect(ctrl.btnName).toEqual("Save");
      	
+        expect(ctrl.hasAccess).toBeFalsy();
         expect(ctrl.modified).toBeFalsy();
         expect(ctrl.access).toEqual("admin");
      	expect(ctrl.startDay).toEqual("10/02/2005");
@@ -86,6 +87,7 @@ describe('Controller: formController', function() {
      	watchListenerFunction();
      	expect(ctrl.btnSave).toBeTruthy();
      	expect(ctrl.btnName).toEqual("Save");
+        expect(ctrl.hasAccess).toBeFalsy();
 
         expect(ctrl.modified).toBeFalsy();
         expect(ctrl.access).toEqual("user");
@@ -108,6 +110,7 @@ describe('Controller: formController', function() {
         watchListenerFunction();
         expect(ctrl.btnSave).toBeTruthy();
         expect(ctrl.btnName).toEqual("Save");
+        expect(ctrl.hasAccess).toBeFalsy();
 
         expect(ctrl.modified).toBeTruthy();
         expect(ctrl.access).toEqual("user");
@@ -129,6 +132,7 @@ describe('Controller: formController', function() {
      	watchListenerFunction();
      	expect(ctrl.btnSave).toBeTruthy();
      	expect(ctrl.btnName).toEqual("Save");
+        expect(ctrl.hasAccess).toBeFalsy();
         expect(ctrl.modified).toBeFalsy(); 
         expect(ctrl.access).toEqual("user");
 
@@ -153,6 +157,7 @@ describe('Controller: formController', function() {
      	watchListenerFunction();
      	expect(ctrl.btnSave).toBeTruthy();
      	expect(ctrl.btnName).toEqual("Save");
+        expect(ctrl.hasAccess).toBeFalsy();
 
         expect(ctrl.modified).toBeFalsy();
         expect(ctrl.access).toEqual("admin");
