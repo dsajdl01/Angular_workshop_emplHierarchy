@@ -20,6 +20,7 @@ myMngtHierarchyApp.controller('formController', [ 'commonNodeHeirarchyModel', 'm
 		{
 			self.btnSave = true;
 			self.btnName = "Save";
+			self.hasAccess = false;
 			self.modified = (self.commonNodeHeirarchyModel.selectedTopNode.access == "admin") ? false : true;
 			self.access = self.commonNodeHeirarchyModel.userSelectedNode.access;
 			self.startDay = nodeDetails.start;
