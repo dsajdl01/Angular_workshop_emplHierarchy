@@ -8,7 +8,7 @@ describe('Controller: myProfileContrller', function() {
 	var details = [{"id": 101, "dob": "18/10/1973", "start": "28/09/2006","possition": "Developer",
 		"comments": "Working as full-stacker developer.","fullname": "Bob Freeman","email":
 		"bob.freeman@example.co.uk","password": "1234"},
-		{"id": 102, "dob": null, "start": "21/02/2008","possition": "Developer",
+		{"id": 102, "dob": null, "start": "21/02/2008","possition": "Designer",
 		"comments": "Working as Java developer.","fullname": "Adam Smith","email":
 		null,"password": "1234"}];
 
@@ -63,11 +63,75 @@ describe('Controller: myProfileContrller', function() {
 		expect(ctrl.newPassword).toBeNull();
 		expect(ctrl.confirmPassword).toBeNull();
 		expect(ctrl.btnEqualValue).toBeTruthy();
+    	
 
 		assertEqualOriginalValues();
     });
 
-    
+    it('should initialize instance variables when init() function is called - II', function(){
+    	commonNodeHeirarchyModelMock.userSelectedNode = selectedNode[0].child[0];
+
+    	ctrl.init();
+
+		expect(ctrl.showInputForms).toBeFalsy();
+		expect(ctrl.btnName).toEqual("Save");
+		expect(ctrl.employeeName).toEqual("Adam");
+		expect(ctrl.Access).toEqual("user");
+		expect(ctrl.dob).toBeNull();
+		expect(ctrl.email).toBeNull();
+		expect(ctrl.position).toEqual("Designer");
+		expect(ctrl.startDay).toEqual("21/02/2008");
+		expect(ctrl.employeeFullName).toEqual("Adam Smith");
+		expect(ctrl.hasAccess).toBeTruthy();
+		expect(ctrl.oldPassword).toBeNull();
+		expect(ctrl.newPassword).toBeNull();
+		expect(ctrl.confirmPassword).toBeNull();
+		expect(ctrl.btnEqualValue).toBeTruthy();
+
+		assertEqualOriginalValues_II();
+    });
+
+    it('should open and close pa fields when showPasswordFields is called', function(){
+    	ctrl.init();
+    	expect(ctrl.showInputForms).toBeFalsy();
+    	// user open password's fields
+    	ctrl.showPasswordFields();
+    	expect(ctrl.showInputForms).toBeTruthy();
+    	// user can modified password's fields
+    	ctrl.oldPassword = "password";
+		ctrl.newPassword = "bflmpsvz";
+		ctrl.confirmPassword = "bflmpsvz";
+		// user close password's fields
+    	ctrl.showPasswordFields();
+    	expect(ctrl.showInputForms).toBeFalsy();
+    	expect(ctrl.oldPassword).toBeNull();
+		expect(ctrl.newPassword).toBeNull();
+		expect(ctrl.confirmPassword).toBeNull();
+    });
+
+    it('should disable and rename buton when values are not same as original', function(){
+    	ctrl.init();
+    	// button should be disable and name Save
+    	expect(ctrl.btnName).toEqual("Save");
+    	expect(ctrl.btnEqualValue).toBeTruthy();
+    	//user modify value
+    	ctrl.employeeName = "Bobik";
+    	ctrl.makeChange();
+    	expect(ctrl.btnName).toEqual("Save");
+    	expect(ctrl.btnEqualValue).toBeFalsy();
+    	// user add back value
+    	ctrl.employeeName = "Bob";
+    	ctrl.makeChange();
+    	expect(ctrl.btnName).toEqual("Done");
+    	expect(ctrl.btnEqualValue).toBeTruthy();
+    	// user modified it again
+    	ctrl.email = "bob.freeman@example.com";
+    	ctrl.makeChange();
+    	expect(ctrl.btnName).toEqual("Save");
+    	expect(ctrl.btnEqualValue).toBeFalsy();
+
+    })
+
 	var assertEqualOriginalValues = function(){
 		expect(ctrl.originalEmplName).toEqual("Bob");
 		expect(ctrl.originalDob).toEqual("18/10/1973");
@@ -78,5 +142,17 @@ describe('Controller: myProfileContrller', function() {
 		expect(ctrl.originalOldPassword).toBeNull();
 		expect(ctrl.originalNewPassword).toBeNull();
 		expect(ctrl.originalConfirmPassword).toBeNull();
-	}
+	};
+
+	var assertEqualOriginalValues_II = function(){
+		expect(ctrl.originalEmplName).toEqual("Adam");
+		expect(ctrl.originalDob).toBeNull()
+		expect(ctrl.originalEmail).toBeNull();
+		expect(ctrl.originalPosition).toEqual("Designer");
+		expect(ctrl.originalStartDate).toEqual("21/02/2008");
+		expect(ctrl.originalEmplFullName).toEqual("Adam Smith");
+		expect(ctrl.originalOldPassword).toBeNull();
+		expect(ctrl.originalNewPassword).toBeNull();
+		expect(ctrl.originalConfirmPassword).toBeNull();
+	};
 });
