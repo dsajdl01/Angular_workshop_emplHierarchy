@@ -1,8 +1,8 @@
 /**
 * Created by david on 15/04/16.
 */
-myMngtHierarchyApp.controller('myProfileContrller',['calculateTimeService', 'commonNodeHeirarchyModel', 'mngtHierarchyNodeServiceProvider', 'toaster',
-				 function(calculateTimeService, commonNodeHeirarchyModel, mngtHierarchyNodeServiceProvider, toaster) {
+myMngtHierarchyApp.controller('myProfileContrller',['commonNodeHeirarchyModel', 'mngtHierarchyNodeServiceProvider', 'toaster',
+				 function(commonNodeHeirarchyModel, mngtHierarchyNodeServiceProvider, toaster) {
 
 	var self = this;
 
@@ -26,7 +26,7 @@ myMngtHierarchyApp.controller('myProfileContrller',['calculateTimeService', 'com
 		setOriginalValues();
 	}
 
-	self.showPasswordFields =function()
+	self.showPasswordFields = function()
 	{
 		self.showInputForms = (self.showInputForms) ? false : true;
 		self.oldPassword = null;
@@ -51,8 +51,8 @@ myMngtHierarchyApp.controller('myProfileContrller',['calculateTimeService', 'com
 				if(oldPasswordMatch())
 				{
 					savePassword();
-					saveUserInputDate();
 					self.showInputForms = self.showPasswordFields();
+					saveUserInputDate();
 				}
 				else
 				{
@@ -128,6 +128,7 @@ myMngtHierarchyApp.controller('myProfileContrller',['calculateTimeService', 'com
 		emplDetails.start = self.startDay;
 		emplDetails.fullname = self.employeeFullName;
 		commonNodeHeirarchyModel.userSelectedNode.name = self.employeeName;
+		setOriginalValues();
 		commonNodeHeirarchyModel.hasPersonalData = false;
 		self.btnName = "Done";
 		self.btnEqualValue = true;
