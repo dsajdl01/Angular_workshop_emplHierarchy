@@ -36,7 +36,6 @@ describe('directive: dateValidation', function() {
         expect(scope.formCtrl.origineStartDay).toEqual(date);
         expect(scope.formCtrl.startDay).toEqual(date);
         expect(scope.formCtrl.dateErrorMessage).toBeFalsy();
-        console.log("scope.model: ", scope.model);
         expect(scope.model.startDay).toEqual(date);
         expect(form.startDay.$invalid).toBe(false);
     });
@@ -84,7 +83,6 @@ describe('directive: dateValidation', function() {
 		var plusFiveDays = currentDate.toLocaleString();
 		var plusFiveDaysArray = plusFiveDays.split(",");
 		var fiveDateUp = swopDayWithMonth(plusFiveDaysArray[0]);
-		console.log("sevenDayAgo: ", fiveDateUp);
 				
 		form.startDay.$setViewValue(fiveDateUp);
 		scope.$digest();
