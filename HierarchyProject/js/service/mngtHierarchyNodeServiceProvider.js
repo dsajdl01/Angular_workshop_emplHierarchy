@@ -33,6 +33,17 @@ function mngtHierarchyNodeServiceProvider(hierarchyNodeService, commonNodeHeirar
 			);
 		};
 
+		self.getLoginPage = function(callback){
+			modalDialogBoxService.setTemplate("js/views/login.html");
+			modalDialogBoxService.shareModalData = {}
+			modalDialogBoxService.notify = function(user)
+			{
+				console.log("user in provider: ", user);
+				callback(user);
+            };
+			modalDialogBoxService.showDialog();
+		};
+
 		self.displayAssumeDialogBox = function( path, callBack )
 		{
 			modalDialogBoxService.setTemplate("js/views/assumeIdentityTemplate.html");
