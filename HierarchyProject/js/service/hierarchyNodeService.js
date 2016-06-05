@@ -24,7 +24,7 @@ function hierarchyNodeService($resource, $http){
 					});
 	};
 
-	self.getNodesDetails = function(success, fail){
+	self.getNodesDetails = function(success, fail) {
 	
 		var URL = 'https://raw.githubusercontent.com/dsajdl01/Angular_workshop_emplHierarchy/master/node_data.json';
 		
@@ -34,6 +34,21 @@ function hierarchyNodeService($resource, $http){
 					})
 					.then(function successCallBack(topRoot){
 						success(topRoot.data);
+					},
+					function errorCallBack(error){
+						fail(error);
+					});
+	}
+
+	self.getLoginDetails = function(success, fail) {
+		var URL = 'https://raw.githubusercontent.com/dsajdl01/Angular_workshop_emplHierarchy/logIn.branch/usersProfileLogin.json';
+
+		return $http( {
+						method: 'GET',
+						url: URL
+					})
+					.then(function successCallBack(userdetails){
+						success(userdetails.data);
 					},
 					function errorCallBack(error){
 						fail(error);
