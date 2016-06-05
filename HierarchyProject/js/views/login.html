@@ -1,0 +1,43 @@
+<div class="modal" tabindex="-1" role="dialog" ng-controller="loginController as lgCtrl" ng-init="lgCtrl.init()"> 
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Login to Employee Hierarchy System</h3>
+        </div>
+
+        <div class="modal-body">
+            <div class="login-form">
+			<form name="form" ng-submit="lgCtrl.login()" class="horizontalForm" role="form">
+				<div class="formGroup">
+					<label for="email">Username: </label>
+					<input type="text" ng-model="lgCtrl.user.username"
+									   class="formControl"
+									   name="username"
+									   id="email" 
+									   placeholder="Enter Username" 
+									   required="true">
+				</div>
+				<div class="formGroup">
+					<label for="password">Password: </label>
+					<input type="password" ng-model="lgCtrl.user.password" 
+										   class="formControl"
+										   name="password"
+										   id="password" 
+										   placeholder="Enter Password" 
+										   required="true">
+				</div>
+				<button class="btnSave" type="button" ng-disabled="form.username.$invalid || form.password.$invalid" title=""
+				ng-click="lgCtrl.login()">Login</button>
+			</form>
+		</div>
+        </div>
+        <div class="modal-footer">
+             <div class="row">
+                   <div class="col-sm-4 col-sm-offset-8">
+                <span> &#169; Copyright 2016 Created by David Sajdl</span> 
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
