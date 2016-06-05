@@ -1,7 +1,9 @@
-myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeServiceProvider', 'commonNodeHeirarchyModel', 'calculateTimeService' ,'$location', 'toaster',
-					function(mngtHierarchyNodeServiceProvider, commonNodeHeirarchyModel, calculateTimeService, $location, toaster){
+myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeServiceProvider', 'commonNodeHeirarchyModel', 'calculateTimeService' ,'$location', '$rootScope', 'Auth', 'toaster',
+					function(mngtHierarchyNodeServiceProvider, commonNodeHeirarchyModel, calculateTimeService, $location, $rootScope, Auth, toaster){
 
 	var self = this;
+
+
 	self.showPage = false;
 	self.isTopNavigationBtnDisabled = false;
 	self.commonNodeHeirarchyModel = commonNodeHeirarchyModel;
@@ -17,25 +19,39 @@ myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeSer
 		self.commonNodeHeirarchyModel.hasPersonalData = false;
 		self.isTopNavigationBtnDisabled = false;
 		self.commonNodeHeirarchyModel.isUserAssumeIdentity = false;
-		relocatePageToHomePage();
-		mngtHierarchyNodeServiceProvider.loadTopNode(function(loadResponce){
-			isNodeLoaded = loadResponce;
-			if(!isNodeLoaded)
-			{
-				getPopUpToasterMessage();
-				return;
-			} 
-			mngtHierarchyNodeServiceProvider.loadNodeDetails(function(detailsResponce){
-				isNodeLoaded = detailsResponce;
-				if( isNodeLoaded )
-				{
-					self.getAssumeIdentityDialogBox(isNodeLoaded);
-				}
-				else
+		if(!self.commonNodeHeirarchyModel.isLogIn){
+			self.getLoginPage();
+		} else
+		{
+			relocatePageToHomePage();
+			mngtHierarchyNodeServiceProvider.loadTopNode(function(loadResponce){
+				isNodeLoaded = loadResponce;
+				if(!isNodeLoaded)
 				{
 					getPopUpToasterMessage();
+					return;
 				}
-			});		
+				mngtHierarchyNodeServiceProvider.loadNodeDetails(function(detailsResponce){
+					isNodeLoaded = detailsResponce;
+					if( isNodeLoaded )
+					{
+						self.getAssumeIdentityDialogBox(isNodeLoaded);
+					}
+					else
+					{
+						getPopUpToasterMessage();
+					}
+				});
+			});
+		}
+	};
+
+	self.getLoginPage = function(){
+		self.commonNodeHeirarchyModel.isLogIn = false;
+		self.showPage = false;
+		mngtHierarchyNodeServiceProvider.getLoginPage(function(user){
+			console.log("user:", user);
+			self.init();
 		});
 	};
 
@@ -97,7 +113,7 @@ myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeSer
 
 	var canPageBeDisplayed = function(isNodeLoaded, isAssumeIdentity)
 	{
-		self.showPage = isNodeLoaded && isAssumeIdentity;
+		self.showPage = isNodeLoaded && isAssumeIdentity && self.commonNodeHeirarchyModel.isLogIn;
 	};
 
 	var relocatePageToHomePage = function()
