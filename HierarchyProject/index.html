@@ -13,11 +13,14 @@
 	    <link rel="stylesheet" type="text/css" href="css/assumeIdentityStyle.css" media="all" >
 	</head>
 
-	<body ng-controller="mngtHierarchyController as ctrl" ng-init="ctrl.init()">
+	<body ng-controller="mngtHierarchyController as ctrl" ng-cloak ng-init="ctrl.init()">
 	<toaster-container toaster-options="{'close-button': true}"></toaster-container>
 		<div class="mainContent" ng-show="ctrl.showPage">
 
-			<div class="top-bar"> 
+			<div class="top-bar">
+				<span class="logout">
+					<a href="javascript:void(0)" target="_self"ng-click="ctrl.getLoginPage()" title="Logout {{ctrl.accountTitle}}">Logout</a>
+				</span> 
 				<div class="navigation-menu">
 				<ul>
 					<li><a class="emloyeeProfil" ng-href="#/homeViewAccount" ng-class="{disabled: !ctrl.isTopNavigationBtnDisabled || ctrl.commonNodeHeirarchyModel.hasPersonalData}"  title="Home"> Employee Managment </a></li>
@@ -66,6 +69,7 @@
 		<script src="js/controller/mngtHierarchyController.js"></script>
 		<script src="js/controller/myProfileContrller.js"></script>
 		<script src="js/controller/helpMyProfileController.js"></script>
+		<script src="js/controller/loginController.js"></script>
 		<script src="js/controller/formController.js"></script>
 		<script src="js/controller/assumeIdentityController.js"></script>
 		<script src="js/service/hierarchyNodeService.js"></script>
