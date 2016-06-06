@@ -20,6 +20,15 @@ body {
   font-size: 80%;
   font-style: italic;
 }
+.logout,
+.logout a {
+  color: #fff;
+  float: right;
+  margin-top: 5px;
+  margin-right: 20px;
+  font-size: 100%;
+  font-style: italic; 
+}
 .top-bar{
   background-color: #005695;
   color: #ffffff;
