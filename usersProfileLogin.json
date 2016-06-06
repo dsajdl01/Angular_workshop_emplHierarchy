@@ -1,10 +1,62 @@
 [
 	{
+		"nodeId": 1,
 		"username": "dave",
-		"password": "123password123"
+		"password": "password123",
+		"administrator": true
 	},
 	{
+		"nodeId": 100,
 		"username": "yadira",
-		"password": "1234567890"	
+		"password": "1234567890",
+		"administrator": false
+	},
+	{
+		"nodeId": 101,
+		"username": "bob",
+		"password": "1234567890",
+		"administrator": false
+	},
+	{
+		"nodeId": 102,
+		"username": "david",
+		"password": "1234567890",
+		"administrator": false
+	},
+	{
+		"nodeId": 103,
+		"username": "magda",
+		"password": "1234567890",
+		"administrator": false
+	},
+	{
+		"nodeId": 104,
+		"username": "fred",
+		"password": "1234567890",
+		"administrator": false
+	},
+	{
+		"nodeId": 105,
+		"username": "gita",
+		"password": "1234567890",
+		"administrator": false
+	},
+	{
+		"nodeId": 106,
+		"username": "david_01",
+		"password": "1234567890",
+		"administrator": false
+	},
+	{
+		"nodeId": 107,
+		"username": "jolita",
+		"password": "1234567890",
+		"administrator": false
+	},
+	{
+		"nodeId": 108,
+		"username": "rob",
+		"password": "1234567890",
+		"administrator": false
 	}
 ]
