@@ -19,7 +19,7 @@ myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeSer
 		self.commonNodeHeirarchyModel.hasPersonalData = false;
 		self.isTopNavigationBtnDisabled = false;
 		self.commonNodeHeirarchyModel.isUserAssumeIdentity = false;
-		if(!self.commonNodeHeirarchyModel.isLogIn){
+		if(!self.commonNodeHeirarchyModel.user.isLogin){
 			self.getLoginPage();
 		} else
 		{
@@ -35,7 +35,14 @@ myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeSer
 					isNodeLoaded = detailsResponce;
 					if( isNodeLoaded )
 					{
-						self.getAssumeIdentityDialogBox(isNodeLoaded);
+						if(self.commonNodeHeirarchyModel.user.administrator) {
+							self.getAssumeIdentityDialogBox(isNodeLoaded);
+						} else{
+							var selectedNodeName = mngtHierarchyNodeServiceProvider.getLoginAsTopNode();
+							console.log("selectedNodeName", selectedNodeName);
+							initialiseInsatnceVariabled(selectedNodeName);
+							canPageBeDisplayed(isNodeLoaded,true);
+						}
 					}
 					else
 					{
@@ -69,17 +76,21 @@ myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeSer
 					$location.path("/templateAssumeIdentity");
 				} else
 				{
-					self.isTopNavigationBtnDisabled = true;
-					self.accountTitle = "Profile of " + selectedNodeName;
-					self.commonNodeHeirarchyModel.isUserAssumeIdentity = true;
-					mngtHierarchyNodeServiceProvider.checkIfPersonalDetailsAreInseared();
-					var access = self.commonNodeHeirarchyModel.selectedTopNode.access;
-					self.hasPermission = (access == "admin" || access == "viewer") ? true : false; 
+					initialiseInsatnceVariabled(selectedNodeName);
 				}
 				isAssumeIdentity = !!selectedNodeName;
 				canPageBeDisplayed(isNodeLoaded, isAssumeIdentity);
 			});
 	};
+
+	var initialiseInsatnceVariabled = function(selectedNodeName){
+		self.isTopNavigationBtnDisabled = true;
+		self.accountTitle = "Profile of " + selectedNodeName;
+		self.commonNodeHeirarchyModel.isUserAssumeIdentity = true;
+		mngtHierarchyNodeServiceProvider.checkIfPersonalDetailsAreInseared();
+		var access = self.commonNodeHeirarchyModel.selectedTopNode.access;
+		self.hasPermission = (access == "admin" || access == "viewer") ? true : false; 
+	}
 
 	self.loadPage = function()
 	{
@@ -113,7 +124,7 @@ myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeSer
 
 	var canPageBeDisplayed = function(isNodeLoaded, isAssumeIdentity)
 	{
-		self.showPage = isNodeLoaded && isAssumeIdentity && self.commonNodeHeirarchyModel.isLogIn;
+		self.showPage = isNodeLoaded && isAssumeIdentity && self.commonNodeHeirarchyModel.user.isLogin;
 	};
 
 	var relocatePageToHomePage = function()
