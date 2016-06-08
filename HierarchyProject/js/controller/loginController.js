@@ -20,9 +20,13 @@ myMngtHierarchyApp.controller('loginController', [ 'commonNodeHeirarchyModel', '
     }
  
     self.login = function() {
-      if(isUserAndPasswordExist()){
+      var user = isUserAndPasswordExist();
+      if(user){
            console.log("login userDetails: ", self.user.username, self.user.password, true);
-           self.commonNodeHeirarchyModel.isLogIn = true;
+           self.commonNodeHeirarchyModel.user.isLogin = true;
+           self.commonNodeHeirarchyModel.user.administrator = user.administrator;
+           self.commonNodeHeirarchyModel.user.id = user.nodeId;
+           self.commonNodeHeirarchyModel.user.username = user.username;
            modalDialogBoxService.notifyAndHide(self.user);
       } else {
         // display message
@@ -34,7 +38,7 @@ myMngtHierarchyApp.controller('loginController', [ 'commonNodeHeirarchyModel', '
       for(var i = 0; i < userDetails.length; i++){
         console.log(userDetails[i]);
         if(userDetails[i].username == self.user.username && userDetails[i].password == self.user.password){
-          return true;
+          return userDetails[i];
         }
       }
       return false;
