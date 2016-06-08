@@ -12,4 +12,10 @@ function commonNodeHeirarchyModel(){
 	self.editingNode = {};
 	self.isUserAssumeIdentity = false;
 	self.hasPersonalData = false;
+	self.user = {
+		"id": null,
+		"username": null,
+		"isLogin": false,
+		"administrator": false
+	}
 }
