@@ -27,7 +27,7 @@
 					<li><a class="homeAccount" ng-href="#/homeViewAccount" ng-class="{disabled: !ctrl.isTopNavigationBtnDisabled || ctrl.commonNodeHeirarchyModel.hasPersonalData}" title="Home - View User Account">Selected Account </a></li>
 					<li ng-show="ctrl.hasPermission"><a class="accountManager" ng-href="#/viewAccountInfo" ng-class="{disabled: !ctrl.isTopNavigationBtnDisabled || ctrl.commonNodeHeirarchyModel.hasPersonalData}"  title="Account Managment">Manage Account</a></li>
 					<li><a class="aboutApp" href="javascript:void(0)" target="_self" ng-class="{disabled: !ctrl.isTopNavigationBtnDisabled}" ng-click="ctrl.displayAboutDialog()" title="About Hierarchy App">About</a></li>
-					<li><a class="last" href="#/homeViewAccount" ng-click="ctrl.loadPage()" title="Change Node">Change identity </a></li>
+					<li ng-show="ctrl.commonNodeHeirarchyModel.user.administrator"><a class="last" href="#/homeViewAccount" ng-click="ctrl.loadPage()" title="Change Node">Change identity </a></li>
 					<li><a class="myProfile" href="#myProfile" target="_self" ng-class="{disabled: !ctrl.isTopNavigationBtnDisabled || ctrl.commonNodeHeirarchyModel.hasPersonalData}" title="User's profile">My Profile</a></li>
 					<li><a class="templateAssumeIdentity" ng-href="#/templateAssumeIdentity"></a></li>
 				</ul>
