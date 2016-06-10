@@ -1,0 +1,18 @@
+<div class="text-field" >
+					<label for="username">Username</label>
+					<input type="text"
+					   class="form-control-helper"
+					   id="username"
+					   name="username"
+					   maxlength="225"
+					   placeholder="Username"
+					   autocomplete="off"
+					   autofocus
+					   ng-change="formCtrl.makeChange()"
+					   ng-model="formCtrl.username"
+					   required="true"
+					   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }"/>
+				</div>
+	<div class="message-help-block" ng-messages="form.username.$error" ng-if="form.username.$dirty">
+		<div class="form_error_messages" ng-message="required">Username is required.</div>
+	</div>
