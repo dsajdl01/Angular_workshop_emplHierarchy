@@ -11,13 +11,15 @@ describe('Controller: myProfileContrller', function() {
 		{"id": 102, "dob": null, "start": "21/02/2008","possition": "Designer",
 		"comments": "Working as Java developer.","fullname": "Adam Smith","email":
 		null,"password": "1234"}];
+    var user = [{ "username": "bob"}, {"username": "adam"}]
 
 	beforeEach(module('myMngtHierarchyApp'));
 
 	beforeEach(module(function($provide)
 	{   
 		commonNodeHeirarchyModelMock = {
-			userSelectedNode: selectedNode[0]
+			userSelectedNode: selectedNode[0],
+            user: user[0]
 		};
 
 		mngtHierarchyProviderMock = {
@@ -52,6 +54,7 @@ describe('Controller: myProfileContrller', function() {
     	ctrl.init();
 
     	expect(ctrl.showInputForms).toBeFalsy();
+        expect(ctrl.username).toEqual("bob");
 		expect(ctrl.btnName).toEqual("Save");
 		expect(ctrl.employeeName).toEqual("Bob");
 		expect(ctrl.Access).toEqual("admin");
@@ -72,11 +75,13 @@ describe('Controller: myProfileContrller', function() {
     it('should initialize instance variables when init() function is called - II', function()
     {
     	commonNodeHeirarchyModelMock.userSelectedNode = selectedNode[0].child[0];
+        commonNodeHeirarchyModelMock.user = user[1]
 
     	ctrl.init();
 
 		expect(ctrl.showInputForms).toBeFalsy();
 		expect(ctrl.btnName).toEqual("Save");
+        expect(ctrl.username).toEqual("adam");
 		expect(ctrl.employeeName).toEqual("Adam");
 		expect(ctrl.Access).toEqual("user");
 		expect(ctrl.dob).toBeNull();

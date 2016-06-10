@@ -11,6 +11,7 @@ myMngtHierarchyApp.controller('myProfileContrller',['commonNodeHeirarchyModel', 
 		self.showInputForms = false;
 		self.btnName = "Save";
 		var emplDetails = getEmlpDetails();
+		self.username = commonNodeHeirarchyModel.user.username;
 		self.employeeName = commonNodeHeirarchyModel.userSelectedNode.name;
 		self.Access = commonNodeHeirarchyModel.userSelectedNode.access;
 		self.dob = emplDetails.dob;
@@ -127,7 +128,8 @@ myMngtHierarchyApp.controller('myProfileContrller',['commonNodeHeirarchyModel', 
 		emplDetails.dob = self.dob;
 		emplDetails.start = self.startDay;
 		emplDetails.fullname = self.employeeFullName;
-		commonNodeHeirarchyModel.userSelectedNode.name = self.employeeName;
+		commonNodeHeirarchyModel.userSelectedNode.name = self.employeeName; 
+		commonNodeHeirarchyModel.user.username = self.username;
 		setOriginalValues();
 		commonNodeHeirarchyModel.hasPersonalData = false;
 		self.btnName = "Done";
@@ -156,6 +158,7 @@ myMngtHierarchyApp.controller('myProfileContrller',['commonNodeHeirarchyModel', 
 
 	var setOriginalValues = function()
 	{
+		self.originalUsername = self.username;
 		self.originalEmplName = self.employeeName;
 		self.originalDob = self.dob;
 		self.originalEmail = self.email;
@@ -177,7 +180,8 @@ myMngtHierarchyApp.controller('myProfileContrller',['commonNodeHeirarchyModel', 
 				&& self.originalEmplFullName == self.employeeFullName
 				&& self.originalOldPassword == self.oldPassword
 				&& self.originalNewPassword == self.newPassword
-				&& self.originalConfirmPassword == self.confirmPassword;
+				&& self.originalConfirmPassword == self.confirmPassword
+				&& self.originalUsername == self.username;
 	}
 
 	var doesUserHasAccessToModified = function()
