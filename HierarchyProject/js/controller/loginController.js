@@ -1,20 +1,22 @@
-myMngtHierarchyApp.controller('loginController', [ 'commonNodeHeirarchyModel', 'modalDialogBoxService', 'hierarchyNodeService', '$location', 'Auth',
-  function(commonNodeHeirarchyModel, modalDialogBoxService, hierarchyNodeService, $location, Auth) {
+myMngtHierarchyApp.controller('loginController', [ 'commonNodeHeirarchyModel', 'modalDialogBoxService', 'hierarchyNodeService', '$location', 'Auth', 'toaster',
+  function(commonNodeHeirarchyModel, modalDialogBoxService, hierarchyNodeService, $location, Auth, toaster) {
 
     var self = this;
     self.user = {};
-    self.user.username = "";
-    self.user.password = "";
-    self.failed = false;
     var userDetails;
     self.commonNodeHeirarchyModel = commonNodeHeirarchyModel;
 
     self.init = function(){
+        self.user.username = "";
+        self.user.password = "";
+        self.failed = false;
+        self.errorMessage = false;
         hierarchyNodeService.getLoginDetails(function(userLogin){
-          userDetails = userLogin;
-            console.log("loginController: ", userLogin);
+            userDetails = userLogin;
           },
           function(fail) {
+            toaster.pop("error","ERROR!","An error occer while app was downloading data.");
+            modalDialogBoxService.hideDialog()
           }
         );
     }
@@ -29,8 +31,7 @@ myMngtHierarchyApp.controller('loginController', [ 'commonNodeHeirarchyModel', '
            self.commonNodeHeirarchyModel.user.username = user.username;
            modalDialogBoxService.notifyAndHide(self.user);
       } else {
-        // display message
-        console.log("false===>");
+        self.errorMessage = "Username or password is incorrect!";
       }
     };
 
