@@ -28,6 +28,9 @@
 				</div>
 				<button class="btnSave" type="button" ng-disabled="form.username.$invalid || form.password.$invalid" title=""
 				ng-click="lgCtrl.login()">Login</button>
+				<div class="" ng-show="lgCtrl.errorMessage">
+					<span>{{ lgCtrl.errorMessage }}</span>
+				</div>
 			</form>
 		</div>
         </div>
