@@ -3,7 +3,6 @@ myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeSer
 
 	var self = this;
 
-
 	self.showPage = false;
 	self.isTopNavigationBtnDisabled = false;
 	self.commonNodeHeirarchyModel = commonNodeHeirarchyModel;
@@ -19,27 +18,31 @@ myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeSer
 		self.commonNodeHeirarchyModel.hasPersonalData = false;
 		self.isTopNavigationBtnDisabled = false;
 		self.commonNodeHeirarchyModel.isUserAssumeIdentity = false;
-		if(!self.commonNodeHeirarchyModel.user.isLogin){
+		if(!self.commonNodeHeirarchyModel.user.isLogin ){
 			self.getLoginPage();
-		} else
+		}
+		else
 		{
 			relocatePageToHomePage();
-			mngtHierarchyNodeServiceProvider.loadTopNode(function(loadResponce){
+			mngtHierarchyNodeServiceProvider.loadTopNode(function(loadResponce)
+			{
 				isNodeLoaded = loadResponce;
 				if(!isNodeLoaded)
 				{
 					getPopUpToasterMessage();
 					return;
 				}
-				mngtHierarchyNodeServiceProvider.loadNodeDetails(function(detailsResponce){
+				mngtHierarchyNodeServiceProvider.loadNodeDetails(function(detailsResponce)
+				{
 					isNodeLoaded = detailsResponce;
 					if( isNodeLoaded )
 					{
 						if(self.commonNodeHeirarchyModel.user.administrator) {
 							self.getAssumeIdentityDialogBox(isNodeLoaded);
-						} else{
-							var selectedNodeName = mngtHierarchyNodeServiceProvider.getLoginAsTopNode();
-							console.log("selectedNodeName", selectedNodeName);
+						}
+						else
+						{
+							var selectedNodeName = mngtHierarchyNodeServiceProvider.getLoginUserAsTopNode();
 							initialiseInsatnceVariabled(selectedNodeName);
 							canPageBeDisplayed(isNodeLoaded,true);
 						}
@@ -53,12 +56,14 @@ myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeSer
 		}
 	};
 
-	self.getLoginPage = function(){
+	self.getLoginPage = function()
+	{
 		self.commonNodeHeirarchyModel.isLogIn = false;
 		self.showPage = false;
-		mngtHierarchyNodeServiceProvider.getLoginPage(function(user){
-			console.log("user:", user);
-			self.init();
+		mngtHierarchyNodeServiceProvider.getLoginPage(function(isLogin)
+		{
+			if(isLogin) self.init();
+			else toaster.pop("error","ERROR!","An error occer while app was downloading data.");
 		});
 	};
 
@@ -74,7 +79,8 @@ myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeSer
 					self.accountTitle = "";
 					selectedNodeName = true;
 					$location.path("/templateAssumeIdentity");
-				} else
+				}
+				else
 				{
 					initialiseInsatnceVariabled(selectedNodeName);
 				}
@@ -83,13 +89,14 @@ myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeSer
 			});
 	};
 
-	var initialiseInsatnceVariabled = function(selectedNodeName){
+	var initialiseInsatnceVariabled = function(selectedNodeName)
+	{
 		self.isTopNavigationBtnDisabled = true;
 		self.accountTitle = "Profile of " + selectedNodeName;
 		self.commonNodeHeirarchyModel.isUserAssumeIdentity = true;
 		mngtHierarchyNodeServiceProvider.checkIfPersonalDetailsAreInseared();
 		var access = self.commonNodeHeirarchyModel.selectedTopNode.access;
-		self.hasPermission = (access == "admin" || access == "viewer") ? true : false; 
+		self.hasPermission = (access == "admin" || access == "viewer") ? true : false;
 	}
 
 	self.loadPage = function()
@@ -114,7 +121,7 @@ myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeSer
 		var pathToCurrentNode = pathToParent + (pathToParent.length == 0 ? "": ">") + nodes.name
 		allPath.push(pathToCurrentNode);
 		nodes.pathToNode = pathToCurrentNode;
-		self.commonNodeHeirarchyModel.allNodesDetails.push(nodes); 
+		self.commonNodeHeirarchyModel.allNodesDetails.push(nodes);
 		for(var i = 0; i < nodes.child.length; i++)
 		{
 			getAllPathToEachNode(nodes.child[i], pathToCurrentNode, allPath);
