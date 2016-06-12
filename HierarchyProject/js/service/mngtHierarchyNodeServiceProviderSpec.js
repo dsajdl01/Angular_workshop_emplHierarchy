@@ -11,6 +11,9 @@ describe('Service: mngtHierarchyNodeServiceProvider', function() {
             "comments": "Work with hard for our company.", "fullname": "Sandra Smith", "email": "s.smith@example.com", "password": "1234567890"}];
 	
 	var path = ["Sandra", "Sandra>Bob"];
+
+    var user = [{ "id": 100,"username": "bob","password": "1234567890","administrator": true},
+        {"id": 101,"username": "sandra","password": "1234567890","administrator": false}];
 	
 	beforeEach(module('myMngtHierarchyApp'));
 
@@ -49,7 +52,8 @@ describe('Service: mngtHierarchyNodeServiceProvider', function() {
 			allNodesDetails: nodesDetails,
 			rootNode: rootNode,
 			nodesDetails: nodesDetails,
-            selectedTopNode: rootNode[0] 
+            selectedTopNode: rootNode[0],
+            user: user[0]
 		};
 
 		$provide.value('hierarchyNodeService', hierarchyNodeServiceMock);
@@ -209,5 +213,33 @@ describe('Service: mngtHierarchyNodeServiceProvider', function() {
         service.checkIfPersonalDetailsAreInseared();
 
         expect(locationMock.path).not.toHaveBeenCalled();
+    });
+
+    it('should open lonin template when getLoginPage is call',function(){
+
+        spyOn(modalDialogBoxServiceMock, 'setTemplate');
+        spyOn(modalDialogBoxServiceMock, 'notify').and.callThrough();
+
+        modalDialogBoxServiceMock.showDialog = function () {
+            modalDialogBoxServiceMock.notify(true);
+        };
+
+        var callback = function(responce) {
+            expect(responce).toBeTruthy();
+            callbackCalled = true;
+        };
+
+        service.getLoginPage(callback);
+        expect(modalDialogBoxServiceMock.setTemplate).toHaveBeenCalledWith("js/views/login.html");
+        expect(callbackCalled).toBeTruthy();
+    });
+
+    it('should retuen return logn user when getLoginUserAsTopNode is called', function(){
+        expect(service.getLoginUserAsTopNode()).toEqual("Sandra");
+    });
+
+    it('should retuen return logn user when getLoginUserAsTopNode is called', function(){
+        commonNodeHeirarchyModelMock.user = user[1]
+        expect(service.getLoginUserAsTopNode()).toEqual("Bob");
     });
 });

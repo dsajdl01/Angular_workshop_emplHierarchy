@@ -36,10 +36,9 @@ function mngtHierarchyNodeServiceProvider(hierarchyNodeService, commonNodeHeirar
 		self.getLoginPage = function(callback){
 			modalDialogBoxService.setTemplate("js/views/login.html");
 			modalDialogBoxService.shareModalData = {}
-			modalDialogBoxService.notify = function(user)
+			modalDialogBoxService.notify = function(isLogin)
 			{
-				console.log("user in provider: ", user);
-				callback(user);
+				callback(isLogin);
             };
 			modalDialogBoxService.showDialog();
 		};
@@ -83,24 +82,28 @@ function mngtHierarchyNodeServiceProvider(hierarchyNodeService, commonNodeHeirar
 			return null;
 		};
 
-		self.getLoginAsTopNode = function(){
+		self.getLoginUserAsTopNode = function()
+		{
 			saveSelectedNodeFromId(commonNodeHeirarchyModel.user.id);
 			return commonNodeHeirarchyModel.selectedTopNode.name
 		}
 
 		self.checkIfPersonalDetailsAreInseared = function(){
 			var selectedDetails =	self.getSelectedNodeDetails(commonNodeHeirarchyModel.selectedTopNode.id);
-			if(selectedDetails.dob == null || selectedDetails.email == null){
+			if(selectedDetails.dob == null || selectedDetails.email == null)
+			{
 				commonNodeHeirarchyModel.hasPersonalData = true;
 				$location.path('/personalInfo');
 			}
 		}
 
-		var getNode = function(node, id){
+		var getNode = function(node, id)
+		{
 			if(node.id == id) return node;
 			var children = node.child
 			var res = null
-				for(var i = 0; res == null && i < children.length; i++){
+				for(var i = 0; res == null && i < children.length; i++)
+				{
 					res = getNode(children[i], id);
 				}
 			return res;
@@ -125,13 +128,13 @@ function mngtHierarchyNodeServiceProvider(hierarchyNodeService, commonNodeHeirar
 			};
 		};
 
-		var saveSelectedNodeFromId = function(userId){
+		var saveSelectedNodeFromId = function(userId)
+		{
 			var topNode = commonNodeHeirarchyModel.rootNode[0];
 			var selectedNode = (topNode.id == userId)? topNode : getNode(topNode, userId);
 			commonNodeHeirarchyModel.selectedTopNode = selectedNode;
 			commonNodeHeirarchyModel.selectedTopNode.isRootNode = true;
 			commonNodeHeirarchyModel.userSelectedNode = selectedNode;
-			console.log("node:", selectedNode);
 		}
 };
 	
