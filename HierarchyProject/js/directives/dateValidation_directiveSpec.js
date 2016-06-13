@@ -82,8 +82,7 @@ describe('directive: dateValidation', function() {
 		currentDate.setDate(currentDate.getDate() + 5);
 		var plusFiveDays = currentDate.toLocaleString();
 		var plusFiveDaysArray = plusFiveDays.split(",");
-		var fiveDateUp = swopDayWithMonth(plusFiveDaysArray[0]);
-				
+		var fiveDateUp = addZeroIfNecessary(plusFiveDaysArray[0]);
 		form.startDay.$setViewValue(fiveDateUp);
 		scope.$digest();
 
@@ -94,10 +93,10 @@ describe('directive: dateValidation', function() {
         expect(form.startDay.$invalid).toBe(true);
 	}); 
 
-    var swopDayWithMonth = function(date)
+    var addZeroIfNecessary = function(date)
     {
     	var dateArr = date.split("/");
-    	return addZero(dateArr[1]) +"/"+addZero(dateArr[0])+"/"+dateArr[2];
+    	return addZero(dateArr[0]) +"/"+addZero(dateArr[1])+"/"+dateArr[2];
     };
 
     var addZero = function(valueStr) {

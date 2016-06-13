@@ -21,30 +21,30 @@ describe('Service: calculateTimeService', function() {
     	var dateArray = today.toLocaleString().split(",");
 
     	// getting date from getCurrentDate() function
-    	swopDayWithMonth(dateArray[0]);
+    	addZeroIfNecessary(dateArray[0]);
     	var dateExcepted = splitDayMonthYearToArry(dateArray[0]);
     	var received = splitDayMonthYearToArry(service.getCurrentDate());
     	
     	expect(received.length).toBe(dateExcepted.length);
-    	expect(received[0]).toContain(dateExcepted[1]); // months 
-    	expect(received[1]).toContain(dateExcepted[0]); // day
+    	expect(received[0]).toContain(dateExcepted[0]); // day 
+    	expect(received[1]).toContain(dateExcepted[1]); // month
     	expect( received[2] ).toEqual( dateExcepted[2] );  // year
     });
 
     it('shoud calculate how many days are missing to complete starting', function(){
     	try {
 	    	var day7 = sevenDayAgo.split(",");
-	    	expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(swopDayWithMonth(day7[0]), 0)).toBe(6);
+	    	expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(addZeroIfNecessary(day7[0]), 0)).toBe(6);
 			var oneYear = updateYear(day7[0], 1);
-			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(swopDayWithMonth(oneYear), 1)).toBe(6);
+			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(addZeroIfNecessary(oneYear), 1)).toBe(6);
 			var oneYear = updateYear(day7[0], 2);
-			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(swopDayWithMonth(oneYear), 2)).toBe(6);
+			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(addZeroIfNecessary(oneYear), 2)).toBe(6);
 			var oneYear = updateYear(day7[0], 3);
-			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(swopDayWithMonth(oneYear), 3)).toBe(6);
+			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(addZeroIfNecessary(oneYear), 3)).toBe(6);
 			var oneYear = updateYear(day7[0], 4);
-			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(swopDayWithMonth(oneYear), 4)).toBe(6);
+			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(addZeroIfNecessary(oneYear), 4)).toBe(6);
 			var oneYear = updateYear(day7[0], 5);
-			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(swopDayWithMonth(oneYear), 5)).toBe(6);
+			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(addZeroIfNecessary(oneYear), 5)).toBe(6);
 		} catch (error) {
 		} 	
 	});
@@ -61,13 +61,13 @@ describe('Service: calculateTimeService', function() {
     it('should give a number of years from given date', function(){
     	var day7 = sevenDayAgo.split(",");
 		var fourYear = updateYear(day7[0], 4);
-		expect(service.calculateDiffYearToCurrentDayFromFormatDay(swopDayWithMonth(fourYear))).toBe(4);
+		expect(service.calculateDiffYearToCurrentDayFromFormatDay(addZeroIfNecessary(fourYear))).toBe(4);
 		var  plus7 = new Date();
 		plus7.setDate(plus7.getDate() + 1);
 		plus7 = plus7.toLocaleString();
 		plus7 = plus7.split(",");
 		fourYear = updateYear(plus7[0], 4);
-		expect(service.calculateDiffYearToCurrentDayFromFormatDay(swopDayWithMonth(fourYear))).toBe(3);
+		expect(service.calculateDiffYearToCurrentDayFromFormatDay(addZeroIfNecessary(fourYear))).toBe(3);
 
     })
 
@@ -78,9 +78,9 @@ describe('Service: calculateTimeService', function() {
 		return date.split("/");
 	};
 
-    var swopDayWithMonth = function(date){
+    var addZeroIfNecessary = function(date){
     	var dateArr = splitDayMonthYearToArry(date);
-    	return addZero(dateArr[1]) +"/"+addZero(dateArr[0])+"/"+dateArr[2];
+    	return addZero(dateArr[0]) +"/"+addZero(dateArr[1])+"/"+dateArr[2];
     };
 
     var updateYear = function(date, number){
