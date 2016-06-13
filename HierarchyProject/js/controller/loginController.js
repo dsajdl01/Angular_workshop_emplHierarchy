@@ -6,11 +6,13 @@ myMngtHierarchyApp.controller('loginController', [ 'commonNodeHeirarchyModel', '
     var userDetails;
     self.commonNodeHeirarchyModel = commonNodeHeirarchyModel;
 
-    self.init = function(){
+    self.init = function()
+    {
         self.user.username = "";
         self.user.password = "";
         self.failed = false;
         self.errorMessage = false;
+        self.commonNodeHeirarchyModel.user = {};
         hierarchyNodeService.getLoginDetails(function(userLogin)
         {
             userDetails = userLogin;
@@ -26,7 +28,6 @@ myMngtHierarchyApp.controller('loginController', [ 'commonNodeHeirarchyModel', '
       var user = isUserAndPasswordExist();
       if(user)
       {
-           console.log("login userDetails: ", self.user.username, self.user.password, true);
            self.commonNodeHeirarchyModel.user.isLogin = true;
            self.commonNodeHeirarchyModel.user.administrator = user.administrator;
            self.commonNodeHeirarchyModel.user.id = user.nodeId;
