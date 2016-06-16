@@ -23,8 +23,7 @@ describe('Controller: formController', function() {
 		mngtHierarchyProviderMock = {
 			getSelectedNodeDetails: function(nodeId){
 				if(nodeId == 101) return detailsNode[0];
-				else if (nodeId = 106) return detailsNode[1];
-				else return "unknown node Id";
+				else return detailsNode[1];
 			}
 		};
 

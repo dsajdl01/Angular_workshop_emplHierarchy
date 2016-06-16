@@ -20,13 +20,12 @@ describe('Controller: helpMyProfileController', function(){
 		mngtHierarchyProviderMock = {
 			getSelectedNodeDetails: function(nodeId) {
 				if(nodeId == 101) return detailsNode[0];
-				else if (nodeId = 102) return detailsNode[1];
-				else return null;
+				else return detailsNode[1];
 			}
 		};
 
 		locationMock = {
-			path: function(path) {}
+			path: ""
 		}
 
 		$provide.value('commonNodeHeirarchyModel', commonNodeHeirarchyModelMock);

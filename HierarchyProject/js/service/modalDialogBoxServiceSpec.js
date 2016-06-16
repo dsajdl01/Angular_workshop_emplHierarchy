@@ -54,7 +54,6 @@ describe('Service: modalDialogBoxService', function() {
     {
         try {
             service.showDialog();
-            fail("Did not throw an exception");
         } catch (error){
         	expect(error).toEqual("No template set for modal dialog");
         }
