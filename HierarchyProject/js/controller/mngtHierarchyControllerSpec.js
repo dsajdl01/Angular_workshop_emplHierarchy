@@ -4,7 +4,7 @@ describe('Controller: mngtHierarchyController', function() {
 
 	var ctrl, mockMngtHierarchyProvider, mockCommonNodeHeirarchyModel, mockLocation, mockToaster, mockCalculateTimeService;
 
-	var login = [{"isLogin": true, "administrator": true}, {"isLogin": true, "administrator": false }];
+	var login = [{"isLogin": true, "administrator": true}, {"isLogin": true, "administrator": false }, {"isLogin": false, "administrator": false }];
 
 	var node = [{
 			"name": "Sandra",
@@ -68,11 +68,7 @@ describe('Controller: mngtHierarchyController', function() {
 							selectedNodeName("Fred");
 						}
 					} else {
-						if(this.isFirstNaneSelected){
-							selectedNodeName("Sandra");
-						} else {
-							selectedNodeName("David");
-						}
+						selectedNodeName("Sandra");
 					}
 				} else {
 					selectedNodeName(false);
@@ -184,19 +180,40 @@ describe('Controller: mngtHierarchyController', function() {
     	expect(ctrl.hasPermission).toBeFalsy();
     });
 
+    it('should pop up toaster when init is called and user is not login that fail', function()
+    {
+        mockMngtHierarchyProvider.isSubNode = false;
+        mockMngtHierarchyProvider.isFirstNaneSelected = false;
+        mockMngtHierarchyProvider.selNodeSucceed = true;
+        mockMngtHierarchyProvider.loadSucceed = false;
+        mockMngtHierarchyProvider.detailsSuccesd = false;
+        mockCommonNodeHeirarchyModel.selectedTopNode = node[0].child[1];
+        mockCommonNodeHeirarchyModel.user = login[2];
+        mockMngtHierarchyProvider.islogin = false;
+
+        spyOn(mockMngtHierarchyProvider, 'getLoginPage').and.callThrough();
+        spyOn(mockToaster, 'pop');
+
+        ctrl.init();
+
+        expect(ctrl.commonNodeHeirarchyModel.isLogIn).toBeFalsy();
+        expect(mockMngtHierarchyProvider.getLoginPage).toHaveBeenCalled();
+        expect(mockToaster.pop).toHaveBeenCalledWith("error","ERROR!","An error occer while app was downloading data.");
+    });
+
     it('should pop up toaster message when loadTopNode() fail to load data', function()
     {
     	mockMngtHierarchyProvider.loadSucceed = false;
     	spyOn(mockMngtHierarchyProvider, 'loadTopNode').and.callThrough();
+        spyOn(mockToaster, 'pop');
 
     	ctrl.init();
 
-    	spyOn(mockToaster, 'pop');
     	expect(ctrl.showPage).toBeFalsy();
     	expect(ctrl.isTopNavigationBtnDisabled).toBeFalsy();
     	expect(ctrl.accountTitle).toBeUndefined;
     	expect(ctrl.isTopNavigationBtnDisabled).toBeFalsy();
-
+        expect(mockToaster.pop).toHaveBeenCalledWith("error","Error occer while app was downloading data.");
     });
 
     it('should pop up toaster message when loadNodeDetails() falil to load data', function()
@@ -206,12 +223,14 @@ describe('Controller: mngtHierarchyController', function() {
 
     	spyOn(mockMngtHierarchyProvider, 'loadTopNode').and.callThrough();
     	spyOn(mockMngtHierarchyProvider, 'loadNodeDetails').and.callThrough();
-
     	spyOn(mockToaster, 'pop');
+
+        ctrl.init();
     	expect(ctrl.showPage).toBeFalsy();
     	expect(ctrl.isTopNavigationBtnDisabled).toBeFalsy();
     	expect(ctrl.accountTitle).toBeUndefined;
     	expect(ctrl.isTopNavigationBtnDisabled).toBeFalsy();
+        expect(mockToaster.pop).toHaveBeenCalledWith("error","Error occer while app was downloading data.");
     });
 
     it('should assume identity as bob when administrator is true, getAssumeIdentityDialogBox is displayed and user select bob', function()

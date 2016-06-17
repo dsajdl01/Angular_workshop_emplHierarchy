@@ -7,7 +7,7 @@ describe('Service: mngtHierarchyNodeServiceProvider', function() {
 	var nodesDetails = [
 		{"id": 100, "pathToNode": "Sandra","dob": "28/02/1976","start": "09/12/2001","possition": "Senior Developer",
             "comments": "Work with smile in our company.", "fullname": "Bob Bobek", "email": null, "password": "1234567890"},
-		{"id": 101, "pathToNode": "Sandra>Bod", "dob": "28/02/1981","start": "05/02/2005","possition": "Junior Developer",
+		{"id": 101, "pathToNode": "Sandra>Bob", "dob": "28/02/1981","start": "05/02/2005","possition": "Junior Developer",
             "comments": "Work with hard for our company.", "fullname": "Sandra Smith", "email": "s.smith@example.com", "password": "1234567890"}];
 	
 	var path = ["Sandra", "Sandra>Bob"];
@@ -194,6 +194,11 @@ describe('Service: mngtHierarchyNodeServiceProvider', function() {
     it('should return selected node details when getSelectedNodeDetails is called II', function()
     {
     	expect(service.getSelectedNodeDetails(101)).toEqual(nodesDetails[1]);
+    });
+
+    it('should return null when getSelectedNodeDetails is called with fake id', function()
+    {
+        expect(service.getSelectedNodeDetails(35)).toBeNull();
     });
 
     it('should redirect to personalInfo page when checkIfPersonalDetailsAreInseared() is called and data is missing', function(){

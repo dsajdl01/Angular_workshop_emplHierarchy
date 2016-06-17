@@ -265,7 +265,6 @@ describe('Controller: nodeController', function() {
         expect(ctrl.workSince).toEqual("Bob has been working for our company since 20/07/2010");
         expect(ctrl.commensData).toEqual("Concentrate on front end especially on AngulaJS.");
         expect(ctrl.detailsTitle).toEqual("Bob comments:");
-        console.log(selectedNode[0].child[0])
     });
 
     it('should put a node as selected node and initilaze variable when userSelectedNode is called III', function()
