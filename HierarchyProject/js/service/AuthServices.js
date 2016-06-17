@@ -33,7 +33,7 @@ function Auth(commonNodeHeirarchyModel, mngtHierarchyNodeServiceProvider)
         }
         return hasEnterPeronalDate(view);
     };
-     
+
     self.userHasPermission = function(permissions)
     {
         var found = false;
@@ -63,16 +63,32 @@ function Auth(commonNodeHeirarchyModel, mngtHierarchyNodeServiceProvider)
         {
             return true;
         }
-        return isPersonalDataEntered(view.personalDataEntry);
-    }
+        try
+        {
+            return isPersonalDataEntered(view.personalDataEntry);
+        }
+        catch (err)
+        {
+           return false;
+        }
+    };
 
     var isPersonalDataEntered = function(personalData)
     {
         var details = getDetails();
         var result = false;
         angular.forEach(personalData, function(data, index) {
-            if(!getDetailsValue(data, details)){
-                result = true;
+            try
+            {
+                if(!getDetailsValue(data, details))
+                {
+                    result = true;
+                }
+            }
+            catch(err)
+            {
+                console.log("ERROR:", err);
+                throw Error();
             }
         });
         return result;
@@ -87,9 +103,9 @@ function Auth(commonNodeHeirarchyModel, mngtHierarchyNodeServiceProvider)
             case 'dob':
                 return details.dob;
             default:
-                return null;
+                 throw "incorrect data!";
         }
-    }
+    };
 
     var getDetails = function()
     {
