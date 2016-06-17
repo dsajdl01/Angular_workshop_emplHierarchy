@@ -138,6 +138,16 @@ describe('Controller: Auth', function() {
     	expect(service.checkPermissionForView(view)).toBeTruthy();
     });
 
+     it('should return false (access view) if the view has retquireAuth to true, permission to admin and personalDataEntry has incorrect valeu', function(){
+        commonNodeHeirarchyModelMock.userSelectedNode = {"id": 102}
+        view.requiresAuthentication = true;
+        view.requirePersonalDataEntry = true;
+        view.permissions = ["admin", "viewer"];
+        view.personalDataEntry = ["fullname", "email"];
+
+        expect(service.checkPermissionForView(view)).toBeFalsy();
+    });
+
     it('should return true (access view) if the view has retquireAuth to true, permission to admin and personalDataEntry contains only email', function(){
     	details[1].email = "adam@example.co.uk";
     	commonNodeHeirarchyModelMock.userSelectedNode = {"id": 102}
