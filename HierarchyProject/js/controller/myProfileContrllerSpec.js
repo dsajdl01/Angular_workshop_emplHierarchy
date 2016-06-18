@@ -25,13 +25,12 @@ describe('Controller: myProfileContrller', function() {
 		mngtHierarchyProviderMock = {
 			getSelectedNodeDetails: function(id) {
 				if(id == 101) return details[0];
-				else if (id == 102) return details[1];
-				else return null;
+				else return details[1];
 			}
 		};
 
 		toasterMock = {
-			pop: function(error,message, option) {}
+			pop: ""
 		};
 
 		$provide.value('commonNodeHeirarchyModel', commonNodeHeirarchyModelMock);

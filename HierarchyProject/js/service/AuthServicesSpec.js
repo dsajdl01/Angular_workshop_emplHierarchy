@@ -11,6 +11,8 @@ describe('Controller: Auth', function() {
 		"comments": "Working as Java developer.","fullname": "Adam Smith","email":
 		null,"password": "1234"}];
 
+    var userDetails = {"isLogin": true};
+
 	beforeEach(module('myMngtHierarchyApp'));
 
 	beforeEach(module(function($provide)
@@ -18,7 +20,8 @@ describe('Controller: Auth', function() {
 		commonNodeHeirarchyModelMock = {
 			isUserAssumeIdentity: true,
 			selectedTopNode: {'access': 'admin'},
-			userSelectedNode: {"id": 101}
+			userSelectedNode: {"id": 101},
+            user: userDetails
 		};
 
 		mngtHierarchyProviderMock = {
@@ -40,6 +43,12 @@ describe('Controller: Auth', function() {
     it('should be defined - Controller', function()
     {
         expect(service).toBeDefined();
+    });
+
+    it('should return false if the user is not login', function(){
+        var userDt = {"isLogin": false};
+        commonNodeHeirarchyModelMock.user = userDt;
+        expect(service.checkPermissionForView(view)).toBeFalsy();
     });
 
     it('Should return true if the requireAssumedIdentity is undefined', function(){
