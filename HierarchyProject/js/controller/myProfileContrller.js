@@ -11,7 +11,7 @@ myMngtHierarchyApp.controller('myProfileContrller',['commonNodeHeirarchyModel', 
 		self.showInputForms = false;
 		self.btnName = "Save";
 		var emplDetails = getEmlpDetails();
-		self.username = commonNodeHeirarchyModel.user.username;
+		self.username = getUsername();
 		self.employeeName = commonNodeHeirarchyModel.userSelectedNode.name;
 		self.Access = commonNodeHeirarchyModel.userSelectedNode.access;
 		self.dob = emplDetails.dob;
@@ -25,6 +25,10 @@ myMngtHierarchyApp.controller('myProfileContrller',['commonNodeHeirarchyModel', 
 		self.confirmPassword = null;
 		self.btnEqualValue = true;
 		setOriginalValues();
+	}
+
+	var getUsername = function(){
+		return commonNodeHeirarchyModel.user.administrator ? "confidential": commonNodeHeirarchyModel.user.username;
 	}
 
 	self.showPasswordFields = function()
