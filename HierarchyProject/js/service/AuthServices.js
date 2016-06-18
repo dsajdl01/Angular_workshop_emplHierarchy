@@ -20,6 +20,11 @@ function Auth(commonNodeHeirarchyModel, mngtHierarchyNodeServiceProvider)
 
     self.checkPermissionForView = function(view)
     {
+        if(!commonNodeHeirarchyModel.user.isLogin)
+        {
+            return false;
+        }
+
         if (!view.requiresAuthentication)
         {
             return true;
