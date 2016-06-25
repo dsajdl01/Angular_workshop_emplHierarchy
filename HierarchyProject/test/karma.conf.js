@@ -30,6 +30,7 @@ module.exports = function(config) {
         'vendor/angular-ui-select/dist/select.js',
 
         'app.js',
+        'appSpec.js',
         'controller/*.js',
         'directives/*.js',
         'service/*.js'
