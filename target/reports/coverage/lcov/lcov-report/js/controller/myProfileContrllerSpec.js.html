@@ -1,0 +1,1079 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js/controller/myProfileContrllerSpec.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">js/controller/</a> myProfileContrllerSpec.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>222/222</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>20/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>221/221</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">describe('Controller: myProfileContrller', function() {
+&nbsp;
+	var ctrl, commonNodeHeirarchyModelMock, mngtHierarchyProviderMock, toasterMock;
+&nbsp;
+	var selectedNode = [{"name": "Bob", "id": 101,"parentsId": 100,"access": "admin",
+						"child": [{"name": "Adam","id": 102,"parentsId": 101,"access": "user",
+								"child": [] }] }];
+	var details = [{"id": 101, "dob": "18/10/1973", "start": "28/09/2006","possition": "Developer",
+		"comments": "Working as full-stacker developer.","fullname": "Bob Freeman","email":
+		"bob.freeman@example.co.uk","password": "1234"},
+		{"id": 102, "dob": null, "start": "21/02/2008","possition": "Designer",
+		"comments": "Working as Java developer.","fullname": "Adam Smith","email":
+		null,"password": "1234"}];
+    var user = [{ "username": "bob"}, {"username": "adam"}]
+&nbsp;
+	beforeEach(module('myMngtHierarchyApp'));
+&nbsp;
+	beforeEach(module(function($provide)
+	{   
+		commonNodeHeirarchyModelMock = {
+			userSelectedNode: selectedNode[0],
+            user: user[0]
+		};
+&nbsp;
+		mngtHierarchyProviderMock = {
+			getSelectedNodeDetails: function(id) {
+				if(id == 101) return details[0];
+				else return details[1];
+			}
+		};
+&nbsp;
+		toasterMock = {
+			pop: ""
+		};
+&nbsp;
+		$provide.value('commonNodeHeirarchyModel', commonNodeHeirarchyModelMock);
+		$provide.value('mngtHierarchyNodeServiceProvider', mngtHierarchyProviderMock);
+		$provide.value('toaster', toasterMock);
+	}));
+&nbsp;
+	beforeEach(inject(function($controller)
+	{
+        ctrl = $controller('myProfileContrller');
+    }));
+&nbsp;
+    it('should be defined - Controller', function()
+    {
+        expect(ctrl).toBeDefined();
+    });
+&nbsp;
+    it('should initialize instance variables when init() function is called', function()
+    {
+    	ctrl.init();
+&nbsp;
+    	expect(ctrl.showInputForms).toBeFalsy();
+        expect(ctrl.username).toEqual("bob");
+		expect(ctrl.btnName).toEqual("Save");
+		expect(ctrl.employeeName).toEqual("Bob");
+		expect(ctrl.Access).toEqual("admin");
+		expect(ctrl.dob).toEqual("18/10/1973");
+		expect(ctrl.email).toEqual("bob.freeman@example.co.uk");
+		expect(ctrl.position).toEqual("Developer");
+		expect(ctrl.startDay).toEqual("28/09/2006");
+		expect(ctrl.employeeFullName).toEqual("Bob Freeman");
+		expect(ctrl.hasAccess).toBeFalsy();
+		expect(ctrl.oldPassword).toBeNull();
+		expect(ctrl.newPassword).toBeNull();
+		expect(ctrl.confirmPassword).toBeNull();
+		expect(ctrl.btnEqualValue).toBeTruthy();
+    	
+		assertEqualOriginalValues();
+    });
+&nbsp;
+    it('should initialize instance variables when init() function is called - II', function()
+    {
+    	commonNodeHeirarchyModelMock.userSelectedNode = selectedNode[0].child[0];
+        commonNodeHeirarchyModelMock.user = user[1]
+&nbsp;
+    	ctrl.init();
+&nbsp;
+		expect(ctrl.showInputForms).toBeFalsy();
+		expect(ctrl.btnName).toEqual("Save");
+        expect(ctrl.username).toEqual("adam");
+		expect(ctrl.employeeName).toEqual("Adam");
+		expect(ctrl.Access).toEqual("user");
+		expect(ctrl.dob).toBeNull();
+		expect(ctrl.email).toBeNull();
+		expect(ctrl.position).toEqual("Designer");
+		expect(ctrl.startDay).toEqual("21/02/2008");
+		expect(ctrl.employeeFullName).toEqual("Adam Smith");
+		expect(ctrl.hasAccess).toBeTruthy();
+		expect(ctrl.oldPassword).toBeNull();
+		expect(ctrl.newPassword).toBeNull();
+		expect(ctrl.confirmPassword).toBeNull();
+		expect(ctrl.btnEqualValue).toBeTruthy();
+&nbsp;
+		assertEqualOriginalValues_II();
+    });
+&nbsp;
+    it('should open and close pa fields when showPasswordFields is called', function()
+    {
+    	ctrl.init();
+    	expect(ctrl.showInputForms).toBeFalsy();
+    	// user open password's fields
+    	ctrl.showPasswordFields();
+    	expect(ctrl.showInputForms).toBeTruthy();
+    	// user can modified password's fields
+    	ctrl.oldPassword = "password";
+		ctrl.newPassword = "bflmpsvz";
+		ctrl.confirmPassword = "bflmpsvz";
+		// user close password's fields
+    	ctrl.showPasswordFields();
+    	expect(ctrl.showInputForms).toBeFalsy();
+    	expect(ctrl.oldPassword).toBeNull();
+		expect(ctrl.newPassword).toBeNull();
+		expect(ctrl.confirmPassword).toBeNull();
+    });
+&nbsp;
+    it('should disable and rename buton when values are not same as original', function()
+    {
+    	ctrl.init();
+    	// button should be disable and name Save
+    	expect(ctrl.btnName).toEqual("Save");
+    	expect(ctrl.btnEqualValue).toBeTruthy();
+    	//user modify value
+    	ctrl.employeeName = "Bobik";
+    	ctrl.makeChange();
+    	expect(ctrl.btnName).toEqual("Save");
+    	expect(ctrl.btnEqualValue).toBeFalsy();
+    	// user add back value
+    	ctrl.employeeName = "Bob";
+    	ctrl.makeChange();
+    	expect(ctrl.btnName).toEqual("Done");
+    	expect(ctrl.btnEqualValue).toBeTruthy();
+    	// user modified it again
+    	ctrl.email = "bob.freeman@example.com";
+    	ctrl.makeChange();
+    	expect(ctrl.btnName).toEqual("Save");
+    	expect(ctrl.btnEqualValue).toBeFalsy();
+    });
+&nbsp;
+    it('should save personal data and called toaster when all data passed  and save function is called', function()
+    {
+    	ctrl.init();
+    	ctrl.employeeName = "Bobik";
+    	ctrl.employeeFullName = "Bobik Freeman";
+&nbsp;
+    	expect(ctrl.originalEmplName).toEqual("Bob");
+    	expect(ctrl.originalEmplFullName).toEqual("Bob Freeman");
+    	spyOn(toasterMock, 'pop');
+&nbsp;
+    	ctrl.save();
+&nbsp;
+    	expect(ctrl.originalEmplName).toEqual("Bobik");
+    	expect(ctrl.originalEmplFullName).toEqual("Bobik Freeman");
+    	expect(toasterMock.pop).toHaveBeenCalledWith("success","Done", "The data was successfully saved.");
+&nbsp;
+    	ctrl.employeeName = "Bob";
+    	ctrl.employeeFullName = "Bob Freeman";
+&nbsp;
+    	ctrl.save();
+    	expect(ctrl.originalEmplName).toEqual("Bob");
+    	expect(ctrl.originalEmplFullName).toEqual("Bob Freeman");
+    	expect(toasterMock.pop).toHaveBeenCalledWith("success","Done", "The data was successfully saved.");
+    });
+&nbsp;
+    it('should display error  message when user try to save and enter only new password', function()
+    {
+    	ctrl.init();
+    	ctrl.showPasswordFields();
+&nbsp;
+    	expect(ctrl.old_passwordMsg).toBeNull();
+		expect(ctrl.confirm_passwordMsg).toBeNull();
+		expect(ctrl.new_passwordMsg).toBeNull();
+&nbsp;
+    	ctrl.newPassword = "newPassword";
+    	ctrl.save();
+&nbsp;
+    	expect(ctrl.old_passwordMsg).toEqual("Current password is required.");
+        expect(ctrl.confirm_passwordMsg).toBeTruthy();
+        expect(ctrl.new_passwordMsg).toBeNull();
+    });
+&nbsp;
+     it('should display error  message when user try to save and enter only old password', function()
+     {
+    	ctrl.init();
+    	ctrl.showPasswordFields();
+&nbsp;
+    	expect(ctrl.old_passwordMsg).toBeNull();
+		expect(ctrl.confirm_passwordMsg).toBeNull();
+		expect(ctrl.new_passwordMsg).toBeNull();
+&nbsp;
+    	ctrl.oldPassword = "1234";
+&nbsp;
+    	ctrl.save();
+    	expect(ctrl.old_passwordMsg).toBeNull();
+        expect(ctrl.confirm_passwordMsg).toBeTruthy();
+        expect(ctrl.new_passwordMsg).toBeTruthy();
+    });
+&nbsp;
+     it('should display error  message when user try to save and enter only confirm password', function()
+     {
+    	ctrl.init();
+    	ctrl.showPasswordFields();
+&nbsp;
+    	expect(ctrl.old_passwordMsg).toBeNull();
+		expect(ctrl.confirm_passwordMsg).toBeNull();
+		expect(ctrl.new_passwordMsg).toBeNull();
+&nbsp;
+    	ctrl.confirmPassword = "newPassword";
+&nbsp;
+    	ctrl.save();
+    	expect(ctrl.old_passwordMsg).toEqual("Current password is required.");
+        expect(ctrl.confirm_passwordMsg).toBeNull();
+        expect(ctrl.new_passwordMsg).toBeTruthy();
+    });
+&nbsp;
+    it('should display error  message when user try to save and enter old password and confirm password', function()
+    {
+    	ctrl.init();
+    	ctrl.showPasswordFields();
+&nbsp;
+    	expect(ctrl.old_passwordMsg).toBeNull();
+		expect(ctrl.confirm_passwordMsg).toBeNull();
+		expect(ctrl.new_passwordMsg).toBeNull();
+&nbsp;
+    	ctrl.oldPassword = "1234";
+    	ctrl.confirmPassword = "newPassword";
+&nbsp;
+    	ctrl.save();
+    	expect(ctrl.old_passwordMsg).toBeNull();
+        expect(ctrl.confirm_passwordMsg).toBeNull();
+        expect(ctrl.new_passwordMsg).toBeTruthy();
+    });
+&nbsp;
+    it('should display error  message when user try to save and enter old password and new password', function()
+    {
+    	ctrl.init();
+    	ctrl.showPasswordFields();
+&nbsp;
+    	expect(ctrl.old_passwordMsg).toBeNull();
+		expect(ctrl.confirm_passwordMsg).toBeNull();
+		expect(ctrl.new_passwordMsg).toBeNull();
+&nbsp;
+    	ctrl.oldPassword = "1234";
+    	ctrl.newPassword = "newPassword";
+&nbsp;
+    	ctrl.save();
+    	expect(ctrl.old_passwordMsg).toBeNull();
+        expect(ctrl.confirm_passwordMsg).toBeTruthy();
+        expect(ctrl.new_passwordMsg).toBeNull();
+    });
+&nbsp;
+    it('should display error  message when user try to save and enter new password and confirm password', function()
+    {
+    	ctrl.init();
+    	ctrl.showPasswordFields();
+&nbsp;
+    	expect(ctrl.old_passwordMsg).toBeNull();
+		expect(ctrl.confirm_passwordMsg).toBeNull();
+		expect(ctrl.new_passwordMsg).toBeNull();
+&nbsp;
+    	ctrl.confirmPassword = "newPassword";
+    	ctrl.newPassword = "newPassword";
+&nbsp;
+    	ctrl.save();
+    	expect(ctrl.old_passwordMsg).toEqual("Current password is required.");
+        expect(ctrl.confirm_passwordMsg).toBeNull();
+        expect(ctrl.new_passwordMsg).toBeNull();
+    });
+&nbsp;
+    it('should display error  message when user try to save and enter incorrect old password', function()
+    {
+    	ctrl.init();
+    	ctrl.showPasswordFields();
+&nbsp;
+    	expect(ctrl.old_passwordMsg).toBeNull();
+		expect(ctrl.confirm_passwordMsg).toBeNull();
+		expect(ctrl.new_passwordMsg).toBeNull();
+&nbsp;
+    	ctrl.oldPassword = "whatEver";
+    	ctrl.newPassword = "newPassword";
+    	ctrl.confirmPassword = "newPassword";
+&nbsp;
+    	ctrl.save();
+    	expect(ctrl.old_passwordMsg).toEqual("Incorrect Current Password");
+        expect(ctrl.confirm_passwordMsg).toBeNull();
+        expect(ctrl.new_passwordMsg).toBeNull();
+    });
+&nbsp;
+    it('should save personal data and assgn passwords instance to null when save is called and all data is entered', function()
+    {
+    	ctrl.init();
+    	ctrl.showPasswordFields();
+&nbsp;
+    	expect(ctrl.old_passwordMsg).toBeNull();
+		expect(ctrl.confirm_passwordMsg).toBeNull();
+		expect(ctrl.new_passwordMsg).toBeNull();
+    	spyOn(toasterMock, 'pop');
+&nbsp;
+    	ctrl.oldPassword = "1234";
+    	ctrl.newPassword = "newPassword";
+    	ctrl.confirmPassword = "newPassword";
+&nbsp;
+    	ctrl.save();
+&nbsp;
+    	expect(ctrl.old_passwordMsg).toBeNull();
+        expect(ctrl.confirm_passwordMsg).toBeNull();
+        expect(ctrl.new_passwordMsg).toBeNull();
+        expect(toasterMock.pop).toHaveBeenCalledWith("success","Done", "The data was successfully saved.");
+        assertEqualOriginalValues();
+    });
+&nbsp;
+	var assertEqualOriginalValues = function()
+	{
+		expect(ctrl.originalEmplName).toEqual("Bob");
+		expect(ctrl.originalDob).toEqual("18/10/1973");
+		expect(ctrl.originalEmail).toEqual("bob.freeman@example.co.uk");
+		expect(ctrl.originalPosition).toEqual("Developer");
+		expect(ctrl.originalStartDate).toEqual("28/09/2006");
+		expect(ctrl.originalEmplFullName).toEqual("Bob Freeman");
+		expect(ctrl.originalOldPassword).toBeNull();
+		expect(ctrl.originalNewPassword).toBeNull();
+		expect(ctrl.originalConfirmPassword).toBeNull();
+	};
+&nbsp;
+	var assertEqualOriginalValues_II = function()
+	{
+		expect(ctrl.originalEmplName).toEqual("Adam");
+		expect(ctrl.originalDob).toBeNull();
+		expect(ctrl.originalEmail).toBeNull();
+		expect(ctrl.originalPosition).toEqual("Designer");
+		expect(ctrl.originalStartDate).toEqual("21/02/2008");
+		expect(ctrl.originalEmplFullName).toEqual("Adam Smith");
+		expect(ctrl.originalOldPassword).toBeNull();
+		expect(ctrl.originalNewPassword).toBeNull();
+		expect(ctrl.originalConfirmPassword).toBeNull();
+	};
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 26 2016 22:20:10 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

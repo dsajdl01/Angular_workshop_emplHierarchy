@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js/service/AuthServicesSpec.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">js/service/</a> AuthServicesSpec.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>112/112</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>25/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>111/111</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">describe('Controller: Auth', function() {
+&nbsp;
+	var service, commonNodeHeirarchyModelMock, mngtHierarchyProviderMock;
+&nbsp;
+	var view = {};
+&nbsp;
+	var details = [{"id": 101, "dob": "18/10/1973", "start": "28/09/2006","possition": "Developer",
+		"comments": "Working as full-stacker developer.","fullname": "Bob Freeman","email":
+		"bob.freeman@example.co.uk","password": "1234"},
+		{"id": 102, "dob": null, "start": "21/02/2008","possition": "Developer",
+		"comments": "Working as Java developer.","fullname": "Adam Smith","email":
+		null,"password": "1234"}];
+&nbsp;
+    var userDetails = {"isLogin": true};
+&nbsp;
+	beforeEach(module('myMngtHierarchyApp'));
+&nbsp;
+	beforeEach(module(function($provide)
+	{
+		commonNodeHeirarchyModelMock = {
+			isUserAssumeIdentity: true,
+			selectedTopNode: {'access': 'admin'},
+			userSelectedNode: {"id": 101},
+            user: userDetails
+		};
+&nbsp;
+		mngtHierarchyProviderMock = {
+			getSelectedNodeDetails: function(nodeId){
+				if(nodeId == 101) return details[0]
+				else return details[1]
+			}
+		};
+&nbsp;
+		$provide.value("mngtHierarchyNodeServiceProvider", mngtHierarchyProviderMock);
+		$provide.value("commonNodeHeirarchyModel", commonNodeHeirarchyModelMock);
+	}));
+&nbsp;
+	beforeEach(inject(function($injector, _$httpBackend_) {
+		httpBackend = _$httpBackend_;
+		service = $injector.get('Auth');
+	}));
+&nbsp;
+    it('should be defined - Controller', function()
+    {
+        expect(service).toBeDefined();
+    });
+&nbsp;
+    it('should return false if the user is not login', function(){
+        var userDt = {"isLogin": false};
+        commonNodeHeirarchyModelMock.user = userDt;
+        expect(service.checkPermissionForView(view)).toBeFalsy();
+    });
+&nbsp;
+    it('Should return true if the requireAssumedIdentity is undefined', function(){
+&nbsp;
+    	expect(service.checkIfAssumedIdentity(view)).toBeTruthy()
+    });
+&nbsp;
+    it('Should return true if the requireAssumedIdentity is false', function(){
+    	view.requireAssumedIdentity = false;
+    	expect(service.checkIfAssumedIdentity(view)).toBeTruthy();
+    });
+&nbsp;
+    it('should return true if the user assume identity and page require assume identity', function(){
+    	view.requireAssumedIdentity = true;
+    	expect(service.checkIfAssumedIdentity(view)).toBeTruthy();
+    });
+&nbsp;
+    it('should return false if the user did not assume identity and page require assume identity', function(){
+    	commonNodeHeirarchyModelMock.isUserAssumeIdentity = false;
+    	view.requireAssumedIdentity = true;
+&nbsp;
+    	expect(service.checkIfAssumedIdentity(view)).toBeFalsy();
+    });
+&nbsp;
+    it('should return true if view does not have defined permission', function(){
+    	expect(service.checkPermissionForView(view)).toBeTruthy();
+    });
+&nbsp;
+    it('should return true if view has requiresAuthentication set to false', function(){
+    	view.requiresAuthentication = false;
+    	expect(service.checkPermissionForView(view)).toBeTruthy();
+    });
+&nbsp;
+     it('should return true if view has requiresAuthentication set true and permission IS undefined', function(){
+    	view.requiresAuthentication = true;
+    	view.permissions = undefined;
+&nbsp;
+    	expect(service.checkPermissionForView(view)).toBeTruthy();
+    });
+&nbsp;
+    it('should return true if view has requiresAuthentication set true and permission set to view and admin', function(){
+    	view.requiresAuthentication = true;
+    	view.permissions = ["admin", "viewer"];
+&nbsp;
+    	expect(service.checkPermissionForView(view)).toBeTruthy();
+    });
+&nbsp;
+    it('should return false if view has requiresAuthentication set to true and permission set to view and user', function(){
+    	view.requiresAuthentication = true;
+    	view.permissions = ["user", "viewer"];
+&nbsp;
+    	expect(service.checkPermissionForView(view)).toBeFalsy();
+    });
+&nbsp;
+    it('should return false if view has requiresAuthentication set to true, permission to view and admin and selectedTopNode is user', function(){
+    	commonNodeHeirarchyModelMock.selectedTopNode.access = "user";
+    	view.requiresAuthentication = true;
+    	view.permissions = ["admin", "viewer"];
+&nbsp;
+    	expect(service.checkPermissionForView(view)).toBeFalsy();
+    });
+&nbsp;
+    it('should return true if the view has retquireAuth to true, permission to admin and personalDataEntry is undefined', function(){
+    	view.requiresAuthentication = true;
+    	view.permissions = ["admin", "viewer"];
+    	view.personalDataEntry = undefined;
+&nbsp;
+    	expect(service.checkPermissionForView(view)).toBeTruthy();
+    });
+&nbsp;
+    it('should return true (access view) if the view has retquireAuth to true, permission to admin and personalDataEntry undefined', function(){
+    	view.requiresAuthentication = true;
+    	view.requirePersonalDataEntry = true;
+    	view.permissions = ["admin", "viewer"];
+    	view.personalDataEntry = undefined;
+&nbsp;
+    	expect(service.checkPermissionForView(view)).toBeTruthy();
+    });
+&nbsp;
+    it('should return false (not access view) if the view has retquireAuth to true, permission to admin and personalDataEntry is entered', function(){
+    	view.requiresAuthentication = true;
+    	view.requirePersonalDataEntry = true;
+    	view.permissions = ["admin", "viewer"];
+    	view.personalDataEntry = ["email", "dob"];
+&nbsp;
+    	expect(service.checkPermissionForView(view)).toBeFalsy();
+    });
+&nbsp;
+    it('should return true (access view) if the view has retquireAuth to true, permission to admin and personalDataEntry is not entered', function(){
+    	commonNodeHeirarchyModelMock.userSelectedNode = {"id": 102}
+    	view.requiresAuthentication = true;
+    	view.requirePersonalDataEntry = true;
+    	view.permissions = ["admin", "viewer"];
+    	view.personalDataEntry = ["email", "dob"];
+&nbsp;
+    	expect(service.checkPermissionForView(view)).toBeTruthy();
+    });
+&nbsp;
+     it('should return false (access view) if the view has retquireAuth to true, permission to admin and personalDataEntry has incorrect valeu', function(){
+        commonNodeHeirarchyModelMock.userSelectedNode = {"id": 102}
+        view.requiresAuthentication = true;
+        view.requirePersonalDataEntry = true;
+        view.permissions = ["admin", "viewer"];
+        view.personalDataEntry = ["fullname", "email"];
+&nbsp;
+        expect(service.checkPermissionForView(view)).toBeFalsy();
+    });
+&nbsp;
+    it('should return true (access view) if the view has retquireAuth to true, permission to admin and personalDataEntry contains only email', function(){
+    	details[1].email = "adam@example.co.uk";
+    	commonNodeHeirarchyModelMock.userSelectedNode = {"id": 102}
+    	view.requiresAuthentication = true;
+    	view.requirePersonalDataEntry = true;
+    	view.permissions = ["admin", "viewer"];
+    	view.personalDataEntry = ["email", "dob"];
+&nbsp;
+    	expect(service.checkPermissionForView(view)).toBeTruthy();
+    	details[1].email = null; // as it is object set email back to null after execution
+    });
+&nbsp;
+    it('should return true (access view) if the view has retquireAuth to true, permission to admin and personalDataEntry contains only day of Bithday', function(){
+    	details[1].dob = "03/07/1980";
+    	commonNodeHeirarchyModelMock.userSelectedNode = {"id": 102}
+    	view.requiresAuthentication = true;
+    	view.requirePersonalDataEntry = true;
+    	view.permissions = ["admin", "viewer"];
+    	view.personalDataEntry = ["email", "dob"];
+&nbsp;
+    	expect(service.checkPermissionForView(view)).toBeTruthy();
+    	details[1].dob = null;  // as it is object set dob back to null after execution
+    });
+&nbsp;
+    it('should return true if the parameter of userHasPermission function contains admin', function(){
+    	var permission = ["admin", "viewer"];
+    	expect(service.userHasPermission(permission)).toBeTruthy();
+    });
+&nbsp;
+    it('should return false if the parameter of userHasPermission function does not contains admin', function(){
+    	var permission = ["viewer", "user"];
+    	expect(service.userHasPermission(permission)).toBeFalsy();
+    });
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 26 2016 22:20:10 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

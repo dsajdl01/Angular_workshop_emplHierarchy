@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js/service/calculateTimeServiceSpec.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">js/service/</a> calculateTimeServiceSpec.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>60/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>11/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>60/60</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">describe('Service: calculateTimeService', function() {
+&nbsp;
+	var service;
+	var sevenDayAgo = new Date();
+	sevenDayAgo.setDate(sevenDayAgo.getDate() - 5);
+	sevenDayAgo = sevenDayAgo.toLocaleString();
+&nbsp;
+	beforeEach(module('myMngtHierarchyApp'));
+&nbsp;
+	beforeEach(inject(function($injector) {
+		service = $injector.get('calculateTimeService');
+	}));
+&nbsp;
+	it('should be defined', function() {
+        expect(service).toBeDefined();
+    });
+&nbsp;
+    it('should return today date in format dd/mm/yyy.', function(){
+    	// getting current date
+    	var today = new Date();
+    	var dateArray = today.toLocaleString().split(",");
+&nbsp;
+    	// getting date from getCurrentDate() function
+    	addZeroIfNecessary(dateArray[0]);
+    	var dateExcepted = splitDayMonthYearToArry(dateArray[0]);
+    	var received = splitDayMonthYearToArry(service.getCurrentDate());
+    	
+    	expect(received.length).toBe(dateExcepted.length);
+    	expect(received[0]).toContain(dateExcepted[0]); // day 
+    	expect(received[1]).toContain(dateExcepted[1]); // month
+    	expect( received[2] ).toEqual( dateExcepted[2] );  // year
+    });
+&nbsp;
+    it('shoud calculate how many days are missing to complete starting', function(){
+    	try {
+	    	var day7 = sevenDayAgo.split(",");
+	    	expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(addZeroIfNecessary(day7[0]), 0)).toBe(6);
+			var oneYear = updateYear(day7[0], 1);
+			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(addZeroIfNecessary(oneYear), 1)).toBe(6);
+			var oneYear = updateYear(day7[0], 2);
+			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(addZeroIfNecessary(oneYear), 2)).toBe(6);
+			var oneYear = updateYear(day7[0], 3);
+			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(addZeroIfNecessary(oneYear), 3)).toBe(6);
+			var oneYear = updateYear(day7[0], 4);
+			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(addZeroIfNecessary(oneYear), 4)).toBe(6);
+			var oneYear = updateYear(day7[0], 5);
+			expect(service.calculateDiffDaysToCurrentDayFromFormatDayAndYear(addZeroIfNecessary(oneYear), 5)).toBe(6);
+		} catch (error) {
+		} 	
+	});
+&nbsp;
+    it('should throw exception when year is greater then current year', function(){
+    	var currentYear = new Date().getFullYear();
+    	try {
+	    	service.calculateDiffDaysToCurrentDayFromFormatDayAndYear("01/01/"+(currentYear+1), 0);
+	    } catch (error) {
+	    	expect(error).toEqual("Starting year cannot be greater that current year!");
+        }
+    });
+&nbsp;
+    it('should give a number of years from given date', function(){
+    	var day7 = sevenDayAgo.split(",");
+		var fourYear = updateYear(day7[0], 4);
+		expect(service.calculateDiffYearToCurrentDayFromFormatDay(addZeroIfNecessary(fourYear))).toBe(4);
+		var  plus7 = new Date();
+		plus7.setDate(plus7.getDate() + 1);
+		plus7 = plus7.toLocaleString();
+		plus7 = plus7.split(",");
+		fourYear = updateYear(plus7[0], 4);
+		expect(service.calculateDiffYearToCurrentDayFromFormatDay(addZeroIfNecessary(fourYear))).toBe(3);
+&nbsp;
+    })
+&nbsp;
+    /**********************************
+	***   Private help functions	***
+    ***********************************/
+	var splitDayMonthYearToArry = function(date){
+		return date.split("/");
+	};
+&nbsp;
+    var addZeroIfNecessary = function(date){
+    	var dateArr = splitDayMonthYearToArry(date);
+    	return addZero(dateArr[0]) +"/"+addZero(dateArr[1])+"/"+dateArr[2];
+    };
+&nbsp;
+    var updateYear = function(date, number){
+    	var dateArr = splitDayMonthYearToArry(date);
+    	var newYear = Number(dateArr[2]) - number;
+    	return dateArr[0]+"/"+dateArr[1]+"/"+newYear;
+    }
+&nbsp;
+    var addZero = function(valueStr){
+    	return (valueStr.length &lt; 2) ? <span class="branch-0 cbranch-no" title="branch not covered" >'0' + valueStr </span>: valueStr;
+    };
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 26 2016 22:20:10 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

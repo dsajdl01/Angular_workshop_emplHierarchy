@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js/controller/formControllerSpec.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">js/controller/</a> formControllerSpec.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>118/118</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>117/117</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">describe('Controller: formController', function() {
+&nbsp;
+	var ctrl, commonNodeHeirarchyModelMock, mngtHierarchyProviderMock, scopeMock, toasterMock;
+	
+	var selectedNode = {"name": "Bob", "id": 101,"parentsId": 100, "access": "admin",
+						"child": [{"name": "David","id": 106,"parentsId": 105, "access": "user", "child": []}]};
+&nbsp;
+	var detailsNode = [{"id": 101, "dob": "28/02/1976","start": "10/02/2005",
+			"possition": "Senior Developer","comments": "Work with smile in our company."},
+	 		{"id": 106, "dob": "20/10/1979","start": "10/02/2006","possition": "Junior Developer",
+	 							"comments": "Concentrate on AngulaJS, Java and REST Full services."}];
+&nbsp;
+	beforeEach(module('myMngtHierarchyApp'));
+&nbsp;
+	beforeEach(module(function($provide)
+	{
+		commonNodeHeirarchyModelMock = {
+            selectedTopNode: selectedNode,
+			userSelectedNode: selectedNode,
+			nodesDetails: detailsNode
+		};
+&nbsp;
+		mngtHierarchyProviderMock = {
+			getSelectedNodeDetails: function(nodeId){
+				if(nodeId == 101) return detailsNode[0];
+				else return detailsNode[1];
+			}
+		};
+&nbsp;
+		toasterMock = {
+			pop: function(error,message, option) {}
+		};
+&nbsp;
+		scopeMock = {
+            $watch : function(watchExpression, listener) {
+            	watchExpressionFunction = watchExpression;
+            	watchListenerFunction = listener;
+            }
+        };
+&nbsp;
+		$provide.value('commonNodeHeirarchyModel', commonNodeHeirarchyModelMock);
+		$provide.value('mngtHierarchyNodeServiceProvider', mngtHierarchyProviderMock);
+		$provide.value('toaster', toasterMock);
+		$provide.value("$scope", scopeMock);
+	}));
+&nbsp;
+	beforeEach(inject(function($controller)
+	{
+		spyOn(scopeMock, '$watch').and.callThrough();
+        ctrl = $controller('formController');
+        expect(scopeMock.$watch).toHaveBeenCalledWith(jasmine.any(Function), jasmine.any(Function));
+    }));
+&nbsp;
+	it('should be defined - Controller', function()
+    {
+        expect(ctrl).toBeDefined();
+    });
+&nbsp;
+    it('should watch the userSelectedNode and refresh the user list when node changes', function()
+    {
+    	var watchedObject = watchExpressionFunction();
+        expect(watchedObject).toBe(commonNodeHeirarchyModelMock.userSelectedNode);
+&nbsp;
+     	watchListenerFunction();
+     	expect(ctrl.btnSave).toBeTruthy();
+     	expect(ctrl.btnName).toEqual("Save");
+     	
+        expect(ctrl.hasAccess).toBeFalsy();
+        expect(ctrl.modified).toBeFalsy();
+        expect(ctrl.access).toEqual("admin");
+     	expect(ctrl.startDay).toEqual("10/02/2005");
+     	expect(ctrl.position).toEqual("Senior Developer");
+     	expect(ctrl.comment).toEqual("Work with smile in our company.");
+&nbsp;
+     	expect(ctrl.origineStartDay).toEqual("10/02/2005");
+		expect(ctrl.OriginePosition).toEqual("Senior Developer");
+		expect(ctrl.OriginComment).toEqual("Work with smile in our company.");
+    });
+&nbsp;
+    it('should watch the userSelectedNode and refresh the user list when node changes', function()
+    {
+    	commonNodeHeirarchyModelMock.userSelectedNode = selectedNode.child[0];
+    	var watchedObject = watchExpressionFunction();
+        expect(watchedObject).toBe(commonNodeHeirarchyModelMock.userSelectedNode);
+&nbsp;
+     	watchListenerFunction();
+     	expect(ctrl.btnSave).toBeTruthy();
+     	expect(ctrl.btnName).toEqual("Save");
+        expect(ctrl.hasAccess).toBeFalsy();
+&nbsp;
+        expect(ctrl.modified).toBeFalsy();
+        expect(ctrl.access).toEqual("user");
+     	expect(ctrl.startDay).toEqual("10/02/2006");
+     	expect(ctrl.position).toEqual("Junior Developer");
+     	expect(ctrl.comment).toEqual("Concentrate on AngulaJS, Java and REST Full services.");
+&nbsp;
+     	expect(ctrl.origineStartDay).toEqual("10/02/2006");
+		expect(ctrl.OriginePosition).toEqual("Junior Developer");
+		expect(ctrl.OriginComment).toEqual("Concentrate on AngulaJS, Java and REST Full services.");
+    });
+&nbsp;
+     it('should watch the userSelectedNode and refresh the user list when node changes_II', function()
+    {
+        commonNodeHeirarchyModelMock.selectedTopNode = selectedNode.child[0];
+        commonNodeHeirarchyModelMock.userSelectedNode = selectedNode.child[0];
+        var watchedObject = watchExpressionFunction();
+        expect(watchedObject).toBe(commonNodeHeirarchyModelMock.userSelectedNode);
+&nbsp;
+        watchListenerFunction();
+        expect(ctrl.btnSave).toBeTruthy();
+        expect(ctrl.btnName).toEqual("Save");
+        expect(ctrl.hasAccess).toBeFalsy();
+&nbsp;
+        expect(ctrl.modified).toBeTruthy();
+        expect(ctrl.access).toEqual("user");
+        expect(ctrl.startDay).toEqual("10/02/2006");
+        expect(ctrl.position).toEqual("Junior Developer");
+        expect(ctrl.comment).toEqual("Concentrate on AngulaJS, Java and REST Full services.");
+&nbsp;
+        expect(ctrl.origineStartDay).toEqual("10/02/2006");
+        expect(ctrl.OriginePosition).toEqual("Junior Developer");
+        expect(ctrl.OriginComment).toEqual("Concentrate on AngulaJS, Java and REST Full services.");
+    });
+&nbsp;
+    it('should set button visible if values are different and if values get same button is disabled', function()
+    {
+    	commonNodeHeirarchyModelMock.userSelectedNode = selectedNode.child[0];
+    	var watchedObject = watchExpressionFunction();
+        expect(watchedObject).toBe(commonNodeHeirarchyModelMock.userSelectedNode);
+&nbsp;
+     	watchListenerFunction();
+     	expect(ctrl.btnSave).toBeTruthy();
+     	expect(ctrl.btnName).toEqual("Save");
+        expect(ctrl.hasAccess).toBeFalsy();
+        expect(ctrl.modified).toBeFalsy(); 
+        expect(ctrl.access).toEqual("user");
+&nbsp;
+     	// chenging value of the position
+     	ctrl.position = "Java Developer";
+		ctrl.makeChange();    
+		expect(ctrl.btnSave).toBeFalsy();
+     	expect(ctrl.btnName).toEqual("Save"); 
+&nbsp;
+     	// chenging position to origine value	
+     	ctrl.position = "Junior Developer";
+		ctrl.makeChange();    
+		expect(ctrl.btnSave).toBeTruthy();
+     	expect(ctrl.btnName).toEqual("Save"); 
+    });
+&nbsp;
+    it('should save details and update origine values when save button is pressed', function()
+    {
+    	var watchedObject = watchExpressionFunction();
+        expect(watchedObject).toBe(commonNodeHeirarchyModelMock.userSelectedNode);
+        // getting selected data.
+     	watchListenerFunction();
+     	expect(ctrl.btnSave).toBeTruthy();
+     	expect(ctrl.btnName).toEqual("Save");
+        expect(ctrl.hasAccess).toBeFalsy();
+&nbsp;
+        expect(ctrl.modified).toBeFalsy();
+        expect(ctrl.access).toEqual("admin");
+     	expect(ctrl.startDay).toEqual("10/02/2005");
+     	expect(ctrl.position).toEqual("Senior Developer");
+     	expect(ctrl.comment).toEqual("Work with smile in our company.");
+&nbsp;
+     	expect(ctrl.origineStartDay).toEqual("10/02/2005");
+		expect(ctrl.OriginePosition).toEqual("Senior Developer");
+		expect(ctrl.OriginComment).toEqual("Work with smile in our company.");
+&nbsp;
+		// simulating changing data where makeChange() function is executed.
+		ctrl.startDay = "10/02/2005";
+		ctrl.position = "Senior Java Developer";
+		ctrl.comment = "Work with smile and with enthusiasm in our company.";
+		ctrl.makeChange();
+		expect(ctrl.btnSave).toBeFalsy();
+&nbsp;
+		// on save() function is executed when user press button. 
+		ctrl.save();
+		spyOn(toasterMock, 'pop');
+		expect(ctrl.btnSave).toBeTruthy();
+     	expect(ctrl.btnName).toEqual("Done");
+     	expect(ctrl.origineStartDay).toEqual("10/02/2005");
+		expect(ctrl.OriginePosition).toEqual("Senior Java Developer");
+		expect(ctrl.OriginComment).toEqual("Work with smile and with enthusiasm in our company.");
+    });
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 26 2016 22:20:10 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

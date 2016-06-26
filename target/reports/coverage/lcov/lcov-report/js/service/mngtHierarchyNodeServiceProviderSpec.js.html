@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js/service/mngtHierarchyNodeServiceProviderSpec.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">js/service/</a> mngtHierarchyNodeServiceProviderSpec.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>127/127</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.89% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>32/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>127/127</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">describe('Service: mngtHierarchyNodeServiceProvider', function() {
+&nbsp;
+&nbsp;
+	var service, hierarchyNodeServiceMock, commonNodeHeirarchyModelMock, modalDialogBoxServiceMock, locationMock;
+	var rootNode = [{"name": "Sandra","id": 100,"parentsId": null, "access": "admin", "child": [
+				{"name":"Bob","id": 101,"parentsId": 100, "access": "user", "child": []}]}];
+	var nodesDetails = [
+		{"id": 100, "pathToNode": "Sandra","dob": "28/02/1976","start": "09/12/2001","possition": "Senior Developer",
+            "comments": "Work with smile in our company.", "fullname": "Bob Bobek", "email": null, "password": "1234567890"},
+		{"id": 101, "pathToNode": "Sandra&gt;Bob", "dob": "28/02/1981","start": "05/02/2005","possition": "Junior Developer",
+            "comments": "Work with hard for our company.", "fullname": "Sandra Smith", "email": "s.smith@example.com", "password": "1234567890"}];
+	
+	var path = ["Sandra", "Sandra&gt;Bob"];
+&nbsp;
+    var user = [{ "id": 100,"username": "bob","password": "1234567890","administrator": true},
+        {"id": 101,"username": "sandra","password": "1234567890","administrator": false}];
+	
+	beforeEach(module('myMngtHierarchyApp'));
+&nbsp;
+	beforeEach(module(function($provide)
+	{
+		hierarchyNodeServiceMock = {
+			success: true,
+			getSelectedNode: function(rootNode, fail){
+					if(this.success){
+						rootNode(true);
+					} else {
+						fail(false)
+					}
+			},
+			getNodesDetails: function(nodesDetails, fail){
+				if(this.success){
+					nodesDetails(true);
+				} else {
+					fail(false)
+				}
+			}
+		};
+		
+		modalDialogBoxServiceMock = {
+			shareModalData: {},
+			showDialog: <span class="fstat-no" title="function not covered" >function(){</span>},
+			notify: <span class="fstat-no" title="function not covered" >function(){</span>},
+			setTemplate: <span class="fstat-no" title="function not covered" >function(){</span>}
+		};
+&nbsp;
+        locationMock = {
+            path: <span class="fstat-no" title="function not covered" >function(path) {</span>}
+        };
+		
+		commonNodeHeirarchyModelMock = {
+			allNodesDetails: nodesDetails,
+			rootNode: rootNode,
+			nodesDetails: nodesDetails,
+            selectedTopNode: rootNode[0],
+            user: user[0]
+		};
+&nbsp;
+		$provide.value('hierarchyNodeService', hierarchyNodeServiceMock);
+		$provide.value('commonNodeHeirarchyModel', commonNodeHeirarchyModelMock);
+		$provide.value('modalDialogBoxService', modalDialogBoxServiceMock);
+        $provide.value('$location', locationMock);
+	}));
+	
+	beforeEach(inject(function($injector, _$httpBackend_) {
+		httpBackend = _$httpBackend_;
+		service = $injector.get('mngtHierarchyNodeServiceProvider');
+	}));
+&nbsp;
+	it('should be defined', function()
+	{
+        expect(service).toBeDefined();
+    });
+&nbsp;
+    it('should be true when loadTopNode is called and nodes are successfully loaded', function()
+    {
+    	hierarchyNodeServiceMock.success = true;
+    	var callbackCalled = false;
+&nbsp;
+    	var callback = function(responce) {
+    		expect(responce).toBeTruthy();
+        	callbackCalled = true; 
+        };
+&nbsp;
+        spyOn(service, 'loadTopNode').and.callThrough();
+        spyOn(commonNodeHeirarchyModelMock, 'rootNode');
+    	service.loadTopNode(callback);
+    	expect(callbackCalled).toBeTruthy();
+    	expect(service.loadTopNode).toHaveBeenCalled(); 
+    });
+&nbsp;
+    it('should be false when loadTopNode is called and nodes are unsuccessfully loaded', function()
+    {
+    	hierarchyNodeServiceMock.success = false;
+    	var callbackCalled = false;
+&nbsp;
+    	var callback = function(responce) {
+    		expect(responce).toBeFalsy();
+        	callbackCalled = true; 
+        };
+&nbsp;
+        spyOn(service, 'loadTopNode').and.callThrough();
+    	service.loadTopNode(callback);
+    	expect(callbackCalled).toBeTruthy();
+    	expect(service.loadTopNode).toHaveBeenCalled();
+    });
+&nbsp;
+    it('should be true when loadNodeDetails is called and details are successfully loaded', function()
+    {
+    	hierarchyNodeServiceMock.success = true;
+    	var callbackCalled = false;
+&nbsp;
+    	var callback = function(responce) {
+    		expect(responce).toBeTruthy();
+        	callbackCalled = true; 
+        };
+&nbsp;
+       	spyOn(service, 'loadNodeDetails').and.callThrough();
+        spyOn(commonNodeHeirarchyModelMock, 'nodesDetails')
+    	service.loadNodeDetails(callback);
+    	expect(callbackCalled).toBeTruthy();
+    	expect(service.loadNodeDetails).toHaveBeenCalled(); 
+    });
+&nbsp;
+    it('should be false when loadNodeDetails is called and details are unsuccessfully loaded', function()
+    {
+    	hierarchyNodeServiceMock.success = false;
+&nbsp;
+    	var callbackCalled = false;
+&nbsp;
+    	var callback = function(responce) {
+    		expect(responce).toBeFalsy();
+        	callbackCalled = true; 
+        };
+&nbsp;
+       	spyOn(service, 'loadNodeDetails').and.callThrough();
+    	service.loadNodeDetails(callback);
+    	expect(callbackCalled).toBeTruthy();
+    	expect(service.loadNodeDetails).toHaveBeenCalled(); 
+    });
+&nbsp;
+    it('should show assume dialog box when displayAssumeDialogBox is called', function()
+    {
+    	spyOn(modalDialogBoxServiceMock, 'setTemplate');
+    	spyOn(modalDialogBoxServiceMock, 'notify').and.callThrough();
+&nbsp;
+    	modalDialogBoxServiceMock.showDialog = function () {
+            modalDialogBoxServiceMock.notify("Sandra&gt;Bob");
+        };
+&nbsp;
+    	var callback = function(responce) {
+    		expect(responce).toEqual("Bob");
+        	callbackCalled = true;
+        };
+&nbsp;
+        service.displayAssumeDialogBox(path, callback);
+        expect(modalDialogBoxServiceMock.setTemplate).toHaveBeenCalledWith('js/views/assumeIdentityTemplate.html');
+        expect(callbackCalled).toBeTruthy(); 
+    });
+&nbsp;
+    it('should show assume dialog box when displayAssumeDialogBox is called and call false when user close window', function()
+    {
+    	spyOn(modalDialogBoxServiceMock, 'setTemplate');
+    	spyOn(modalDialogBoxServiceMock, 'notify').and.callThrough();
+&nbsp;
+    	modalDialogBoxServiceMock.showDialog = function() {
+            modalDialogBoxServiceMock.notify(false);
+        };
+&nbsp;
+    	var callback = function(responce) {
+    		expect(responce).toBeFalsy();
+        	callbackCalled = true;
+        };
+&nbsp;
+        service.displayAssumeDialogBox(path, callback);
+        expect(modalDialogBoxServiceMock.setTemplate).toHaveBeenCalledWith('js/views/assumeIdentityTemplate.html');
+        expect(callbackCalled).toBeTruthy(); 
+    });
+&nbsp;
+    it('should show about dialog box when displayAboutDialogBox is called', function()
+    {
+    	spyOn(modalDialogBoxServiceMock, 'setTemplate');
+    	modalDialogBoxServiceMock.showDialog = function () {};
+&nbsp;
+    	service.displayAboutDialogBox();
+    	expect(modalDialogBoxServiceMock.setTemplate).toHaveBeenCalledWith("js/views/aboutTemplate.html");
+    });
+&nbsp;
+    it('should return selected node details when getSelectedNodeDetails is called', function()
+    {
+    	expect(service.getSelectedNodeDetails(100)).toEqual(nodesDetails[0]);
+    });
+&nbsp;
+    it('should return selected node details when getSelectedNodeDetails is called II', function()
+    {
+    	expect(service.getSelectedNodeDetails(101)).toEqual(nodesDetails[1]);
+    });
+&nbsp;
+    it('should return null when getSelectedNodeDetails is called with fake id', function()
+    {
+        expect(service.getSelectedNodeDetails(35)).toBeNull();
+    });
+&nbsp;
+    it('should redirect to personalInfo page when checkIfPersonalDetailsAreInseared() is called and data is missing', function(){
+&nbsp;
+        spyOn(locationMock, 'path');
+&nbsp;
+        service.checkIfPersonalDetailsAreInseared();
+&nbsp;
+        expect(locationMock.path).toHaveBeenCalledWith('/personalInfo')
+    });
+&nbsp;
+    it('should not be redirect when checkIfPersonalDetailsAreInseared() is called and data is entered', function(){
+&nbsp;
+        commonNodeHeirarchyModelMock.selectedTopNode = rootNode[0].child[0];
+        spyOn(locationMock, 'path');
+&nbsp;
+        service.checkIfPersonalDetailsAreInseared();
+&nbsp;
+        expect(locationMock.path).not.toHaveBeenCalled();
+    });
+&nbsp;
+    it('should open lonin template when getLoginPage is call',function(){
+&nbsp;
+        spyOn(modalDialogBoxServiceMock, 'setTemplate');
+        spyOn(modalDialogBoxServiceMock, 'notify').and.callThrough();
+&nbsp;
+        modalDialogBoxServiceMock.showDialog = function () {
+            modalDialogBoxServiceMock.notify(true);
+        };
+&nbsp;
+        var callback = function(responce) {
+            expect(responce).toBeTruthy();
+            callbackCalled = true;
+        };
+&nbsp;
+        service.getLoginPage(callback);
+        expect(modalDialogBoxServiceMock.setTemplate).toHaveBeenCalledWith("js/views/login.html");
+        expect(callbackCalled).toBeTruthy();
+    });
+&nbsp;
+    it('should retuen return logn user when getLoginUserAsTopNode is called', function(){
+        expect(service.getLoginUserAsTopNode()).toEqual("Sandra");
+    });
+&nbsp;
+    it('should retuen return logn user when getLoginUserAsTopNode is called', function(){
+        commonNodeHeirarchyModelMock.user = user[1]
+        expect(service.getLoginUserAsTopNode()).toEqual("Bob");
+    });
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 26 2016 22:20:10 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js/directives/nodeDirectiveSpec.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">js/directives/</a> nodeDirectiveSpec.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>32/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">71.43% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>32/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+describe('directive: editNodeInPlace', function() {
+&nbsp;
+	var element, scopeExternal, scopeInternel, commonNodeHeirarchy, nodeForDirective;
+    var inputElement, spanElement;
+&nbsp;
+    beforeEach(module('myMngtHierarchyApp'));
+&nbsp;
+&nbsp;
+    beforeEach(module(function($provide)
+	{ 
+		commonNodeHeirarchy = {
+			userSelectedNode: null
+		};
+		scopeInternel = null;
+		$provide.value('commonNodeHeirarchyModel', commonNodeHeirarchy);
+	}));
+&nbsp;
+&nbsp;
+&nbsp;
+    beforeEach(inject(function($rootScope, $compile, $templateCache) {
+&nbsp;
+    	scopeExternal = $rootScope.$new();
+&nbsp;
+    	var directiveTemplate = null;
+	    var req = new XMLHttpRequest();
+	    req.onload = function() {
+	        directiveTemplate = this.responseText;
+	    };
+	    // ref: http://stackoverflow.com/questions/15214760/unit-testing-angularjs-directive-with-templateurl
+	    // Note that the relative path may be different from your unit test HTML file.
+	    // Using `false` as the third parameter to open() makes the operation synchronous.
+	    // Gentle reminder that boolean parameters are not the best API choice.
+	    req.open("get", "../../js/views/accounts.html", false);
+	    req.send();
+	    $templateCache.put("js/views/accounts.html", directiveTemplate);
+&nbsp;
+    	nodeForDirective = {id: 10, name: "David"};
+		commonNodeHeirarchy.userSelectedNode = nodeForDirective;    	
+&nbsp;
+    	scopeExternal.nodeCtrl = {
+    		userSelectedNode: <span class="fstat-no" title="function not covered" >function(node) {</span>},
+    		updateSelectedNodeName: <span class="fstat-no" title="function not covered" >function(newName) {</span>},
+    		"commonNodeHeirarchy": commonNodeHeirarchy
+		};
+&nbsp;
+		scopeExternal.s = {id:10, name:"nodeName"};
+&nbsp;
+    	element = angular.element(
+	    	'&lt;edit-node-in-place ' +
+				'select="nodeCtrl.userSelectedNode(s)" '+
+	 			'value="{{s.name}}"' +
+	 			'update="nodeCtrl.updateSelectedNodeName(newName)"'+
+	 			'is-selected-condition="{{s.id == nodeCtrl.commonNodeHeirarchy.userSelectedNode.id}}"&gt;'+
+	 		'&lt;/edit-node-in-place&gt;');
+&nbsp;
+	 	element = $compile(element)(scopeExternal);
+&nbsp;
+	 	scopeExternal.$digest();
+&nbsp;
+	 	scopeInternel = element.isolateScope();
+&nbsp;
+	 	spanElement = angular.element(element.children()[0]);
+        inputElement = angular.element(element.children()[1]);
+&nbsp;
+    }));
+&nbsp;
+    it("should setup the node for the directive", function() {
+        expect(scopeInternel.value).toEqual("nodeName");
+        expect(scopeInternel.update).toEqual(jasmine.any(Function));
+        expect(scopeInternel.select).toEqual(jasmine.any(Function));
+        expect(scopeInternel.isSelectedCondition).toBeTruthy();
+    });
+&nbsp;
+  //  it("should call back to the nodeCtrl when the &lt;span&gt; is selected", function() {
+//        spyOn(scopeExternal.nodeCtrl, "userSelectedNode");
+&nbsp;
+   //     var spanElement = angular.element(  element.children()[0] );
+        //console.log("\n\nelem: ", spanElement, "\n\nfsfsf:",  scopeInternel.select )
+    //    spanElement.triggerHandler('click');
+      //  console.log("hhh---", spanElement, "\n\n&gt;&gt;&gt;&gt;- " , spanElement.triggerHandler('click'));
+    //    console.log("\n\n&gt;&gt;&gt;&gt;- " , scopeExternal.nodeCtrl);
+&nbsp;
+  //      expect(scopeExternal.nodeCtrl.userSelectedNode).toHaveBeenCalledWith(nodeForDirective);
+ //   });
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 26 2016 22:20:10 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js/controller/mngtHierarchyController.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">js/controller/</a> mngtHierarchyController.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>78/78</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>21/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>15/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>77/77</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">myMngtHierarchyApp.controller( 'mngtHierarchyController', ['mngtHierarchyNodeServiceProvider', 'commonNodeHeirarchyModel', 'calculateTimeService' ,'$location', '$rootScope', 'Auth', 'toaster',
+					function(mngtHierarchyNodeServiceProvider, commonNodeHeirarchyModel, calculateTimeService, $location, $rootScope, Auth, toaster){
+&nbsp;
+	var self = this;
+&nbsp;
+	self.showPage = false;
+	self.isTopNavigationBtnDisabled = false;
+	self.commonNodeHeirarchyModel = commonNodeHeirarchyModel;
+	self.accountTitle;
+	self.todayDay = calculateTimeService.getCurrentDate();
+	self.hasPermision = true;
+&nbsp;
+	self.init = function()
+	{
+		var isAssumeIdentity = false;
+		var isNodeLoaded = false;
+		self.showPage = false;
+		self.commonNodeHeirarchyModel.hasPersonalData = false;
+		self.isTopNavigationBtnDisabled = false;
+		self.commonNodeHeirarchyModel.isUserAssumeIdentity = false;
+		if(!self.commonNodeHeirarchyModel.user.isLogin ){
+			self.getLoginPage();
+		}
+		else
+		{
+			relocatePageToHomePage();
+			mngtHierarchyNodeServiceProvider.loadTopNode(function(loadResponce)
+			{
+				isNodeLoaded = loadResponce;
+				if(!isNodeLoaded)
+				{
+					getPopUpToasterMessage();
+					return;
+				}
+				mngtHierarchyNodeServiceProvider.loadNodeDetails(function(detailsResponce)
+				{
+					isNodeLoaded = detailsResponce;
+					if( isNodeLoaded )
+					{
+						if(self.commonNodeHeirarchyModel.user.administrator) {
+							self.getAssumeIdentityDialogBox(isNodeLoaded);
+						}
+						else
+						{
+							var selectedNodeName = mngtHierarchyNodeServiceProvider.getLoginUserAsTopNode();
+							initialiseInsatnceVariabled(selectedNodeName);
+							canPageBeDisplayed(isNodeLoaded,true);
+						}
+					}
+					else
+					{
+						getPopUpToasterMessage();
+					}
+				});
+			});
+		}
+	};
+&nbsp;
+	self.getLoginPage = function()
+	{
+		self.commonNodeHeirarchyModel.isLogIn = false;
+		self.showPage = false;
+		mngtHierarchyNodeServiceProvider.getLoginPage(function(isLogin)
+		{
+			if(isLogin) self.init();
+			else toaster.pop("error","ERROR!","An error occer while app was downloading data.");
+		});
+	};
+&nbsp;
+	self.getAssumeIdentityDialogBox = function(isNodeLoaded)
+	{	
+		var nodes  = getAllPathToEachNode(commonNodeHeirarchyModel.rootNode[0], "", []);
+			nodes.unshift("[Assume Identity]");
+			mngtHierarchyNodeServiceProvider.displayAssumeDialogBox(nodes, function(selectedNodeName)
+			{
+				if(selectedNodeName == false)
+				{
+					self.isTopNavigationBtnDisabled = selectedNodeName;
+					self.accountTitle = "";
+					selectedNodeName = true;
+					$location.path("/templateAssumeIdentity");
+				}
+				else
+				{
+					initialiseInsatnceVariabled(selectedNodeName);
+				}
+				isAssumeIdentity = !!selectedNodeName;
+				canPageBeDisplayed(isNodeLoaded, isAssumeIdentity);
+			});
+	};
+&nbsp;
+	var initialiseInsatnceVariabled = function(selectedNodeName)
+	{
+		self.isTopNavigationBtnDisabled = true;
+		self.accountTitle = "Profile of " + selectedNodeName;
+		self.commonNodeHeirarchyModel.isUserAssumeIdentity = true;
+		mngtHierarchyNodeServiceProvider.checkIfPersonalDetailsAreInseared();
+		var access = self.commonNodeHeirarchyModel.selectedTopNode.access;
+		self.hasPermission = (access == "admin" || access == "viewer") ? true : false;
+	}
+&nbsp;
+	self.loadPage = function()
+	{
+		self.showPage = false;
+		self.commonNodeHeirarchyModel.isUserAssumeIdentity = false;
+		self.getAssumeIdentityDialogBox(true);
+	};
+&nbsp;
+	self.displayAboutDialog = function() 
+	{
+		mngtHierarchyNodeServiceProvider.displayAboutDialogBox();
+	};
+&nbsp;
+	var getPopUpToasterMessage = function()
+	{
+		toaster.pop("error","Error occer while app was downloading data.");
+	}
+&nbsp;
+	var getAllPathToEachNode = function(nodes, pathToParent, allPath)
+	{
+		var pathToCurrentNode = pathToParent + (pathToParent.length == 0 ? "": "&gt;") + nodes.name
+		allPath.push(pathToCurrentNode);
+		nodes.pathToNode = pathToCurrentNode;
+		self.commonNodeHeirarchyModel.allNodesDetails.push(nodes);
+		for(var i = 0; i &lt; nodes.child.length; i++)
+		{
+			getAllPathToEachNode(nodes.child[i], pathToCurrentNode, allPath);
+		}
+		return allPath;
+	};
+&nbsp;
+	var canPageBeDisplayed = function(isNodeLoaded, isAssumeIdentity)
+	{
+		self.showPage = isNodeLoaded &amp;&amp; isAssumeIdentity &amp;&amp; self.commonNodeHeirarchyModel.user.isLogin;
+	};
+&nbsp;
+	var relocatePageToHomePage = function()
+	{
+		$location.path('/homeViewAccount');
+	};
+}]);</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 26 2016 22:20:10 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

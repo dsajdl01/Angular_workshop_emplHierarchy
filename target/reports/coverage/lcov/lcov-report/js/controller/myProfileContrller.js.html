@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js/controller/myProfileContrller.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">js/controller/</a> myProfileContrller.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>105/105</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>49/50</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>16/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>105/105</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+* Created by david on 15/04/16.
+*/
+myMngtHierarchyApp.controller('myProfileContrller',['commonNodeHeirarchyModel', 'mngtHierarchyNodeServiceProvider', 'toaster',
+				 function(commonNodeHeirarchyModel, mngtHierarchyNodeServiceProvider, toaster) {
+&nbsp;
+	var self = this;
+&nbsp;
+	self.init = function()
+	{
+		self.showInputForms = false;
+		self.btnName = "Save";
+		var emplDetails = getEmlpDetails();
+		self.username = getUsername();
+		self.employeeName = commonNodeHeirarchyModel.userSelectedNode.name;
+		self.Access = commonNodeHeirarchyModel.userSelectedNode.access;
+		self.dob = emplDetails.dob;
+		self.email = emplDetails.email;
+		self.position = emplDetails.possition;
+		self.startDay = emplDetails.start;
+		self.employeeFullName = emplDetails.fullname;
+		self.hasAccess = doesUserHasAccessToModified();
+		self.oldPassword = null;
+		self.newPassword = null;
+		self.confirmPassword = null;
+		self.btnEqualValue = true;
+		setOriginalValues();
+	}
+&nbsp;
+	var getUsername = function(){
+		return commonNodeHeirarchyModel.user.administrator ? <span class="branch-0 cbranch-no" title="branch not covered" >"confidential":</span> commonNodeHeirarchyModel.user.username;
+	}
+&nbsp;
+	self.showPasswordFields = function()
+	{
+		self.showInputForms = (self.showInputForms) ? false : true;
+		self.oldPassword = null;
+		self.newPassword = null;
+		self.confirmPassword = null;
+		self.makeChange();
+		setMessagesToNull();
+	}
+&nbsp;
+	self.makeChange = function()
+	{
+		self.btnEqualValue = equal();
+		self.btnName = (self.btnEqualValue)? "Done": "Save";
+	}
+&nbsp;
+	self.save = function(){
+		setMessagesToNull();
+		if(isPaswordValid())
+		{
+			if(self.oldPassword)
+			{
+				if(oldPasswordMatch())
+				{
+					savePassword();
+					self.showInputForms = self.showPasswordFields();
+					saveUserInputDate();
+				}
+				else
+				{
+					self.old_passwordMsg = "Incorrect Current Password";
+				}
+			}
+			else
+			{
+				saveUserInputDate();
+			}
+		}
+		else
+		{
+			displayPasswordMessage();
+		}
+	}
+	var setMessagesToNull = function()
+	{
+		self.old_passwordMsg = null;
+		self.confirm_passwordMsg = null;
+		self.new_passwordMsg = null;
+	}
+&nbsp;
+	var displayPasswordMessage = function()
+    {
+        if(!self.confirmPassword)
+        {
+            if(!self.confirmPassword &amp;&amp; !self.oldPassword)
+            {
+                self.old_passwordMsg = "Current password is required.";
+                self.confirm_passwordMsg = true;
+            }
+            else if (!self.confirmPassword &amp;&amp; !self.newPassword)
+            {
+                self.new_passwordMsg = true;
+                self.confirm_passwordMsg = true;
+            }
+            else
+            {
+                self.confirm_passwordMsg = true;
+            }
+        }
+        else if (!self.newPassword)
+        {
+            if(!self.newPassword &amp;&amp; !self.oldPassword)
+            {
+                self.new_passwordMsg = true;
+                self.old_passwordMsg = "Current password is required.";
+            }
+            else
+            {
+                self.new_passwordMsg = true;
+            }
+        }
+        else
+        {
+            self.old_passwordMsg = "Current password is required.";
+        }
+    }
+&nbsp;
+	var savePassword = function()
+	{
+		var emplDetails = getEmlpDetails();
+		emplDetails.password = self.newPassword;
+	}
+&nbsp;
+	var saveUserInputDate = function()
+	{
+		var emplDetails = getEmlpDetails();
+		emplDetails.email =  self.email;
+		emplDetails.possition = self.position;
+		emplDetails.dob = self.dob;
+		emplDetails.start = self.startDay;
+		emplDetails.fullname = self.employeeFullName;
+		commonNodeHeirarchyModel.userSelectedNode.name = self.employeeName; 
+		commonNodeHeirarchyModel.user.username = self.username;
+		setOriginalValues();
+		commonNodeHeirarchyModel.hasPersonalData = false;
+		self.btnName = "Done";
+		self.btnEqualValue = true;
+		toaster.pop("success","Done", "The data was successfully saved.");
+	}
+&nbsp;
+	var oldPasswordMatch = function()
+	{
+		var emplDetails = getEmlpDetails();
+		return self.oldPassword == emplDetails.password
+	}
+&nbsp;
+	var isPaswordValid = function()
+	{
+        if(!self.confirmPassword &amp;&amp; !self.oldPassword &amp;&amp; !self.newPassword)
+        {
+            return true;
+        }
+        if(self.confirmPassword &amp;&amp; self.oldPassword &amp;&amp; self.newPassword)
+        {
+            return true;
+        }
+        return false;
+    }
+&nbsp;
+	var setOriginalValues = function()
+	{
+		self.originalUsername = self.username;
+		self.originalEmplName = self.employeeName;
+		self.originalDob = self.dob;
+		self.originalEmail = self.email;
+		self.originalPosition = self.position;
+		self.originalStartDate = self.startDay;
+		self.originalEmplFullName = self.employeeFullName;
+		self.originalOldPassword = self.oldPassword;
+		self.originalNewPassword = self.newPassword;
+		self.originalConfirmPassword = self.confirmPassword;
+	}
+&nbsp;
+	var equal = function()
+	{
+		return self.originalEmplName == self.employeeName
+				&amp;&amp; self.originalDob == self.dob
+				&amp;&amp; self.originalEmail == self.email
+				&amp;&amp; self.originalPosition == self.position
+				&amp;&amp; self.originalStartDate == self.startDay
+				&amp;&amp; self.originalEmplFullName == self.employeeFullName
+				&amp;&amp; self.originalOldPassword == self.oldPassword
+				&amp;&amp; self.originalNewPassword == self.newPassword
+				&amp;&amp; self.originalConfirmPassword == self.confirmPassword
+				&amp;&amp; self.originalUsername == self.username;
+	}
+&nbsp;
+	var doesUserHasAccessToModified = function()
+	{
+		return !(commonNodeHeirarchyModel.userSelectedNode.access == "admin"
+			|| commonNodeHeirarchyModel.userSelectedNode.access == "viewer");
+	}
+&nbsp;
+	var getEmlpDetails = function()
+	{
+		return mngtHierarchyNodeServiceProvider.getSelectedNodeDetails(commonNodeHeirarchyModel.userSelectedNode.id);
+	}
+}]);</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 26 2016 22:20:10 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

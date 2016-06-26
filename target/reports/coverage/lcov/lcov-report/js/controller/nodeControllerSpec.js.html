@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js/controller/nodeControllerSpec.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">js/controller/</a> nodeControllerSpec.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>157/157</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>26/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>157/157</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">describe('Controller: nodeController', function() {
+	
+	var ctrl, commonNodeHeirarchyModelMock, mngtHierarchyProviderMock, windowMock, calculateTimeMock;
+&nbsp;
+	var selectedNode = [{"name": "Bob","id": 101,"parentsId": 100,"access": "admin","child": [
+                            {"name": "David","id": 106,"parentsId": 101,"access": "user","child": []},
+                            {"name": "Fred","id": 107,"parentsId": 101,"access": "user","child": []},
+                            {"name": "Kaith","id": 108,"parentsId": 101,"access": "viewer","child": [
+                            {"name": "Dan","id": 110,"parentsId": 108,"access": "viewer","child": []}]}]}];
+&nbsp;
+	var detailsNode = [{"id": 101, "dob": "28/02/1976","start": "10/02/2005",
+			"possition": "Senior Developer","comments": "Work with smile in our company."},
+	 		{"id": 106, "dob": "20/10/1979","start": "10/02/2006","possition": "Junior Developer",
+	 							"comments": "Concentrate on AngulaJS, Java and REST Full services."},
+			{"id": 107, "dob": "28/11/1981","start": "20/07/2010","possition": "Junior Angular Developer",
+	 							"comments": "Concentrate on front end especially on AngulaJS."},
+			{"id": 108, "dob": "30/11/1982","start": "20/07/2014","possition": "Designer",
+	 							"comments": "Concentrate on user requirements and designing user interface."}];
+&nbsp;
+	beforeEach(module('myMngtHierarchyApp'));
+&nbsp;
+	beforeEach(module(function($provide)
+	{
+		commonNodeHeirarchyModelMock = {
+			nodesDetails: detailsNode,
+			selectedTopNode: selectedNode[0],
+			rootNode: selectedNode,
+			userSelectedNode: selectedNode[0].child[0]
+		};
+&nbsp;
+		mngtHierarchyProviderMock = {
+			getSelectedNodeDetails: function(nodeId){
+				if(nodeId == 108) {
+					return detailsNode[3];
+				}
+				else if (nodeId == 106) {
+					return detailsNode[1]
+				}
+				else {
+                    return detailsNode[2];
+                }
+			},
+            checkIfPersonalDetailsAreInseared: function(){}
+		};
+&nbsp;
+		calculateTimeServiceMock = {
+			getCurrentDate: function(){
+				return "25/04/2016";
+			}
+		};
+&nbsp;
+		windowMock = {
+            isAppruved: true,
+            confirm: function(message) {
+                return this.isAppruved;
+            }
+        };
+&nbsp;
+		$provide.value('commonNodeHeirarchyModel', commonNodeHeirarchyModelMock);
+		$provide.value('mngtHierarchyNodeServiceProvider', mngtHierarchyProviderMock);
+		$provide.value('calculateTimeService', calculateTimeServiceMock);
+		$provide.value('$window', windowMock);
+	}));
+&nbsp;
+	beforeEach(inject(function($controller)
+	{
+        ctrl = $controller('nodeController');
+    }));
+&nbsp;
+	it('should be defined - Controller', function()
+    {
+        expect(ctrl).toBeDefined();
+    });
+&nbsp;
+    it('should initialize instance variables when ini() is called', function()
+    {
+    	ctrl.init();
+    	expect(ctrl.titleOfNode).toEqual("David");
+		expect(ctrl.numberOfChild).toEqual("David does not have any child.");
+		expect(ctrl.profesionInfo).toEqual("David works as Junior Developer.");
+		expect(ctrl.workSince).toEqual("David has been working for our company since 10/02/2006");
+		expect(ctrl.commensData).toEqual("Concentrate on AngulaJS, Java and REST Full services.");
+		expect(ctrl.detailsTitle).toEqual("David comments:");
+    });
+&nbsp;
+    it('should delete node from top root when deleteNode() is called', function()
+    {
+    	windowMock = true;
+   		spyOn(ctrl, 'removeNodesFromTree').and.callThrough();
+   		expect(selectedNode[0].child.length).toEqual(3);
+&nbsp;
+    	ctrl.deleteNode(selectedNode[0].child[0]);
+    	expect(ctrl.removeNodesFromTree).toHaveBeenCalled();
+    	expect(selectedNode[0].child.length).toEqual(2);
+    });
+&nbsp;
+    it('should delete node from top root when deleteNode() is called and user approved is false', function()
+    {
+    	windowMock.isAppruved = false;
+   		spyOn(ctrl, 'removeNodesFromTree').and.callThrough();
+   		expect(selectedNode[0].child.length).toEqual(2);
+&nbsp;
+    	ctrl.deleteNode(selectedNode[0].child[0]);
+    	expect(ctrl.removeNodesFromTree).not.toHaveBeenCalled();
+    	expect(selectedNode[0].child.length).toEqual(2);
+    });
+&nbsp;
+    it('should create a new node with id -1 into patents child ', function()
+    {
+    	spyOn(ctrl, 'createNewChildNodeForUserToEdit').and.callThrough();
+    	expect(selectedNode[0].child[0].child.length).toEqual(0);
+&nbsp;
+    	//adding new node
+    	ctrl.createNewChildNodeForUserToEdit(selectedNode[0].child[0]);
+    	expect(ctrl.createNewChildNodeForUserToEdit).toHaveBeenCalled();
+    	expect(selectedNode[0].child[0].child.length).toEqual(1);
+&nbsp;
+    	//deleting new added node
+    	windowMock.isAppruved  = true;
+    	spyOn(ctrl, 'removeNodesFromTree').and.callThrough();
+    	ctrl.deleteNode(selectedNode[0].child[0].child[0]);
+    	expect(ctrl.removeNodesFromTree).toHaveBeenCalled();
+    	expect(selectedNode[0].child[0].child.length).toEqual(0);
+    });
+&nbsp;
+    it('should alrt window with message that node has child when deleteNode is called and node contains child', function()
+    {
+        windowMock.isAppruved = false;
+        spyOn(windowMock, 'confirm');
+&nbsp;
+        ctrl.deleteNode(selectedNode[0]);
+&nbsp;
+        expect(windowMock.confirm).toHaveBeenCalledWith("Bob has 3 nested SIM accounts. Do you want to continue to delete?");
+    });
+&nbsp;
+     it('The node should be in start editing instance variable when editingStart() is called', function()
+     {
+    	spyOn(ctrl, 'editingStart').and.callThrough();
+&nbsp;
+    	ctrl.editingStart(selectedNode[0].child[0]);
+    	expect(ctrl.editingStart).toHaveBeenCalled();
+    	expect(ctrl.commonNodeHeirarchyModel.editingNode).toEqual(selectedNode[0].child[0]);
+    });
+&nbsp;
+    it('should retuen supply name when user create node and do not supply with name', function()
+    {
+    	var newName = "";
+    	var obj = ctrl.validateNewNodeName(newName);
+    	expect(obj.message).toEqual(" Please supply a name");
+    	expect(obj.valid).toBeFalsy();
+    });
+&nbsp;
+    it('should return true and empty message when user attempts to modify node and then put it back as it was', function()
+    {
+        var obj = ctrl.validateNewNodeName(selectedNode[0].child[0].name);
+        expect(obj.message).toEqual("");
+        expect(obj.valid).toBeTruthy();
+    });
+&nbsp;
+    it('should retuen Cannot contain characters ... when user create node and add invalid characters name', function()
+    {
+    	var newName = "bob/lik";
+    	var obj = ctrl.validateNewNodeName(newName);
+    	expect(obj.message).toEqual(" Cannot contain characters: \\  /  |  :  ;  ,  .  &lt;  &gt;");
+    	expect(obj.valid).toBeFalsy();
+    });
+&nbsp;
+    it('should retuen name is already used when user create node and add same name that already exist in hierarchy', function()
+    {
+    	var newName = "Kaith";
+    	var obj = ctrl.validateNewNodeName(newName);
+    	expect(obj.message).toEqual(" The name is already in used");
+    	expect(obj.valid).toBeFalsy();
+    });
+&nbsp;
+    it('should retuen empty message and true when user create new name that is valid', function()
+    {
+    	var newName = "Adam";
+    	var obj = ctrl.validateNewNodeName(newName);
+    	expect(obj.message).toEqual("");
+    	expect(obj.valid).toBeTruthy();
+    });
+&nbsp;
+    it('should update selected node name when updateSelectedNodeName() is called', function()
+    {
+    	var node = {"name": "Kaith", "id": 108, "parentsId": 101, "child": [] };
+    	ctrl.commonNodeHeirarchyModel.editingNode = node;
+    	expect(ctrl.commonNodeHeirarchyModel.editingNode.name).toEqual("Kaith");
+    	spyOn(ctrl, 'updateSelectedNodeName').and.callThrough();
+&nbsp;
+    	ctrl.updateSelectedNodeName("Sandra");
+    	expect(ctrl.commonNodeHeirarchyModel.editingNode.name).toEqual("Sandra");
+    	expect(ctrl.updateSelectedNodeName).toHaveBeenCalled();
+    });
+&nbsp;
+     it('should update selected node name when updateSelectedNodeName() is called', function()
+     {
+    	var node = {"name": "Kaith", "id": 108, "parentsId": 101, "child": [] };
+    	ctrl.commonNodeHeirarchyModel.editingNode = node;
+    	expect(ctrl.commonNodeHeirarchyModel.editingNode.name).toEqual("Kaith");
+    	spyOn(ctrl, 'updateSelectedNodeName').and.callThrough();
+&nbsp;
+    	ctrl.updateSelectedNodeName("Sandra");
+    	expect(ctrl.commonNodeHeirarchyModel.editingNode.name).toEqual("Sandra");
+    	expect(ctrl.updateSelectedNodeName).toHaveBeenCalled();
+    });
+&nbsp;
+    it('should give a new id and create a new node details when updateSelectedNodeName() is called and id is -1', function()
+    {
+    	var node = {"name": "", "id": -1, "parentsId": 101, "child": [] };
+    	ctrl.commonNodeHeirarchyModel.editingNode = node;
+    	expect(ctrl.commonNodeHeirarchyModel.nodesDetails.length).toBe(4);
+    	expect(ctrl.commonNodeHeirarchyModel.editingNode.name).toEqual("");
+    	spyOn(ctrl, 'updateSelectedNodeName').and.callThrough();
+&nbsp;
+    	ctrl.updateSelectedNodeName("Alan");
+    	expect(ctrl.commonNodeHeirarchyModel.editingNode.name).toEqual("Alan");
+    	expect(ctrl.updateSelectedNodeName).toHaveBeenCalled();
+    	var len = ctrl.commonNodeHeirarchyModel.nodesDetails.length;
+    	expect(len).toBe(5);
+    	expect(ctrl.commonNodeHeirarchyModel.nodesDetails[len -1].start).toEqual("25/04/2016");
+    });
+&nbsp;
+    it('should delete a new nodewhen updateSelectedNodeName() is called and id is -1 without any name', function()
+    {
+    	spyOn(ctrl, 'createNewChildNodeForUserToEdit').and.callThrough();
+    	//to the selected node does not have any child so the length should be 0
+    	expect(selectedNode[0].child[0].child.length).toEqual(0);
+&nbsp;
+    	//adding new node
+    	ctrl.createNewChildNodeForUserToEdit(selectedNode[0].child[0]);
+    	expect(ctrl.createNewChildNodeForUserToEdit).toHaveBeenCalled();
+    	//to the selected node was added 1 child so the length should be 1
+    	expect(selectedNode[0].child[0].child.length).toBe(1);
+   
+    	ctrl.commonNodeHeirarchyModel.editingNode = selectedNode[0].child[0].child[0];
+    	expect(ctrl.commonNodeHeirarchyModel.editingNode.id).toBe(-1)
+    	expect(ctrl.commonNodeHeirarchyModel.editingNode.name).toEqual("");
+    	spyOn(ctrl, 'updateSelectedNodeName').and.callThrough();
+&nbsp;
+    	//updated selected node without name with id -1 should be deleted.
+    	ctrl.updateSelectedNodeName("");
+    	expect(ctrl.updateSelectedNodeName).toHaveBeenCalled();
+    	//selected node should have child 0 as it was deteted.
+    	expect(selectedNode[0].child[0].child.length).toBe(0);
+    });
+&nbsp;
+	it('should put a node as selected node and initilaze variable when userSelectedNode is called', function()
+    {
+		ctrl.userSelectedNode(selectedNode[0].child[1]);
+		expect(ctrl.titleOfNode).toEqual("Kaith");
+		expect(ctrl.numberOfChild).toEqual("Kaith has 1 child.");
+		expect(ctrl.profesionInfo).toEqual("Kaith works as Designer.");
+		expect(ctrl.workSince).toEqual("Kaith has been working for our company since 20/07/2014");
+		expect(ctrl.commensData).toEqual("Concentrate on user requirements and designing user interface.");
+		expect(ctrl.detailsTitle).toEqual("Kaith comments:");
+	});
+&nbsp;
+    it('should put a node as selected node and initilaze variable when userSelectedNode is called_II', function()
+    {
+        ctrl.userSelectedNode(selectedNode[0]);
+        expect(ctrl.titleOfNode).toEqual("Bob");
+        expect(ctrl.numberOfChild).toEqual("Bob has 2 childern.");
+        expect(ctrl.profesionInfo).toEqual("Bob works as Junior Angular Developer.");
+        expect(ctrl.workSince).toEqual("Bob has been working for our company since 20/07/2010");
+        expect(ctrl.commensData).toEqual("Concentrate on front end especially on AngulaJS.");
+        expect(ctrl.detailsTitle).toEqual("Bob comments:");
+    });
+&nbsp;
+    it('should put a node as selected node and initilaze variable when userSelectedNode is called III', function()
+    {
+        ctrl.userSelectedNode(selectedNode[0].child[0]);
+        expect(ctrl.titleOfNode).toEqual("Fred");
+        expect(ctrl.numberOfChild).toEqual("Fred does not have any child.");
+        expect(ctrl.profesionInfo).toEqual("Fred works as Junior Angular Developer.");
+        expect(ctrl.workSince).toEqual("Fred has been working for our company since 20/07/2010");
+        expect(ctrl.commensData).toEqual("Concentrate on front end especially on AngulaJS.");
+        expect(ctrl.detailsTitle).toEqual("Fred comments:");
+    });
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 26 2016 22:20:10 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
