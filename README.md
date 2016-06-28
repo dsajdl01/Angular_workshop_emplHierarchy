@@ -40,7 +40,7 @@ Just type to your terminal:
 		
 
 If you receive something like *v0.10.37* then your PC has node.js, if not go to [node](https://nodejs.org/en/)
-or type folloning comands:
+or type following comands:
 
 	cd /opt
 	sudo wget https://nodejs.org/download/release/v0.10.45/node-v0.10.45-linux-x64.tar.gz # (try to keep update node)
