@@ -49,7 +49,7 @@ or type folloning comands:
 	sudo ln -s /opt/node/bin/node /usr/bin/node
 	sudo ln -s /usr/bin/node /usr/bin/nodejs
 
-# check all is fine by escaping the directory or running a new terminal (both commands should now show version v0.10.45)
+check all is fine by escaping the directory or running a new terminal (both commands should now show version v0.10.45)
 	cd
 	node -v
 	nodejs -v
